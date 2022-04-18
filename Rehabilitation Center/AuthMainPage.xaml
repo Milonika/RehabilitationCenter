@@ -1,0 +1,60 @@
+﻿<Window x:Class="Rehabilitation_Center.AuthPages.AuthMainPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rehabilitation_Center.AuthPages"
+        mc:Ignorable="d"
+        Title="AuthMainPage" Height="800" Width="1420">
+    <Grid>
+        <Image HorizontalAlignment="Left" 
+               Height="347" 
+               Margin="-49,496,0,0" 
+               VerticalAlignment="Top" 
+               Width="347" 
+               Source="/Rehabilitation Center;component/img/plus main.png"/>
+        
+        <Image HorizontalAlignment="Left" 
+               Height="247" 
+               Margin="-129,-104,0,0" 
+               VerticalAlignment="Top" 
+               Width="500" 
+               Source="img/RectangleAuth.png"/>
+        
+        <Image HorizontalAlignment="Left" 
+               Height="583" 
+               Margin="632,157,0,0"
+               VerticalAlignment="Top"
+               Width="756" 
+               Source="img/authmain img.png"/>
+
+        <Label Content="ТРИ МЕТРА НАД &#xD;&#xA;УРОВНЕМ НЕБА" 
+               HorizontalAlignment="Left" 
+               Height="120" 
+               Margin="149,200,0,0" 
+               VerticalAlignment="Top" 
+               Width="412" 
+               FontSize="48" 
+               Cursor="None" 
+               Foreground="#FF000C8B" 
+               FontWeight="Bold" 
+               FontFamily="Rockwell"/>
+        <Rectangle Fill="#000C8B" 
+                   HorizontalAlignment="Left" 
+                   Height="7" Margin="157,325,0,0" 
+                   Stroke="Black" 
+                   VerticalAlignment="Top" 
+                   Width="103"/>
+        
+        <Label Content="Это частный реабилитационный &#xA;центр алко и нарко зависимых.&#xD;&#xA;&#xA;Где мы помогаем побороть ваши&#xA;зависимости и сохраним &#xA;информацию конфидециальной." 
+               HorizontalAlignment="Left" 
+               Height="186" 
+               Margin="150,371,0,0" 
+               VerticalAlignment="Top" 
+               Width="371" 
+               FontSize="24" 
+               FontWeight="Light" 
+               FontFamily="Rockwell"/>
+        <Button x:Name="BtnGetStarted" Click="BtnGetStared" Content="Button" HorizontalAlignment="Left" Height="94" Margin="157,594,0,0" VerticalAlignment="Top" Width="273"/>
+    </Grid>
+</Window>
