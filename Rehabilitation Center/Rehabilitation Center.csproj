@@ -102,13 +102,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\plus main.png" />
+    <Resource Include="img\PlusMain.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AuthPages\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\authmain img.png" />
+    <Resource Include="img\AuthmainImg.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\RectangleAuth.png" />
