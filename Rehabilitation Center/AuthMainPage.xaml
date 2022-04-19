@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Rehabilitation_Center.AuthPages"
         mc:Ignorable="d"
         Title="AuthMainPage" Height="800" Width="1420" WindowStartupLocation="Manual" WindowStyle="None" Background="White">
-    
+
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -87,68 +87,14 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Image HorizontalAlignment="Left" 
-               Height="347" 
-               Margin="-49,496,0,0" 
-               VerticalAlignment="Top" 
-               Width="347" 
-               Source="/Rehabilitation Center;component/img/PlusMain.png"/>
+        <Frame x:Name="MainFrameAuth" NavigationUIVisibility="Hidden" Grid.Column="1" />
 
         <Image HorizontalAlignment="Left" 
                Height="247" 
                Margin="-129,-104,0,0" 
                VerticalAlignment="Top" 
                Width="500" 
-               Source="img/RectangleAuth.png"/>
-
-        <Image HorizontalAlignment="Left" 
-               Height="583" 
-               Margin="632,157,0,0"
-               VerticalAlignment="Top"
-               Width="756" 
-               Source="img/AuthmainImg.png"/>
-
-        <Label Content="ТРИ МЕТРА НАД &#xD;&#xA;УРОВНЕМ НЕБА" 
-               HorizontalAlignment="Left" 
-               Height="120" 
-               Margin="149,200,0,0" 
-               VerticalAlignment="Top" 
-               Width="412" 
-               FontSize="48" 
-               Cursor="None" 
-               Foreground="#FF000C8B" 
-               FontWeight="Bold" 
-               FontFamily="Rockwell"/>
-        <Rectangle Fill="#000C8B" 
-                   HorizontalAlignment="Left" 
-                   Height="7" Margin="157,325,0,0" 
-                   VerticalAlignment="Top" 
-                   Width="103"/>
-
-        <Label Content="Это частный реабилитационный &#xA;центр алко и нарко зависимых.&#xD;&#xA;&#xA;Где мы помогаем побороть ваши&#xA;зависимости и сохраним &#xA;информацию конфидециальной." 
-               HorizontalAlignment="Left" 
-               Height="186" 
-               Margin="150,371,0,0" 
-               VerticalAlignment="Top" 
-               Width="371" 
-               FontSize="24" 
-               FontWeight="Light" 
-               FontFamily="Rockwell"/>
-
-        <Button x:Name="BtnGetStarted" 
-                Content="GET SARTED" 
-                Click="BtnGetStarted_Click"
-                HorizontalAlignment="Left" 
-                Height="70" 
-                Margin="142,574,0,0" 
-                VerticalAlignment="Top"
-                Width="220" BorderBrush="{x:Null}" 
-                Background="#FF000C8B" 
-                Foreground="White" 
-                FontSize="20" 
-                FontFamily="Segoe UI Symbol" 
-                FontWeight="Bold" 
-                Style="{DynamicResource StyleBtn}"/>
+               Source="img/RectangleAuth.png" Grid.RowSpan="2"/>
 
         <Label Content="yourHospital" 
                HorizontalAlignment="Left" 
@@ -178,29 +124,29 @@
                 VerticalAlignment="Top" 
                 MouseDoubleClick="oNas_MouseDoubleClick" 
                 Foreground="#FF030483" 
-                FontSize="20" FontWeight="Medium"/>
+                FontSize="20" FontWeight="Medium" Height="37" Width="65"/>
         <Label x:Name="ServisLabel"  Content="Сервис" 
                 HorizontalAlignment="Left" 
                 Margin="823,43,0,0" 
                 VerticalAlignment="Top" 
                 MouseDoubleClick="ServisLabel_MouseDoubleClick" 
                 Foreground="#FF030483" 
-                FontSize="20" FontWeight="Medium"/>
-        
+                FontSize="20" FontWeight="Medium" Height="37" Width="78"/>
+
         <Label x:Name="SpesialistLabel"  Content="Специалисты" 
                 HorizontalAlignment="Left" 
                 Margin="938,43,0,0" 
                 VerticalAlignment="Top" 
                 MouseDoubleClick="SpesialistLabel_MouseDoubleClick" 
                 Foreground="#FF030483" 
-                FontSize="20" FontWeight="Medium"/>
-        
+                FontSize="20" FontWeight="Medium" Height="37" Width="136"/>
+
         <Label x:Name="ContactLabel"  Content="Контакты" 
                 HorizontalAlignment="Left" 
                 Margin="1104,43,0,0" 
                 VerticalAlignment="Top" 
                 MouseDoubleClick="ContactLabel_MouseDoubleClick"
                 Foreground="#FF030483" 
-                FontSize="20" FontWeight="Medium"/>
+                FontSize="20" FontWeight="Medium" Height="37" Width="99"/>
     </Grid>
 </Window>

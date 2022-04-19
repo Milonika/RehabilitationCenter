@@ -31,14 +31,17 @@ namespace Rehabilitation_Center.AuthPages
 
         private void oNas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            MainFrameAuth.Navigate(new AuthONacPage());
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
+            //this.Close();
         }
 
         private void ServisLabel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            //mainDoctor.IsEnabled = !mainDoctor.IsEnabled;
+            
+            MainFrameAuth.Navigate(new ServisPage());
         }
 
         private void SpesialistLabel_MouseDoubleClick(object sender, MouseButtonEventArgs e)

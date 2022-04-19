@@ -59,6 +59,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AuthPages\AuthONacPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuthPages\ServisPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -69,6 +77,12 @@
     </Compile>
     <Compile Include="AuthMainPage.xaml.cs">
       <DependentUpon>AuthMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuthPages\AuthONacPage.xaml.cs">
+      <DependentUpon>AuthONacPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuthPages\ServisPage.xaml.cs">
+      <DependentUpon>ServisPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -105,13 +119,19 @@
     <Resource Include="img\PlusMain.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AuthPages\" />
+    <Resource Include="img\ServisImgDoctor.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\AuthmainImg.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\RectangleAuth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\BottleServisImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\DrugServisImg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
