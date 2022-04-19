@@ -175,24 +175,34 @@
         <Label Content="ЛЕЧЕНИЕ АЛКОГОЛИЗМА" 
                HorizontalAlignment="Left" 
                Height="38" 
-               Margin="609,290,0,0" 
+               Margin="624,290,0,0" 
                VerticalAlignment="Top"
                Width="276" 
                FontSize="20" 
                FontWeight="Bold" 
                Foreground="#FF000C8B"/>
-        <Label Content="НАШ ЦЕНТР ЛЕЧЕНИЯ&#xD;&#xA;АЛКОГОЛИЗМА ПОМОГАЕТ ЛЮДЯМ&#xD;&#xA;ПРЕОДОЛЕТЬ ЭТУ ЗАВИСИМОСТЬ&#xD;&#xA;ЗА СЧЕТ ПРАИВЛЬНО ПОДОБРАННЫХ &#xD;&#xA;ТЕРАПЕВТИЧЕСКИХ МЕТОДИК,&#xD;&#xA;РАБОТЫ С ПСИХОТЕРАПЕВТАМИ,&#xD;&#xA;КОНСУЛЬТАНТАМИ ПО&#xD;&#xA;ХИМИЧЕСКОЙ ЗАВИСИМОСТИ &#xD;&#xA;ПО НАШЙ ПРОГРАММЕ." 
+        <TextBlock Text="НАШ ЦЕНТР ЛЕЧЕНИЯ&#xD;&#xA;АЛКОГОЛИЗМА ПОМОГАЕТ ЛЮДЯМ&#xD;&#xA;ПРЕОДОЛЕТЬ ЭТУ ЗАВИСИМОСТЬ&#xD;&#xA;ЗА СЧЕТ ПРАИВЛЬНО ПОДОБРАННЫХ &#xD;&#xA;ТЕРАПЕВТИЧЕСКИХ МЕТОДИК,&#xD;&#xA;РАБОТЫ С ПСИХОТЕРАПЕВТАМИ,&#xD;&#xA;КОНСУЛЬТАНТАМИ ПО&#xD;&#xA;ХИМИЧЕСКОЙ ЗАВИСИМОСТИ &#xD;&#xA;ПО НАШЙ ПРОГРАММЕ." 
                HorizontalAlignment="Left" 
                Height="226" 
-               Margin="609,360,0,0" 
+               Margin="603,354,0,0" 
                VerticalAlignment="Top" 
-               Width="297" Foreground="#FF0B0C8B" FontSize="16"/>
-        <Label Content="НАШ ЦЕНТР ЛЕЧЕНИЯ&#xA;АЛКОГОЛИЗМА ПОМОГАЕТ ЛЮДЯМ&#xA;ПРЕОДОЛЕТЬ ЭТУ ЗАВИСИМОСТЬ&#xA;ЗА СЧЕТ ПРАИВЛЬНО ПОДОБРАННЫХ &#xA;ТЕРАПЕВТИЧЕСКИХ МЕТОДИК,&#xA;РАБОТЫ С ПСИХОТЕРАПЕВТАМИ,&#xA;КОНСУЛЬТАНТАМИ ПО&#xA;ХИМИЧЕСКОЙ ЗАВИСИМОСТИ &#xA;ПО НАШЙ ПРОГРАММЕ." 
+               Width="297" Foreground="#FF0B0C8B" FontSize="16" TextOptions.TextHintingMode="Animated" TextAlignment="Center"/>
+        <TextBlock Text="ЛЕЧЕНИЕ НАРКОЗАВИСИМЫХ - ЭТО&#xD;&#xA;НЕ ТОЛЬКО ДЕТОКСИКАЦИЯ И &#xD;&#xA;СНЯТИЕ АБСТИНЕНТНОГО &#xD;&#xA;СИНДРОМА. ОНИ ЯВЛЯЮТСЯ ЛИШЬ &#xD;&#xA;ПЕРВЫМИ ШАГАМИ К &#xD;&#xA;ВЫЗДОРОВЛЕНИЮ. ДАЛЬШЕ &#xD;&#xA;ПАНИЦЕНТУ НЕОБХОДИМО ПРОЙТИ&#xD;&#xA;РЕАБИЛИТАЦИЮ В СТАЦИОНАРЕ ПО&#xD;&#xA;ИНДИВИДУАЛЬНОЙ ПРОГРАММЕ &#xD;&#xA;И ПОД НАБЛЮДЕНИЕМ &#xD;&#xA;СПЕЦИАЛИСТОВ ЦЕНТРА" 
             HorizontalAlignment="Left" 
-            Height="226" 
-            Margin="1032,338,0,0" 
+            Height="248" 
+            Margin="1021,354,0,0" 
             VerticalAlignment="Top" 
-            Width="297" Foreground="#FF5690FC" FontSize="16" Background="{x:Null}"/>
+            Width="291" Foreground="#FF598DEE" FontSize="16" Background="{x:Null}" TextAlignment="Center"/>
+        
+        <Label Content="ЛЕЧЕНИЕ НАРКОМАНИИ" 
+            HorizontalAlignment="Left" 
+            Height="38" 
+            Margin="1055,290,0,0" 
+            VerticalAlignment="Top"
+            Width="276" 
+            FontSize="20" 
+            FontWeight="Bold" 
+            Foreground="#FF598DEE"/>
 
     </Grid>
 </Page>
