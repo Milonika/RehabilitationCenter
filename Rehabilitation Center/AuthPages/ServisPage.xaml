@@ -7,6 +7,51 @@
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1420"
       Title="ServisPage">
+    <Page.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonPodrobnee" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
     <Grid>
         <Image HorizontalAlignment="Left" 
@@ -71,6 +116,7 @@
                FontSize="36" 
                FontWeight="Bold" 
                Foreground="#FF000C8B"/>
+
         <Label Content="Ведем учет о вашем здоровье.&#xA;Вы сможете увидеть свой &#xD;&#xA;прогресс в личном кабинете." 
                HorizontalAlignment="Left" 
                Height="87" 
@@ -79,7 +125,74 @@
                Width="295" 
                Foreground="#FF000C8B" FontSize="20" FontFamily="Rockwell"/>
 
+        <Label Content="Что мы предоставляем:" 
+               HorizontalAlignment="Left" 
+               Height="57" 
+               Margin="759,122,0,0" 
+               VerticalAlignment="Top" 
+               Width="431" 
+               Foreground="#FF000C8B" 
+               FontSize="36"/>
 
+        <Button Content="ПОДРОБНЕЕ" 
+                HorizontalAlignment="Left" 
+                Height="51" 
+                Margin="646,631,0,0" 
+                VerticalAlignment="Top"
+                Width="193" Background="{x:Null}" 
+                BorderBrush="#FF000C8B" 
+                FontSize="20" 
+                Foreground="#FF000C8B" 
+                FontWeight="SemiBold" 
+                BorderThickness="2" Style="{DynamicResource ButtonPodrobnee}"
+                />
+        <Button Content="ПОДРОБНЕЕ" 
+                HorizontalAlignment="Left" 
+                Height="51" 
+                Margin="1082,631,0,0" 
+                VerticalAlignment="Top"
+                Width="194" Background="{x:Null}" 
+                BorderBrush="#FF5690FC" 
+                FontSize="20" 
+                Foreground="#FF5690FC" 
+                FontWeight="SemiBold" 
+                BorderThickness="2" Style="{DynamicResource ButtonPodrobnee}"
+                />
+        <Image HorizontalAlignment="Left" 
+               Height="62" 
+               Margin="1317,112,0,0" 
+               VerticalAlignment="Top" 
+               Width="68" 
+               Source="/Rehabilitation Center;component/img/PlusMain.png"/>
+
+        <Image HorizontalAlignment="Left" 
+               Height="215" 
+               Margin="1274,647,0,0" 
+               VerticalAlignment="Top" 
+               Width="236" 
+               Source="/Rehabilitation Center;component/img/PlusMain.png"/>
+
+        <Label Content="ЛЕЧЕНИЕ АЛКОГОЛИЗМА" 
+               HorizontalAlignment="Left" 
+               Height="38" 
+               Margin="609,290,0,0" 
+               VerticalAlignment="Top"
+               Width="276" 
+               FontSize="20" 
+               FontWeight="Bold" 
+               Foreground="#FF000C8B"/>
+        <Label Content="НАШ ЦЕНТР ЛЕЧЕНИЯ&#xD;&#xA;АЛКОГОЛИЗМА ПОМОГАЕТ ЛЮДЯМ&#xD;&#xA;ПРЕОДОЛЕТЬ ЭТУ ЗАВИСИМОСТЬ&#xD;&#xA;ЗА СЧЕТ ПРАИВЛЬНО ПОДОБРАННЫХ &#xD;&#xA;ТЕРАПЕВТИЧЕСКИХ МЕТОДИК,&#xD;&#xA;РАБОТЫ С ПСИХОТЕРАПЕВТАМИ,&#xD;&#xA;КОНСУЛЬТАНТАМИ ПО&#xD;&#xA;ХИМИЧЕСКОЙ ЗАВИСИМОСТИ &#xD;&#xA;ПО НАШЙ ПРОГРАММЕ." 
+               HorizontalAlignment="Left" 
+               Height="226" 
+               Margin="609,360,0,0" 
+               VerticalAlignment="Top" 
+               Width="297" Foreground="#FF0B0C8B" FontSize="16"/>
+        <Label Content="НАШ ЦЕНТР ЛЕЧЕНИЯ&#xA;АЛКОГОЛИЗМА ПОМОГАЕТ ЛЮДЯМ&#xA;ПРЕОДОЛЕТЬ ЭТУ ЗАВИСИМОСТЬ&#xA;ЗА СЧЕТ ПРАИВЛЬНО ПОДОБРАННЫХ &#xA;ТЕРАПЕВТИЧЕСКИХ МЕТОДИК,&#xA;РАБОТЫ С ПСИХОТЕРАПЕВТАМИ,&#xA;КОНСУЛЬТАНТАМИ ПО&#xA;ХИМИЧЕСКОЙ ЗАВИСИМОСТИ &#xA;ПО НАШЙ ПРОГРАММЕ." 
+            HorizontalAlignment="Left" 
+            Height="226" 
+            Margin="1032,338,0,0" 
+            VerticalAlignment="Top" 
+            Width="297" Foreground="#FF5690FC" FontSize="16" Background="{x:Null}"/>
 
     </Grid>
 </Page>
