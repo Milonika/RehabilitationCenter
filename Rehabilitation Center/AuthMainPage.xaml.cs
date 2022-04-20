@@ -51,7 +51,7 @@ namespace Rehabilitation_Center.AuthPages
 
         private void ContactLabel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            MainFrameAuth.Navigate(new ContactPage());
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

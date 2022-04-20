@@ -1,0 +1,21 @@
+﻿<Page x:Class="Rehabilitation_Center.AuthPages.ProfessionalsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Rehabilitation_Center.AuthPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1420"
+      Title="ProfessionalsPage">
+
+    <Grid>
+        <Image HorizontalAlignment="Left" 
+               Height="347" 
+               Margin="-49,496,0,0" 
+               VerticalAlignment="Top" 
+               Width="347" 
+               Source="/Rehabilitation Center;component/img/PlusMain.png"/>
+
+
+    </Grid>
+</Page>

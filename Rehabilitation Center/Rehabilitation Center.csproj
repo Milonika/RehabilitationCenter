@@ -63,6 +63,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AuthPages\ContactPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuthPages\ProfessionalsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AuthPages\ServisPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -80,6 +88,12 @@
     </Compile>
     <Compile Include="AuthPages\AuthONacPage.xaml.cs">
       <DependentUpon>AuthONacPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuthPages\ContactPage.xaml.cs">
+      <DependentUpon>ContactPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuthPages\ProfessionalsPage.xaml.cs">
+      <DependentUpon>ProfessionalsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="AuthPages\ServisPage.xaml.cs">
       <DependentUpon>ServisPage.xaml</DependentUpon>
@@ -132,6 +146,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\DrugServisImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\ContactImg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
