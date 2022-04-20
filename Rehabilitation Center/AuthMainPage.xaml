@@ -93,6 +93,43 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="BtnClose" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="30" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" Margin="0,0,14,15">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Frame x:Name="MainFrameAuth" NavigationUIVisibility="Hidden" Grid.Column="1" Source="/Rehabilitation Center;component/AuthPages/AuthONacPage.xaml" />
@@ -116,9 +153,9 @@
 
         <Button Content="Войти" 
                 HorizontalAlignment="Left" 
-                Margin="1241,32,0,0" 
+                Margin="1193,43,0,0" 
                 VerticalAlignment="Top" 
-                Width="111" 
+                Width="112" 
                 Height="52" 
                 Foreground="#FF030483" 
                 FontSize="20" 
@@ -128,14 +165,14 @@
                 Style="{DynamicResource StyleBtnEmpty}"/>
         <Label x:Name="oNas"  Content="О Нас" 
                 HorizontalAlignment="Left" 
-                Margin="719,43,0,0" 
+                Margin="671,54,0,0" 
                 VerticalAlignment="Top" 
                 MouseDoubleClick="oNas_MouseDoubleClick" 
                 Foreground="#FF030483" 
-                FontSize="20" FontWeight="Medium" Height="37" Width="65"/>
+                FontSize="20" FontWeight="Medium" Height="37" Width="66"/>
         <Label x:Name="ServisLabel"  Content="Сервис" 
                 HorizontalAlignment="Left" 
-                Margin="823,43,0,0" 
+                Margin="775,54,0,0" 
                 VerticalAlignment="Top" 
                 MouseDoubleClick="ServisLabel_MouseDoubleClick" 
                 Foreground="#FF030483" 
@@ -143,7 +180,7 @@
 
         <Label x:Name="SpesialistLabel"  Content="Специалисты" 
                 HorizontalAlignment="Left" 
-                Margin="938,43,0,0" 
+                Margin="891,54,0,0" 
                 VerticalAlignment="Top" 
                 MouseDoubleClick="SpesialistLabel_MouseDoubleClick" 
                 Foreground="#FF030483" 
@@ -151,10 +188,25 @@
 
         <Label x:Name="ContactLabel"  Content="Контакты" 
                 HorizontalAlignment="Left" 
-                Margin="1104,43,0,0" 
+                Margin="1057,54,0,0" 
                 VerticalAlignment="Top" 
                 MouseDoubleClick="ContactLabel_MouseDoubleClick"
                 Foreground="#FF030483" 
-                FontSize="20" FontWeight="Medium" Height="37" Width="99"/>
+                FontSize="20" FontWeight="Medium" 
+                Height="37" Width="98"/>
+
+        <Button Content="Х" 
+                x:Name="BtnCloseAuthWindow"
+                Click="BtnCloseAuthWindow_Click"
+                HorizontalAlignment="Left" 
+                Height="45" 
+                Margin="1363,23,0,0" 
+                VerticalAlignment="Top" 
+                Width="44" 
+                BorderThickness="2"
+                BorderBrush="#FF000C8B" 
+                Foreground="#FF000C8B" 
+                Background="{x:Null}" 
+                Style="{DynamicResource BtnClose}" FontWeight="Bold"/>
     </Grid>
 </Window>

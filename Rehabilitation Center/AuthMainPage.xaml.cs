@@ -46,7 +46,7 @@ namespace Rehabilitation_Center.AuthPages
 
         private void SpesialistLabel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            MainFrameAuth.Navigate(new ProfessionalsPage());
         }
 
         private void ContactLabel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -57,6 +57,11 @@ namespace Rehabilitation_Center.AuthPages
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void BtnCloseAuthWindow_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
