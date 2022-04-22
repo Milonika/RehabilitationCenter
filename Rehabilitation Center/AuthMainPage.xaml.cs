@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Rehabilitation_Center.AuthPages;
 
 namespace Rehabilitation_Center.AuthPages
 {
@@ -26,7 +27,7 @@ namespace Rehabilitation_Center.AuthPages
 
         private void BtnGetStarted_Click(object sender, RoutedEventArgs e)
         {
-  
+            //////////////
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -57,6 +58,13 @@ namespace Rehabilitation_Center.AuthPages
         private void BtnContact_Click(object sender, RoutedEventArgs e)
         {
             MainFrameAuth.Navigate(new ContactPage());          
+        }
+
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new AuthorizationWindow();
+            window.Show();
+            this.Close();
         }
     }
 }

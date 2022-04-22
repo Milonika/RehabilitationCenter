@@ -173,8 +173,8 @@
                  Background="#FFE8F4FE" 
                  Style="{DynamicResource TextBoxCornerRadius}" 
                  VerticalContentAlignment="Center"
-                
                  HorizontalAlignment="Left" Text=" 87y9asd fhg uyizs dk hijus adfkh jsd ahkj "/>
+        
         <TextBox HorizontalAlignment="Left" 
                  Height="63" 
                  Margin="822,362,0,0" 

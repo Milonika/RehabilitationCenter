@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AuthorizationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AuthPages\AuthONacPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,6 +89,9 @@
     </Compile>
     <Compile Include="AuthMainPage.xaml.cs">
       <DependentUpon>AuthMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationWindow.xaml.cs">
+      <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="AuthPages\AuthONacPage.xaml.cs">
       <DependentUpon>AuthONacPage.xaml</DependentUpon>
