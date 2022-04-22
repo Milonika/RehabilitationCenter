@@ -158,5 +158,29 @@
   <ItemGroup>
     <Resource Include="img\Medal.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\AccountIcon.png" />
+    <Resource Include="img\EmployeeIcon.png" />
+    <Resource Include="img\StatisticIcon.png" />
+    <Resource Include="img\TerapiaIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\AuthWindowImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\RegistrImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\TestAvatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\MedalIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\SettingIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

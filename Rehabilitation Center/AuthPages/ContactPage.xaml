@@ -162,15 +162,19 @@
             FontWeight="Bold" 
             Style="{DynamicResource StyleBtn}"/>
         
-        <TextBox HorizontalAlignment="Left" 
+        <TextBox 
                  Height="63" 
                  Margin="822,233,0,0" 
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top"
-                 Width="346" 
+                 IsReadOnly="True"
+                 Width="358.6" 
                  BorderBrush="{x:Null}" 
                  Background="#FFE8F4FE" 
-                 Style="{DynamicResource TextBoxCornerRadius}"/>
+                 Style="{DynamicResource TextBoxCornerRadius}" 
+                 VerticalContentAlignment="Center"
+                
+                 HorizontalAlignment="Left" Text=" 87y9asd fhg uyizs dk hijus adfkh jsd ahkj "/>
         <TextBox HorizontalAlignment="Left" 
                  Height="63" 
                  Margin="822,362,0,0" 
