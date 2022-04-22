@@ -26,32 +26,7 @@ namespace Rehabilitation_Center.AuthPages
 
         private void BtnGetStarted_Click(object sender, RoutedEventArgs e)
         {
-            
-        }
-
-        private void oNas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            MainFrameAuth.Navigate(new AuthONacPage());
-            //MainWindow mainWindow = new MainWindow();
-            //mainWindow.Show();
-            //this.Close();
-        }
-
-        private void ServisLabel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            //mainDoctor.IsEnabled = !mainDoctor.IsEnabled;
-            
-            MainFrameAuth.Navigate(new ServisPage());
-        }
-
-        private void SpesialistLabel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            MainFrameAuth.Navigate(new ProfessionalsPage());
-        }
-
-        private void ContactLabel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            MainFrameAuth.Navigate(new ContactPage());
+  
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -62,6 +37,26 @@ namespace Rehabilitation_Center.AuthPages
         private void BtnCloseAuthWindow_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnONas_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrameAuth.Navigate(new AuthONacPage());
+        }
+
+        private void BtnServis_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrameAuth.Navigate(new ServisPage());
+        }
+
+        private void BtnSpesialists_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrameAuth.Navigate(new ProfessionalsPage());
+        }
+
+        private void BtnContact_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrameAuth.Navigate(new ContactPage());          
         }
     }
 }
