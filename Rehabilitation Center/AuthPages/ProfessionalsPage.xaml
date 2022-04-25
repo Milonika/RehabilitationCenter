@@ -15,7 +15,7 @@
                VerticalAlignment="Top" 
                Width="347" 
                Source="/Rehabilitation Center;component/img/PlusMain.png"/>
-        
+
         <Rectangle HorizontalAlignment="Left" 
             Height="406" 
             Margin="98,301,0,0" 
@@ -24,7 +24,7 @@
             Width="358" 
             StrokeThickness="2" 
             RadiusX="20" RadiusY="20" />
-        
+
         <Rectangle HorizontalAlignment="Left" 
             Height="406" 
             Margin="546,301,0,0" 
@@ -33,7 +33,7 @@
             Width="358" 
             StrokeThickness="2" 
             RadiusX="20" RadiusY="20" />
-        
+
         <Rectangle HorizontalAlignment="Left" 
             Height="406" 
             Margin="996,301,0,0" 
@@ -42,28 +42,28 @@
             Width="358" 
             StrokeThickness="2" 
             RadiusX="20" RadiusY="20" />
-        
+
         <Image HorizontalAlignment="Left" 
                Height="140" 
                Margin="206,231,0,0"
                VerticalAlignment="Top" 
                Width="140" 
                Source="/Rehabilitation Center;component/img/Laila.png"/>
-        
+
         <Image HorizontalAlignment="Left" 
                Height="140" 
                Margin="665,231,0,0" 
                VerticalAlignment="Top"
                Width="140" 
                Source="/Rehabilitation Center;component/img/Ailina.png"/>
-        
+
         <Image HorizontalAlignment="Left" 
                Height="140" 
                Margin="1104,231,0,0" 
                VerticalAlignment="Top"
                Width="140" 
                Source="/Rehabilitation Center;component/img/Gulnara.png"/>
-        
+
         <Label Content="Наши специалисты" 
                HorizontalAlignment="Left"
                Height="63" 
@@ -71,6 +71,92 @@
                VerticalAlignment="Top"
                Width="349" FontSize="36" 
                Foreground="#FF000C8B"/>
+
+        <Label Content="Клинический психолог" 
+               HorizontalAlignment="Left" 
+               FontSize="20"
+               Height="34" 
+               Margin="165,457,0,0" 
+               VerticalAlignment="Top" 
+               Width="224" Foreground="#FF1C6BFF"/>
+
+        <Label Content="Член Общероссийской &#xA;профессиональной &#xA;психотерапевтической лиги РФ.&#xA;Член Российской &#xA;Нейропсихиатрической &#xA;Ассоциации." 
+               HorizontalAlignment="Left" 
+               FontSize="16"
+               Height="214" 
+               Margin="163,510,0,0" 
+               VerticalAlignment="Top" 
+               Width="270" Foreground="#FF00358C"/>
+
+        <Label Content="Психиатр-нарколог" 
+               HorizontalAlignment="Left" 
+               FontSize="20"
+               Height="34" 
+               Margin="630,457,0,0" 
+               VerticalAlignment="Top" 
+               Width="224" Foreground="#FF1C6BFF"/>
+
+        <Label Content="Владеет навыками суггестивной &#xD;&#xA;и аверсивной наркологической &#xD;&#xA;помощи (подшивка, кодирование), &#xD;&#xA;навыками обрыва и выведения &#xD;&#xA;из запоя, купирования состояний &#xD;&#xA;синдрома отмены от алкоголя&#xD;&#xA;и сочетанных ПАВ." 
+               HorizontalAlignment="Left" 
+               FontSize="16"
+               Height="214" 
+               Margin="603,510,0,0" 
+               VerticalAlignment="Top" 
+               Width="270" Foreground="#FF00358C"/>
+
+        <Label Content="Психиатр" 
+               HorizontalAlignment="Left" 
+               FontSize="20"
+               Height="34" 
+               Margin="1126,457,0,0" 
+               VerticalAlignment="Top" 
+               Width="103" Foreground="#FF1C6BFF"/>
+
+        <Label Content="Образование: Казанский &#xD;&#xA;Государственный медицинский &#xD;&#xA;университет (2012-2018) по &#xD;&#xA;специальности Лечебное дело." 
+               HorizontalAlignment="Left" 
+               FontSize="16"
+               Height="99" 
+               Margin="1044,510,0,0" 
+               VerticalAlignment="Top" 
+               Width="270" Foreground="#FF00358C"/>
+
+        <TextBlock HorizontalAlignment="Left" 
+                   Margin="1044,377,0,0" 
+                   TextWrapping="Wrap" 
+                   Text="Гарифинова Гульнара Фанилевна" 
+                   VerticalAlignment="Top" 
+                   FontSize="24"
+                   Height="80" 
+                   Width="270" 
+                   Foreground="#FF000C8B" 
+                   FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+        <TextBlock HorizontalAlignment="Left" 
+                   Margin="603,381,0,0" 
+                   TextWrapping="Wrap" 
+                   Text="Бурнашева Айлина Тимуровна" 
+                   VerticalAlignment="Top" 
+                   FontSize="24"
+                   Height="80" 
+                   Width="251" 
+                   Foreground="#FF000C8B" 
+                   FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+        <TextBlock HorizontalAlignment="Left" 
+                   Margin="174,381,0,0" 
+                   TextWrapping="Wrap" 
+                   Text="Техиева Лайла Исламовна" 
+                   VerticalAlignment="Top" 
+                   FontSize="24"
+                   Height="80" 
+                   Width="215" 
+                   Foreground="#FF000C8B" 
+                   FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+
 
     </Grid>
 </Page>

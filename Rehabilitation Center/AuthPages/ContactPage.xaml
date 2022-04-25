@@ -137,7 +137,7 @@
                Width="152" 
                Foreground="#FF5690FC" FontSize="20
                " FontWeight="Bold"/>
-        <Label Content="Наш телефон" 
+        <Label Content="Наша почта" 
                HorizontalAlignment="Left" 
                Height="47" 
                Margin="830,457,0,0" 
@@ -168,12 +168,13 @@
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top"
                  IsReadOnly="True"
-                 Width="358.6" 
+                 Width="358.6"
+                 FontSize="25"
                  BorderBrush="{x:Null}" 
                  Background="#FFE8F4FE" 
                  Style="{DynamicResource TextBoxCornerRadius}" 
                  VerticalContentAlignment="Center"
-                 HorizontalAlignment="Left" Text=" 87y9asd fhg uyizs dk hijus adfkh jsd ahkj "/>
+                 HorizontalAlignment="Left" Text=" Галеева 25А "/>
         
         <TextBox HorizontalAlignment="Left" 
                  Height="63" 
@@ -181,9 +182,13 @@
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top"
                  Width="346" 
+                 FontSize="25"
                  BorderBrush="{x:Null}" 
                  Background="#FFE8F4FE" 
-                 Style="{DynamicResource TextBoxCornerRadius}"/>
+                 VerticalContentAlignment="Center"
+                 Style="{DynamicResource TextBoxCornerRadius}"
+                 Text="8 800 555 35 35"/>
+        
         <TextBox HorizontalAlignment="Left" 
                  Height="63" 
                  Margin="822,490,0,0" 
@@ -192,7 +197,10 @@
                  Width="346" 
                  BorderBrush="{x:Null}" 
                  Background="#FFE8F4FE" 
-                 Style="{DynamicResource TextBoxCornerRadius}"/>
+                 Style="{DynamicResource TextBoxCornerRadius}"
+                 VerticalContentAlignment="Center"
+                 FontSize="25"
+                 Text="TrimetraHospital@mail.ru"/>
 
     </Grid>
 </Page>
