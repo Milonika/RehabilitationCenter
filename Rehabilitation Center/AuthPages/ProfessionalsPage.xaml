@@ -155,6 +155,9 @@
                    Foreground="#FF000C8B" 
                    FontWeight="Medium"
                    TextAlignment="Center"/>
+        <Image HorizontalAlignment="Left" Height="71" Margin="90,653,0,0" VerticalAlignment="Top" Width="73" Source="/Rehabilitation Center;component/img/MedalIcon.png"/>
+        <Image HorizontalAlignment="Left" Height="71" Margin="546,653,0,0" VerticalAlignment="Top" Width="73" Source="/Rehabilitation Center;component/img/MedalIcon.png"/>
+        <Image HorizontalAlignment="Left" Height="71" Margin="996,653,0,0" VerticalAlignment="Top" Width="73" Source="/Rehabilitation Center;component/img/MedalIcon.png"/>
 
 
 

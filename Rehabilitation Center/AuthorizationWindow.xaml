@@ -284,6 +284,8 @@
                  Style="{DynamicResource TextBoxStyleEmpty}" TextChanged="TBLogin_TextChanged"/>
 
         <Button Content="Войти" 
+                x:Name="BtnLogin"
+                Click="BtnLogin_Click"
                 HorizontalAlignment="Left" 
                 Height="36" 
                 Margin="98,538,0,0" 
@@ -302,7 +304,10 @@
                      FontSize="18"
                      VerticalContentAlignment="Center"
                      Height="37" Style="{DynamicResource PasswordBoxStyle1}"/>
+        
         <Button Content="Регистрация" 
+                x:Name="BtnRegistWindow"
+                Click="BtnRegistWindow_Click"
                 HorizontalAlignment="Left" 
                 Height="19" 
                 Margin="148,579,0,0" 
@@ -311,7 +316,9 @@
                 BorderBrush="{x:Null}" 
                 Background="{x:Null}" 
                 Foreground="#FF90B7FF"/>
-        <Button Content="X" 
+        <Button Content="X"
+                x:Name="BtnCloseAuthWindow"
+                Click="BtnCloseAuthWindow_Click"
                 HorizontalAlignment="Left" 
                 Height="25" 
                 Margin="329,10,0,0" 

@@ -24,5 +24,35 @@ namespace Rehabilitation_Center
         {
             InitializeComponent();
         }
+
+        private void BtnCloseMainWindow_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MyMainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        private void BtnMyAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnMyStatistic_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnTerapia_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnSpesialist_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

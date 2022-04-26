@@ -55,6 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MainWindowPage\MyAccountPage.xaml.cs">
+      <DependentUpon>MyAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowPage\MyStatisticPage.xaml.cs">
+      <DependentUpon>MyStatisticPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowPage\SpesialistPage.xaml.cs">
+      <DependentUpon>SpesialistPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowPage\TherapyPage.xaml.cs">
+      <DependentUpon>TherapyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationWindow.xaml.cs">
+      <DependentUpon>RegistrationWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="AuthMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -109,6 +124,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MainWindowPage\MyAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindowPage\MyStatisticPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindowPage\SpesialistPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindowPage\TherapyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -169,12 +204,6 @@
     <Resource Include="img\Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\AccountIcon.png" />
-    <Resource Include="img\EmployeeIcon.png" />
-    <Resource Include="img\StatisticIcon.png" />
-    <Resource Include="img\TerapiaIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\AuthWindowImg.png" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +217,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\SettingIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\IconAccount.png" />
+    <Resource Include="img\IconEmployee.png" />
+    <Resource Include="img\IconsStatistic.png" />
+    <Resource Include="img\IconTerapia.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

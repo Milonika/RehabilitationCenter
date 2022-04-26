@@ -32,5 +32,24 @@ namespace Rehabilitation_Center
         {
             this.DragMove();
         }
+
+        private void BtnCloseAuthWindow_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnRegistWindow_Click(object sender, RoutedEventArgs e)
+        {
+            Window registwindow = new RegistrationWindow();
+            registwindow.Show();
+            this.Close();
+        }
+
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Window mainwindow = new MainWindow();
+            mainwindow.Show();
+            this.Close();
+        }
     }
 }
