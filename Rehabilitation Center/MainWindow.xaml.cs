@@ -33,7 +33,7 @@ namespace Rehabilitation_Center
 
         private void MyMainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            this.DragMove(); ////
         }
 
         private void BtnMyAccount_Click(object sender, RoutedEventArgs e)
