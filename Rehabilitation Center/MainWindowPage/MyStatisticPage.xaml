@@ -3,12 +3,54 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Rehabilitation_Center.MainWindowPage"
+      xmlns:local="clr-namespace:Rehabilitation_Center.MainWindowPage" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" 
+      d:DesignWidth="1280"
       Title="MyStatisticPage">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="DeepPurple" SecondaryColor="Lime" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
     <Grid>
-        
+        <Rectangle Fill="#F7F8FD" 
+                   HorizontalAlignment="Left" 
+                   Height="617" 
+                   Margin="252,112,0,0" 
+                   VerticalAlignment="Top" 
+                   Width="990"
+                   RadiusY="20"
+                   RadiusX="20"/>
+
+        <Label Content="Моя статистика" 
+               FontSize="32"
+               HorizontalAlignment="Left" 
+               Height="51" 
+               Margin="276,55,0,0" 
+               VerticalAlignment="Top" 
+               Width="242" 
+               FontWeight="SemiBold" 
+               Foreground="#FF5690FC"/>
+
+        <DatePicker HorizontalAlignment="Left" 
+                    x:Name="ggwp"
+                    Height="49" 
+                    SelectedDateChanged="DatePicker_SelectedDateChanged"
+                    Margin="886,155,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="260"/>
+        <ListView HorizontalAlignment="Left" Height="502" Margin="834,236,0,0" VerticalAlignment="Top" Width="360">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </Page>

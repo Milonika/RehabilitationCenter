@@ -48,12 +48,12 @@ namespace Rehabilitation_Center
 
         private void BtnTerapia_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrameInMainWindow.Navigate(new MainWindowPage.TherapyPage());
         }
 
         private void BtnSpesialist_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrameInMainWindow.Navigate(new MainWindowPage.SpesialistPage());
         }
     }
 }

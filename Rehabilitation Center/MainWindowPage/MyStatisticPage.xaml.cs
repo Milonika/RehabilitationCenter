@@ -24,5 +24,10 @@ namespace Rehabilitation_Center.MainWindowPage
         {
             InitializeComponent();
         }
+
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MessageBox.Show(ggwp.SelectedDate.ToString(), ggwp.Text);
+        }
     }
 }
