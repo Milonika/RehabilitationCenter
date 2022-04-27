@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Rehabilitation_Center.MainWindowPage;
 
 namespace Rehabilitation_Center
 {
@@ -37,12 +38,12 @@ namespace Rehabilitation_Center
 
         private void BtnMyAccount_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrameInMainWindow.Navigate(new MyAccountPage());
         }
 
         private void BtnMyStatistic_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrameInMainWindow.Navigate(new MyStatisticPage());
         }
 
         private void BtnTerapia_Click(object sender, RoutedEventArgs e)
