@@ -55,5 +55,10 @@ namespace Rehabilitation_Center
         {
             MainFrameInMainWindow.Navigate(new MainWindowPage.SpesialistPage());
         }
+
+        private void BtnPacient_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

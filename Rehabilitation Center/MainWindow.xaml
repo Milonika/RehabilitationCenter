@@ -39,6 +39,7 @@
             <Button x:Name="BtnMyStatistic" Click="BtnMyStatistic_Click" Content="Моя статистика" FontSize="16" HorizontalAlignment="Left" Height="69" Width="265" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Medium" Foreground="#5690FC" Style="{DynamicResource PanelBtnMainWindow}"/>
             <Button x:Name="BtnTerapia" Click="BtnTerapia_Click" Content="Терапии" FontSize="16" HorizontalAlignment="Left" Height="69" Width="265" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Medium" Foreground="#5690FC" Style="{DynamicResource PanelBtnMainWindow}"/>
             <Button x:Name="BtnSpesialist" Click="BtnSpesialist_Click" Content="Специалисты" FontSize="16" HorizontalAlignment="Left" Height="69" Width="265" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Medium" Foreground="#5690FC" Style="{DynamicResource PanelBtnMainWindow}"/>
+            <Button x:Name="BtnPacient" Click="BtnPacient_Click"  Content="Пациенты" FontSize="16" HorizontalAlignment="Left" Height="69" Width="265" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Medium" Foreground="#5690FC" Style="{DynamicResource PanelBtnMainWindow}"/>
         </StackPanel>
         <Image HorizontalAlignment="Left" Height="82" Margin="28,64,0,0" VerticalAlignment="Top" Width="210" Source="img/LogoTMNUN.png"/>
         <Frame x:Name="MainFrameInMainWindow" NavigationUIVisibility="Hidden" Source="/Rehabilitation Center;component/MainWindowPage/MyAccountPage.xaml"/>
