@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище ReabilCenterModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Auth">
+          <Key>
+            <PropertyRef Name="IDAuth" />
+          </Key>
+          <Property Name="IDAuth" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDRols" Type="int" Nullable="false" />
+          <Property Name="IDClient" Type="int" />
+          <Property Name="IDDoctor" Type="int" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="IDClient" />
+          </Key>
+          <Property Name="IDClient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pasport" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Polis" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="SNILS" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="20" />
+          <Property Name="Photo" Type="varbinary" MaxLength="50" />
+          <Property Name="Age" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dependece">
+          <Key>
+            <PropertyRef Name="IDDependece" />
+          </Key>
+          <Property Name="IDDependece" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DependeceHealth">
+          <Key>
+            <PropertyRef Name="IDHealth" />
+            <PropertyRef Name="IDDependece" />
+          </Key>
+          <Property Name="IDHealth" Type="int" Nullable="false" />
+          <Property Name="IDDependece" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="IDDoctor" />
+          </Key>
+          <Property Name="IDDoctor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pasport" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Polis" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="SNILS" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="20" />
+          <Property Name="Photo" Type="varbinary" MaxLength="50" />
+          <Property Name="IDDoctorCategory" Type="int" Nullable="false" />
+          <Property Name="WorkExperience" Type="int" />
+          <Property Name="Age" Type="int" />
+        </EntityType>
+        <EntityType Name="DoctorCategory">
+          <Key>
+            <PropertyRef Name="IDDoctorCategory" />
+          </Key>
+          <Property Name="IDDoctorCategory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="IDEvents" />
+          </Key>
+          <Property Name="IDEvents" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="health">
+          <Key>
+            <PropertyRef Name="IDHealth" />
+          </Key>
+          <Property Name="IDHealth" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Height" Type="int" />
+          <Property Name="Weight" Type="int" />
+          <Property Name="Pressure" Type="nvarchar" MaxLength="50" />
+          <Property Name="Saturation" Type="nvarchar" MaxLength="50" />
+          <Property Name="BloodType" Type="nchar" MaxLength="10" />
+          <Property Name="IDClient" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HistoryClient">
+          <Key>
+            <PropertyRef Name="IDClient" />
+            <PropertyRef Name="IDEvent" />
+          </Key>
+          <Property Name="IDClient" Type="int" Nullable="false" />
+          <Property Name="IDEvent" Type="int" Nullable="false" />
+          <Property Name="DateStart" Type="datetime" Nullable="false" />
+          <Property Name="DateEnd" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="IDPhoto" />
+          </Key>
+          <Property Name="IDPhoto" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="Photo" Type="varbinary" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rols">
+          <Key>
+            <PropertyRef Name="IDRols" />
+          </Key>
+          <Property Name="IDRols" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "ReabilCenter.dbo.Statistic" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Statistic">
+          <Property Name="IDStatistic" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Therapy">
+          <Key>
+            <PropertyRef Name="IDTherapy" />
+          </Key>
+          <Property Name="IDTherapy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TherapyHistory">
+          <Key>
+            <PropertyRef Name="IDTherapy" />
+            <PropertyRef Name="IDClient" />
+          </Key>
+          <Property Name="IDTherapy" Type="int" Nullable="false" />
+          <Property Name="IDClient" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Auth_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="IDClient" />
+            </Principal>
+            <Dependent Role="Auth">
+              <PropertyRef Name="IDClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auth_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+          <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="IDDoctor" />
+            </Principal>
+            <Dependent Role="Auth">
+              <PropertyRef Name="IDDoctor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auth_Rols">
+          <End Role="Rols" Type="Self.Rols" Multiplicity="1" />
+          <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rols">
+              <PropertyRef Name="IDRols" />
+            </Principal>
+            <Dependent Role="Auth">
+              <PropertyRef Name="IDRols" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Client_Photo">
+          <End Role="Photo" Type="Self.Photo" Multiplicity="0..1" />
+          <End Role="Client" Type="Self.Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Photo">
+              <PropertyRef Name="IDPhoto" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="Photo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DependeceHealth_Dependece">
+          <End Role="Dependece" Type="Self.Dependece" Multiplicity="1" />
+          <End Role="DependeceHealth" Type="Self.DependeceHealth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dependece">
+              <PropertyRef Name="IDDependece" />
+            </Principal>
+            <Dependent Role="DependeceHealth">
+              <PropertyRef Name="IDDependece" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DependeceHealth_health">
+          <End Role="health" Type="Self.health" Multiplicity="1" />
+          <End Role="DependeceHealth" Type="Self.DependeceHealth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="health">
+              <PropertyRef Name="IDHealth" />
+            </Principal>
+            <Dependent Role="DependeceHealth">
+              <PropertyRef Name="IDHealth" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_DoctorCategory">
+          <End Role="DoctorCategory" Type="Self.DoctorCategory" Multiplicity="1" />
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DoctorCategory">
+              <PropertyRef Name="IDDoctorCategory" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="IDDoctorCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_health_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="health" Type="Self.health" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="IDClient" />
+            </Principal>
+            <Dependent Role="health">
+              <PropertyRef Name="IDClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoryClient_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="HistoryClient" Type="Self.HistoryClient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="IDClient" />
+            </Principal>
+            <Dependent Role="HistoryClient">
+              <PropertyRef Name="IDClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoryClient_Events">
+          <End Role="Events" Type="Self.Events" Multiplicity="1" />
+          <End Role="HistoryClient" Type="Self.HistoryClient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="IDEvents" />
+            </Principal>
+            <Dependent Role="HistoryClient">
+              <PropertyRef Name="IDEvent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TherapyHistory_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="TherapyHistory" Type="Self.TherapyHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="IDClient" />
+            </Principal>
+            <Dependent Role="TherapyHistory">
+              <PropertyRef Name="IDClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TherapyHistory_Therapy">
+          <End Role="Therapy" Type="Self.Therapy" Multiplicity="1" />
+          <End Role="TherapyHistory" Type="Self.TherapyHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Therapy">
+              <PropertyRef Name="IDTherapy" />
+            </Principal>
+            <Dependent Role="TherapyHistory">
+              <PropertyRef Name="IDTherapy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище ReabilCenterModelContainer">
+          <EntitySet Name="Auth" EntityType="Self.Auth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dependece" EntityType="Self.Dependece" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DependeceHealth" EntityType="Self.DependeceHealth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DoctorCategory" EntityType="Self.DoctorCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="health" EntityType="Self.health" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistoryClient" EntityType="Self.HistoryClient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Photo" EntityType="Self.Photo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rols" EntityType="Self.Rols" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Therapy" EntityType="Self.Therapy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TherapyHistory" EntityType="Self.TherapyHistory" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Auth_Client" Association="Self.FK_Auth_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Auth" EntitySet="Auth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auth_Doctor" Association="Self.FK_Auth_Doctor">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="Auth" EntitySet="Auth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auth_Rols" Association="Self.FK_Auth_Rols">
+            <End Role="Rols" EntitySet="Rols" />
+            <End Role="Auth" EntitySet="Auth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Client_Photo" Association="Self.FK_Client_Photo">
+            <End Role="Photo" EntitySet="Photo" />
+            <End Role="Client" EntitySet="Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DependeceHealth_Dependece" Association="Self.FK_DependeceHealth_Dependece">
+            <End Role="Dependece" EntitySet="Dependece" />
+            <End Role="DependeceHealth" EntitySet="DependeceHealth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DependeceHealth_health" Association="Self.FK_DependeceHealth_health">
+            <End Role="health" EntitySet="health" />
+            <End Role="DependeceHealth" EntitySet="DependeceHealth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_DoctorCategory" Association="Self.FK_Doctor_DoctorCategory">
+            <End Role="DoctorCategory" EntitySet="DoctorCategory" />
+            <End Role="Doctor" EntitySet="Doctor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_health_Client" Association="Self.FK_health_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="health" EntitySet="health" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoryClient_Client" Association="Self.FK_HistoryClient_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="HistoryClient" EntitySet="HistoryClient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoryClient_Events" Association="Self.FK_HistoryClient_Events">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="HistoryClient" EntitySet="HistoryClient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TherapyHistory_Client" Association="Self.FK_TherapyHistory_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="TherapyHistory" EntitySet="TherapyHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TherapyHistory_Therapy" Association="Self.FK_TherapyHistory_Therapy">
+            <End Role="Therapy" EntitySet="Therapy" />
+            <End Role="TherapyHistory" EntitySet="TherapyHistory" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ReabilCenterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Auth">
+          <Key>
+            <PropertyRef Name="IDAuth" />
+          </Key>
+          <Property Name="IDAuth" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDRols" Type="Int32" Nullable="false" />
+          <Property Name="IDClient" Type="Int32" />
+          <Property Name="IDDoctor" Type="Int32" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_Auth_Client" FromRole="Auth" ToRole="Client" />
+          <NavigationProperty Name="Doctor" Relationship="Self.FK_Auth_Doctor" FromRole="Auth" ToRole="Doctor" />
+          <NavigationProperty Name="Rols" Relationship="Self.FK_Auth_Rols" FromRole="Auth" ToRole="Rols" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="IDClient" />
+          </Key>
+          <Property Name="IDClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pasport" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Polis" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SNILS" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Auth" Relationship="Self.FK_Auth_Client" FromRole="Client" ToRole="Auth" />
+          <NavigationProperty Name="Photo1" Relationship="Self.FK_Client_Photo" FromRole="Client" ToRole="Photo" />
+          <NavigationProperty Name="health" Relationship="Self.FK_health_Client" FromRole="Client" ToRole="health" />
+          <NavigationProperty Name="HistoryClient" Relationship="Self.FK_HistoryClient_Client" FromRole="Client" ToRole="HistoryClient" />
+          <NavigationProperty Name="Therapy" Relationship="Self.TherapyHistory" FromRole="Client" ToRole="Therapy" />
+        </EntityType>
+        <EntityType Name="Dependece">
+          <Key>
+            <PropertyRef Name="IDDependece" />
+          </Key>
+          <Property Name="IDDependece" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="health" Relationship="Self.DependeceHealth" FromRole="Dependece" ToRole="health" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="IDDoctor" />
+          </Key>
+          <Property Name="IDDoctor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pasport" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Polis" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SNILS" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="IDDoctorCategory" Type="Int32" Nullable="false" />
+          <Property Name="WorkExperience" Type="Int32" />
+          <Property Name="Age" Type="Int32" />
+          <NavigationProperty Name="Auth" Relationship="Self.FK_Auth_Doctor" FromRole="Doctor" ToRole="Auth" />
+          <NavigationProperty Name="DoctorCategory" Relationship="Self.FK_Doctor_DoctorCategory" FromRole="Doctor" ToRole="DoctorCategory" />
+        </EntityType>
+        <EntityType Name="DoctorCategory">
+          <Key>
+            <PropertyRef Name="IDDoctorCategory" />
+          </Key>
+          <Property Name="IDDoctorCategory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Doctor" Relationship="Self.FK_Doctor_DoctorCategory" FromRole="DoctorCategory" ToRole="Doctor" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="IDEvents" />
+          </Key>
+          <Property Name="IDEvents" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HistoryClient" Relationship="Self.FK_HistoryClient_Events" FromRole="Events" ToRole="HistoryClient" />
+        </EntityType>
+        <EntityType Name="health">
+          <Key>
+            <PropertyRef Name="IDHealth" />
+          </Key>
+          <Property Name="IDHealth" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Height" Type="Int32" />
+          <Property Name="Weight" Type="Int32" />
+          <Property Name="Pressure" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Saturation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BloodType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IDClient" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_health_Client" FromRole="health" ToRole="Client" />
+          <NavigationProperty Name="Dependece" Relationship="Self.DependeceHealth" FromRole="health" ToRole="Dependece" />
+        </EntityType>
+        <EntityType Name="HistoryClient">
+          <Key>
+            <PropertyRef Name="IDClient" />
+            <PropertyRef Name="IDEvent" />
+          </Key>
+          <Property Name="IDClient" Type="Int32" Nullable="false" />
+          <Property Name="IDEvent" Type="Int32" Nullable="false" />
+          <Property Name="DateStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateEnd" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_HistoryClient_Client" FromRole="HistoryClient" ToRole="Client" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_HistoryClient_Events" FromRole="HistoryClient" ToRole="Events" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="IDPhoto" />
+          </Key>
+          <Property Name="IDPhoto" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="Photo1" Type="Binary" MaxLength="50" FixedLength="false" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_Client_Photo" FromRole="Photo" ToRole="Client" />
+        </EntityType>
+        <EntityType Name="Rols">
+          <Key>
+            <PropertyRef Name="IDRols" />
+          </Key>
+          <Property Name="IDRols" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Auth" Relationship="Self.FK_Auth_Rols" FromRole="Rols" ToRole="Auth" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Therapy">
+          <Key>
+            <PropertyRef Name="IDTherapy" />
+          </Key>
+          <Property Name="IDTherapy" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="Self.TherapyHistory" FromRole="Therapy" ToRole="Client" />
+        </EntityType>
+        <Association Name="FK_Auth_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="IDClient" />
+            </Principal>
+            <Dependent Role="Auth">
+              <PropertyRef Name="IDClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auth_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+          <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="IDDoctor" />
+            </Principal>
+            <Dependent Role="Auth">
+              <PropertyRef Name="IDDoctor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Auth_Rols">
+          <End Role="Rols" Type="Self.Rols" Multiplicity="1" />
+          <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rols">
+              <PropertyRef Name="IDRols" />
+            </Principal>
+            <Dependent Role="Auth">
+              <PropertyRef Name="IDRols" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Client_Photo">
+          <End Role="Photo" Type="Self.Photo" Multiplicity="0..1" />
+          <End Role="Client" Type="Self.Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Photo">
+              <PropertyRef Name="IDPhoto" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="Photo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_health_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="health" Type="Self.health" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="IDClient" />
+            </Principal>
+            <Dependent Role="health">
+              <PropertyRef Name="IDClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoryClient_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="HistoryClient" Type="Self.HistoryClient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="IDClient" />
+            </Principal>
+            <Dependent Role="HistoryClient">
+              <PropertyRef Name="IDClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_DoctorCategory">
+          <End Role="DoctorCategory" Type="Self.DoctorCategory" Multiplicity="1" />
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DoctorCategory">
+              <PropertyRef Name="IDDoctorCategory" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="IDDoctorCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoryClient_Events">
+          <End Role="Events" Type="Self.Events" Multiplicity="1" />
+          <End Role="HistoryClient" Type="Self.HistoryClient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="IDEvents" />
+            </Principal>
+            <Dependent Role="HistoryClient">
+              <PropertyRef Name="IDEvent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DependeceHealth">
+          <End Role="Dependece" Type="Self.Dependece" Multiplicity="*" />
+          <End Role="health" Type="Self.health" Multiplicity="*" />
+        </Association>
+        <Association Name="TherapyHistory">
+          <End Role="Client" Type="Self.Client" Multiplicity="*" />
+          <End Role="Therapy" Type="Self.Therapy" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="ReabilCenterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Auth" EntityType="Self.Auth" />
+          <EntitySet Name="Client" EntityType="Self.Client" />
+          <EntitySet Name="Dependece" EntityType="Self.Dependece" />
+          <EntitySet Name="Doctor" EntityType="Self.Doctor" />
+          <EntitySet Name="DoctorCategory" EntityType="Self.DoctorCategory" />
+          <EntitySet Name="Events" EntityType="Self.Events" />
+          <EntitySet Name="health" EntityType="Self.health" />
+          <EntitySet Name="HistoryClient" EntityType="Self.HistoryClient" />
+          <EntitySet Name="Photo" EntityType="Self.Photo" />
+          <EntitySet Name="Rols" EntityType="Self.Rols" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Therapy" EntityType="Self.Therapy" />
+          <AssociationSet Name="FK_Auth_Client" Association="Self.FK_Auth_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Auth" EntitySet="Auth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auth_Doctor" Association="Self.FK_Auth_Doctor">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="Auth" EntitySet="Auth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Auth_Rols" Association="Self.FK_Auth_Rols">
+            <End Role="Rols" EntitySet="Rols" />
+            <End Role="Auth" EntitySet="Auth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Client_Photo" Association="Self.FK_Client_Photo">
+            <End Role="Photo" EntitySet="Photo" />
+            <End Role="Client" EntitySet="Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_health_Client" Association="Self.FK_health_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="health" EntitySet="health" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoryClient_Client" Association="Self.FK_HistoryClient_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="HistoryClient" EntitySet="HistoryClient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_DoctorCategory" Association="Self.FK_Doctor_DoctorCategory">
+            <End Role="DoctorCategory" EntitySet="DoctorCategory" />
+            <End Role="Doctor" EntitySet="Doctor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoryClient_Events" Association="Self.FK_HistoryClient_Events">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="HistoryClient" EntitySet="HistoryClient" />
+          </AssociationSet>
+          <AssociationSet Name="DependeceHealth" Association="Self.DependeceHealth">
+            <End Role="Dependece" EntitySet="Dependece" />
+            <End Role="health" EntitySet="health" />
+          </AssociationSet>
+          <AssociationSet Name="TherapyHistory" Association="Self.TherapyHistory">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Therapy" EntitySet="Therapy" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ReabilCenterModelContainer" CdmEntityContainer="ReabilCenterEntities">
+          <EntitySetMapping Name="Auth">
+            <EntityTypeMapping TypeName="ReabilCenterModel.Auth">
+              <MappingFragment StoreEntitySet="Auth">
+                <ScalarProperty Name="IDAuth" ColumnName="IDAuth" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IDRols" ColumnName="IDRols" />
+                <ScalarProperty Name="IDClient" ColumnName="IDClient" />
+                <ScalarProperty Name="IDDoctor" ColumnName="IDDoctor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="ReabilCenterModel.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="IDClient" ColumnName="IDClient" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="Pasport" ColumnName="Pasport" />
+                <ScalarProperty Name="Polis" ColumnName="Polis" />
+                <ScalarProperty Name="SNILS" ColumnName="SNILS" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dependece">
+            <EntityTypeMapping TypeName="ReabilCenterModel.Dependece">
+              <MappingFragment StoreEntitySet="Dependece">
+                <ScalarProperty Name="IDDependece" ColumnName="IDDependece" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctor">
+            <EntityTypeMapping TypeName="ReabilCenterModel.Doctor">
+              <MappingFragment StoreEntitySet="Doctor">
+                <ScalarProperty Name="IDDoctor" ColumnName="IDDoctor" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="Pasport" ColumnName="Pasport" />
+                <ScalarProperty Name="Polis" ColumnName="Polis" />
+                <ScalarProperty Name="SNILS" ColumnName="SNILS" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="IDDoctorCategory" ColumnName="IDDoctorCategory" />
+                <ScalarProperty Name="WorkExperience" ColumnName="WorkExperience" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DoctorCategory">
+            <EntityTypeMapping TypeName="ReabilCenterModel.DoctorCategory">
+              <MappingFragment StoreEntitySet="DoctorCategory">
+                <ScalarProperty Name="IDDoctorCategory" ColumnName="IDDoctorCategory" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="ReabilCenterModel.Events">
+              <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="IDEvents" ColumnName="IDEvents" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="health">
+            <EntityTypeMapping TypeName="ReabilCenterModel.health">
+              <MappingFragment StoreEntitySet="health">
+                <ScalarProperty Name="IDHealth" ColumnName="IDHealth" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Pressure" ColumnName="Pressure" />
+                <ScalarProperty Name="Saturation" ColumnName="Saturation" />
+                <ScalarProperty Name="BloodType" ColumnName="BloodType" />
+                <ScalarProperty Name="IDClient" ColumnName="IDClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistoryClient">
+            <EntityTypeMapping TypeName="ReabilCenterModel.HistoryClient">
+              <MappingFragment StoreEntitySet="HistoryClient">
+                <ScalarProperty Name="IDClient" ColumnName="IDClient" />
+                <ScalarProperty Name="IDEvent" ColumnName="IDEvent" />
+                <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Photo">
+            <EntityTypeMapping TypeName="ReabilCenterModel.Photo">
+              <MappingFragment StoreEntitySet="Photo">
+                <ScalarProperty Name="IDPhoto" ColumnName="IDPhoto" />
+                <ScalarProperty Name="Photo1" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rols">
+            <EntityTypeMapping TypeName="ReabilCenterModel.Rols">
+              <MappingFragment StoreEntitySet="Rols">
+                <ScalarProperty Name="IDRols" ColumnName="IDRols" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ReabilCenterModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Therapy">
+            <EntityTypeMapping TypeName="ReabilCenterModel.Therapy">
+              <MappingFragment StoreEntitySet="Therapy">
+                <ScalarProperty Name="IDTherapy" ColumnName="IDTherapy" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="DependeceHealth" TypeName="ReabilCenterModel.DependeceHealth" StoreEntitySet="DependeceHealth">
+            <EndProperty Name="Dependece">
+              <ScalarProperty Name="IDDependece" ColumnName="IDDependece" />
+            </EndProperty>
+            <EndProperty Name="health">
+              <ScalarProperty Name="IDHealth" ColumnName="IDHealth" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TherapyHistory" TypeName="ReabilCenterModel.TherapyHistory" StoreEntitySet="TherapyHistory">
+            <EndProperty Name="Client">
+              <ScalarProperty Name="IDClient" ColumnName="IDClient" />
+            </EndProperty>
+            <EndProperty Name="Therapy">
+              <ScalarProperty Name="IDTherapy" ColumnName="IDTherapy" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

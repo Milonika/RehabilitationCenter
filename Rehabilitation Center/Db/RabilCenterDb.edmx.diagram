@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="68f36eac477640cbba329e8d44571e89" Name="Diagram1">
+        <EntityTypeShape EntityType="ReabilCenterModel.Auth" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Client" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Dependece" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Doctor" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.DoctorCategory" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Events" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.health" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.HistoryClient" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Photo" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Rols" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Therapy" Width="1.5" PointX="5.25" PointY="16.25" IsExpanded="true" />
+        <AssociationConnector Association="ReabilCenterModel.FK_Auth_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="ReabilCenterModel.FK_Auth_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="ReabilCenterModel.FK_Auth_Rols" ManuallyRouted="false" />
+        <AssociationConnector Association="ReabilCenterModel.FK_Client_Photo" ManuallyRouted="false" />
+        <AssociationConnector Association="ReabilCenterModel.FK_health_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="ReabilCenterModel.FK_HistoryClient_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="ReabilCenterModel.FK_Doctor_DoctorCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="ReabilCenterModel.FK_HistoryClient_Events" ManuallyRouted="false" />
+        <AssociationConnector Association="ReabilCenterModel.DependeceHealth" ManuallyRouted="false" />
+        <AssociationConnector Association="ReabilCenterModel.TherapyHistory" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
