@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Rehabilitation_Center.Db;
 
 namespace Rehabilitation_Center
 {
@@ -21,6 +22,7 @@ namespace Rehabilitation_Center
     {
         public AuthorizationWindow()
         {
+            
             InitializeComponent();
         }
 
@@ -47,9 +49,12 @@ namespace Rehabilitation_Center
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            Window mainwindow = new MainWindow();
-            mainwindow.Show();
-            this.Close();
+            var logUser = MainWindow.ReabilCenterDB.Auth.Where(c => c.Login == TBLogin.Text.Trim() && c.Password == PBPassword.Password.Trim()); _
+                if (logUser != null)
+            {
+
+            }
+            MessageBox.Show("Неправильный пароль или логин");
         }
     }
 }

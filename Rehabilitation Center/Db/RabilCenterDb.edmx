@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ReabilCenterModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище ReabilCenterModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Auth">
           <Key>
             <PropertyRef Name="IDAuth" />
@@ -13,8 +13,6 @@
           <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IDRols" Type="int" Nullable="false" />
-          <Property Name="IDClient" Type="int" />
-          <Property Name="IDDoctor" Type="int" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -30,6 +28,7 @@
           <Property Name="Phone" Type="nchar" MaxLength="20" />
           <Property Name="Photo" Type="varbinary" MaxLength="50" />
           <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="IDAuth" Type="int" />
         </EntityType>
         <EntityType Name="Dependece">
           <Key>
@@ -62,6 +61,7 @@
           <Property Name="IDDoctorCategory" Type="int" Nullable="false" />
           <Property Name="WorkExperience" Type="int" />
           <Property Name="Age" Type="int" />
+          <Property Name="IDAuth" Type="int" />
         </EntityType>
         <EntityType Name="DoctorCategory">
           <Key>
@@ -113,11 +113,6 @@
           <Property Name="IDRols" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "ReabilCenter.dbo.Statistic" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="Statistic">
-          <Property Name="IDStatistic" Type="nchar" MaxLength="10" />
-        </EntityType>-->
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -144,30 +139,6 @@
           <Property Name="IDTherapy" Type="int" Nullable="false" />
           <Property Name="IDClient" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Auth_Client">
-          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
-          <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Client">
-              <PropertyRef Name="IDClient" />
-            </Principal>
-            <Dependent Role="Auth">
-              <PropertyRef Name="IDClient" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Auth_Doctor">
-          <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
-          <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Doctor">
-              <PropertyRef Name="IDDoctor" />
-            </Principal>
-            <Dependent Role="Auth">
-              <PropertyRef Name="IDDoctor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Auth_Rols">
           <End Role="Rols" Type="Self.Rols" Multiplicity="1" />
           <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
@@ -177,6 +148,18 @@
             </Principal>
             <Dependent Role="Auth">
               <PropertyRef Name="IDRols" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Client_Auth">
+          <End Role="Auth" Type="Self.Auth" Multiplicity="0..1" />
+          <End Role="Client" Type="Self.Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Auth">
+              <PropertyRef Name="IDAuth" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="IDAuth" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -213,6 +196,18 @@
             </Principal>
             <Dependent Role="DependeceHealth">
               <PropertyRef Name="IDHealth" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_Auth1">
+          <End Role="Auth" Type="Self.Auth" Multiplicity="0..1" />
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Auth">
+              <PropertyRef Name="IDAuth" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="IDAuth" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -303,17 +298,13 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Therapy" EntityType="Self.Therapy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TherapyHistory" EntityType="Self.TherapyHistory" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Auth_Client" Association="Self.FK_Auth_Client">
-            <End Role="Client" EntitySet="Client" />
-            <End Role="Auth" EntitySet="Auth" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Auth_Doctor" Association="Self.FK_Auth_Doctor">
-            <End Role="Doctor" EntitySet="Doctor" />
-            <End Role="Auth" EntitySet="Auth" />
-          </AssociationSet>
           <AssociationSet Name="FK_Auth_Rols" Association="Self.FK_Auth_Rols">
             <End Role="Rols" EntitySet="Rols" />
             <End Role="Auth" EntitySet="Auth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Client_Auth" Association="Self.FK_Client_Auth">
+            <End Role="Auth" EntitySet="Auth" />
+            <End Role="Client" EntitySet="Client" />
           </AssociationSet>
           <AssociationSet Name="FK_Client_Photo" Association="Self.FK_Client_Photo">
             <End Role="Photo" EntitySet="Photo" />
@@ -326,6 +317,10 @@
           <AssociationSet Name="FK_DependeceHealth_health" Association="Self.FK_DependeceHealth_health">
             <End Role="health" EntitySet="health" />
             <End Role="DependeceHealth" EntitySet="DependeceHealth" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_Auth1" Association="Self.FK_Doctor_Auth1">
+            <End Role="Auth" EntitySet="Auth" />
+            <End Role="Doctor" EntitySet="Doctor" />
           </AssociationSet>
           <AssociationSet Name="FK_Doctor_DoctorCategory" Association="Self.FK_Doctor_DoctorCategory">
             <End Role="DoctorCategory" EntitySet="DoctorCategory" />
@@ -352,8 +347,7 @@
             <End Role="TherapyHistory" EntitySet="TherapyHistory" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ReabilCenterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -370,6 +364,8 @@
           <NavigationProperty Name="Client" Relationship="Self.FK_Auth_Client" FromRole="Auth" ToRole="Client" />
           <NavigationProperty Name="Doctor" Relationship="Self.FK_Auth_Doctor" FromRole="Auth" ToRole="Doctor" />
           <NavigationProperty Name="Rols" Relationship="Self.FK_Auth_Rols" FromRole="Auth" ToRole="Rols" />
+          <NavigationProperty Name="Client1" Relationship="ReabilCenterModel.FK_Client_Auth" FromRole="Auth" ToRole="Client" />
+          <NavigationProperty Name="Doctor1" Relationship="ReabilCenterModel.FK_Doctor_Auth1" FromRole="Auth" ToRole="Doctor" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -390,6 +386,8 @@
           <NavigationProperty Name="health" Relationship="Self.FK_health_Client" FromRole="Client" ToRole="health" />
           <NavigationProperty Name="HistoryClient" Relationship="Self.FK_HistoryClient_Client" FromRole="Client" ToRole="HistoryClient" />
           <NavigationProperty Name="Therapy" Relationship="Self.TherapyHistory" FromRole="Client" ToRole="Therapy" />
+          <Property Name="IDAuth" Type="Int32" />
+          <NavigationProperty Name="Auth1" Relationship="ReabilCenterModel.FK_Client_Auth" FromRole="Client" ToRole="Auth" />
         </EntityType>
         <EntityType Name="Dependece">
           <Key>
@@ -417,6 +415,8 @@
           <Property Name="Age" Type="Int32" />
           <NavigationProperty Name="Auth" Relationship="Self.FK_Auth_Doctor" FromRole="Doctor" ToRole="Auth" />
           <NavigationProperty Name="DoctorCategory" Relationship="Self.FK_Doctor_DoctorCategory" FromRole="Doctor" ToRole="DoctorCategory" />
+          <Property Name="IDAuth" Type="Int32" />
+          <NavigationProperty Name="Auth1" Relationship="ReabilCenterModel.FK_Doctor_Auth1" FromRole="Doctor" ToRole="Auth" />
         </EntityType>
         <EntityType Name="DoctorCategory">
           <Key>
@@ -652,7 +652,39 @@
             <End Role="Client" EntitySet="Client" />
             <End Role="Therapy" EntitySet="Therapy" />
           </AssociationSet>
+          <AssociationSet Name="FK_Client_Auth" Association="ReabilCenterModel.FK_Client_Auth">
+            <End Role="Auth" EntitySet="Auth" />
+            <End Role="Client" EntitySet="Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctor_Auth1" Association="ReabilCenterModel.FK_Doctor_Auth1">
+            <End Role="Auth" EntitySet="Auth" />
+            <End Role="Doctor" EntitySet="Doctor" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Client_Auth">
+          <End Type="ReabilCenterModel.Auth" Role="Auth" Multiplicity="0..1" />
+          <End Type="ReabilCenterModel.Client" Role="Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Auth">
+              <PropertyRef Name="IDAuth" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="IDAuth" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctor_Auth1">
+          <End Type="ReabilCenterModel.Auth" Role="Auth" Multiplicity="0..1" />
+          <End Type="ReabilCenterModel.Doctor" Role="Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Auth">
+              <PropertyRef Name="IDAuth" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="IDAuth" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -666,14 +698,13 @@
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="IDRols" ColumnName="IDRols" />
-                <ScalarProperty Name="IDClient" ColumnName="IDClient" />
-                <ScalarProperty Name="IDDoctor" ColumnName="IDDoctor" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="ReabilCenterModel.Client">
               <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="IDAuth" ColumnName="IDAuth" />
                 <ScalarProperty Name="IDClient" ColumnName="IDClient" />
                 <ScalarProperty Name="FName" ColumnName="FName" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -698,6 +729,7 @@
           <EntitySetMapping Name="Doctor">
             <EntityTypeMapping TypeName="ReabilCenterModel.Doctor">
               <MappingFragment StoreEntitySet="Doctor">
+                <ScalarProperty Name="IDAuth" ColumnName="IDAuth" />
                 <ScalarProperty Name="IDDoctor" ColumnName="IDDoctor" />
                 <ScalarProperty Name="FName" ColumnName="FName" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

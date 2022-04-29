@@ -53,9 +53,23 @@
                VerticalAlignment="Top" 
                Width="108" Foreground="#FF000C8B" FontWeight="Medium"/>
 
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="336,139,0,0" TextWrapping="Wrap" Text="Серия и номер паспорта" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="336,203,0,0" TextWrapping="Wrap" Text="Полис" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="336,266,0,0" TextWrapping="Wrap" Text="СНИЛС" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
+        <TextBox 
+            x:Name="TBPasport"
+            HorizontalAlignment="Left" 
+            Height="25"
+            Margin="336,139,0,0" 
+            TextWrapping="Wrap" 
+            Text="Серия и номер паспорта" 
+            VerticalAlignment="Top" 
+            Width="240" 
+            Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" 
+            Foreground="#FF5690FC" 
+            SelectionBrush="#FF000C8B" 
+            BorderBrush="#FF5690FC" 
+            Background="{x:Null}"/>
+
+        <TextBox x:Name="TBPolis" HorizontalAlignment="Left" Height="25" Margin="336,203,0,0" TextWrapping="Wrap" Text="Полис" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
+        <TextBox x:Name="TBSNILS" HorizontalAlignment="Left" Height="25" Margin="336,266,0,0" TextWrapping="Wrap" Text="СНИЛС" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
         <Label Content="Личные сведения" 
             HorizontalAlignment="Left" 
             Height="29" 
@@ -76,26 +90,18 @@
             RadiusY="20"
             RadiusX="20"/>
 
-        <TextBlock HorizontalAlignment="Left" 
-                   Height="48" 
-                   Margin="1004,216,0,0" 
+        <TextBlock 
+            x:Name="FNameAndNameTB"
+            HorizontalAlignment="Left" 
+                   Height="28" 
+                   Margin="1016,216,0,0" 
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top" 
-                   Width="273" 
+                   Width="261" 
                    FontSize="18"
                    TextAlignment="Center"
                    Foreground="#000C8B" 
                    FontWeight="Medium"><Run Text="Бурнашева Айлина"/><LineBreak/><Run Text="Тимуровна"/></TextBlock>
-
-        <TextBlock HorizontalAlignment="Left" 
-                   Height="24" 
-                   Margin="1115,264,0,0" 
-                   TextWrapping="Wrap" 
-                   Text="Возраст" 
-                   VerticalAlignment="Top" 
-                   Width="58" 
-                   FontSize="14"
-                   Foreground="#9BA7C0"/>
         <Label Content="История покупок" 
             HorizontalAlignment="Left" 
             Height="36" 
@@ -116,6 +122,26 @@
                 <ImageBrush ImageSource="/Rehabilitation Center;component/img/SettingIcon.png"/>
             </Button.Background>
         </Button>
+        <TextBlock HorizontalAlignment="Left" 
+                   x:Name="LastNameTB"
+                   FontSize="18" 
+                   Height="26" 
+                   Margin="1089,246,0,0" 
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"
+                   Text="TextBlock" 
+                   VerticalAlignment="Top" 
+                   Width="128" Foreground="#FF000C8B" FontWeight="Medium"/>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            x:Name="TextBlokAge" 
+            Height="21" 
+            Margin="1089,277,0,0" 
+            TextWrapping="Wrap"
+            TextAlignment="Center"
+            Text="TextBlock" 
+            VerticalAlignment="Top" 
+            Width="128" Foreground="#FFA8A8A8" FontWeight="Medium"/>
 
 
     </Grid>

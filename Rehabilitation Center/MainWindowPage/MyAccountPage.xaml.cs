@@ -23,6 +23,22 @@ namespace Rehabilitation_Center.MainWindowPage
         public MyAccountPage()
         {
             InitializeComponent();
+
+            var client = MainWindow.ReabilCenterDB.Client.FirstOrDefault(x => x.IDClient == MainWindow.Client.IDClient);
+            if (client != null)
+            {
+                FNameAndNameTB.Text = $"{client.Name} {client.FName} {client.LName}";
+                LastNameTB.Text = $"{client.LName}";
+                TextBlokAge.Text = $"Возраст: {client.Age.ToString()}";
+            }
+            else
+            {
+                var clients = MainWindow.ReabilCenterDB.Doctor.FirstOrDefault(x => x.IDDoctor == MainWindow.Client.IDDoctor);
+                FNameAndNameTB.Text = $"{clients.Name} {clients.FName}";
+                LastNameTB.Text = $"{client.LName}";
+                TextBlokAge.Text = $"Возраст: {client.Age.ToString()}";
+            }
+            // 
         }
     }
 }

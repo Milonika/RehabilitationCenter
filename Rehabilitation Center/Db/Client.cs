@@ -32,11 +32,13 @@ namespace Rehabilitation_Center.Db
         public string Phone { get; set; }
         public byte[] Photo { get; set; }
         public int Age { get; set; }
+        public Nullable<int> IDAuth { get; set; }
     
         public virtual ICollection<Auth> Auth { get; set; }
         public virtual Photo Photo1 { get; set; }
         public virtual ICollection<health> health { get; set; }
         public virtual ICollection<HistoryClient> HistoryClient { get; set; }
         public virtual ICollection<Therapy> Therapy { get; set; }
+        public virtual Auth Auth1 { get; set; }
     }
 }

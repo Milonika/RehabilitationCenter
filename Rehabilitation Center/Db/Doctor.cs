@@ -31,8 +31,10 @@ namespace Rehabilitation_Center.Db
         public int IDDoctorCategory { get; set; }
         public Nullable<int> WorkExperience { get; set; }
         public Nullable<int> Age { get; set; }
+        public Nullable<int> IDAuth { get; set; }
     
         public virtual ICollection<Auth> Auth { get; set; }
         public virtual DoctorCategory DoctorCategory { get; set; }
+        public virtual Auth Auth1 { get; set; }
     }
 }

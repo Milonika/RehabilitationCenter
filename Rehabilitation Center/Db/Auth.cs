@@ -14,6 +14,12 @@ namespace Rehabilitation_Center.Db
     
     public partial class Auth
     {
+        public Auth()
+        {
+            this.Client1 = new HashSet<Client>();
+            this.Doctor1 = new HashSet<Doctor>();
+        }
+    
         public int IDAuth { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
@@ -24,5 +30,7 @@ namespace Rehabilitation_Center.Db
         public virtual Client Client { get; set; }
         public virtual Doctor Doctor { get; set; }
         public virtual Rols Rols { get; set; }
+        public virtual ICollection<Client> Client1 { get; set; }
+        public virtual ICollection<Doctor> Doctor1 { get; set; }
     }
 }

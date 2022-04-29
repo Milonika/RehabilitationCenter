@@ -27,6 +27,8 @@
         <AssociationConnector Association="ReabilCenterModel.FK_HistoryClient_Events" ManuallyRouted="false" />
         <AssociationConnector Association="ReabilCenterModel.DependeceHealth" ManuallyRouted="false" />
         <AssociationConnector Association="ReabilCenterModel.TherapyHistory" ManuallyRouted="false" />
+        <AssociationConnector Association="ReabilCenterModel.FK_Client_Auth" />
+        <AssociationConnector Association="ReabilCenterModel.FK_Doctor_Auth1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

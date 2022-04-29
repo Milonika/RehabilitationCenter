@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Rehabilitation_Center.MainWindowPage;
+using Rehabilitation_Center.Db; 
 
 namespace Rehabilitation_Center
 {
@@ -21,6 +22,8 @@ namespace Rehabilitation_Center
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static ReabilCenterEntities ReabilCenterDB = new ReabilCenterEntities();
+        public static Auth Client;
         public MainWindow()
         {
             InitializeComponent();
