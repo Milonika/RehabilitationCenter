@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rehabilitation_Center.Db;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,21 +25,41 @@ namespace Rehabilitation_Center.MainWindowPage
         {
             InitializeComponent();
 
-            var client = MainWindow.ReabilCenterDB.Client.FirstOrDefault(x => x.IDClient == MainWindow.Client.IDClient);
-            if (client != null)
+            try
             {
-                FNameAndNameTB.Text = $"{client.Name} {client.FName} {client.LName}";
-                LastNameTB.Text = $"{client.LName}";
-                TextBlokAge.Text = $"Возраст: {client.Age.ToString()}";
+                //Проверям ID роли в соответствии с БД. Если id роли у авторизации 2 - то юзер, если наоборот то админ 
+                if (MainWindow.AuthUser.IDRols == 2)
+                {
+                    //Создаем прееменную клиента к кторой потом обращаемся
+                    var client = MainWindow.ReabilCenterDB.Client.FirstOrDefault(c => c.IDAuth == MainWindow.AuthUser.IDAuth);
+
+                    //работаем с переменной клиента 
+                    MessageBox.Show($"Добро пожаловать {client.Name}", "Сообщение клиенту");
+                    FNameAndNameTB.Text = $"{client.Name} {client.FName} {client.LName}";
+                    LastNameTB.Text = $"{client.LName}";
+                    TextBlokAge.Text = $"Возраст: {client.Age.ToString()}";
+                    TBPasport.Text = $"{client.Pasport}";
+                    TBPolis.Text = $"{client.Polis}";
+                    TBSNILS.Text = $"{client.SNILS}";
+                }
+                else if (MainWindow.AuthUser.IDRols == 1)
+                {
+                    //Создаем прееменную доктора к кторой потом обращаемся
+                    var doctor = MainWindow.ReabilCenterDB.Doctor.FirstOrDefault(c => c.IDAuth == MainWindow.AuthUser.IDAuth);
+
+                    //работаем с переменной клиента 
+                    MessageBox.Show($"Добро пожаловать {doctor.Name}", "Сообщение доктору(админ в бд)");
+                    FNameAndNameTB.Text = $"{doctor.Name} {doctor.FName}";
+                    LastNameTB.Text = $"{doctor.LName}";
+                    TextBlokAge.Text = $"Возраст: {doctor.Age.ToString()}";
+                }
             }
-            else
+            //если вылезает ошибка в авторизации открываем страницу авторизации
+            catch (Exception ex)
             {
-                var clients = MainWindow.ReabilCenterDB.Doctor.FirstOrDefault(x => x.IDDoctor == MainWindow.Client.IDDoctor);
-                FNameAndNameTB.Text = $"{clients.Name} {clients.FName}";
-                LastNameTB.Text = $"{client.LName}";
-                TextBlokAge.Text = $"Возраст: {client.Age.ToString()}";
+                MessageBox.Show(ex.Message);
+                new AuthorizationWindow().Show();
             }
-            // 
         }
     }
 }

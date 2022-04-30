@@ -14,11 +14,6 @@ namespace Rehabilitation_Center.Db
     
     public partial class Doctor
     {
-        public Doctor()
-        {
-            this.Auth = new HashSet<Auth>();
-        }
-    
         public int IDDoctor { get; set; }
         public string FName { get; set; }
         public string Name { get; set; }
@@ -33,8 +28,7 @@ namespace Rehabilitation_Center.Db
         public Nullable<int> Age { get; set; }
         public Nullable<int> IDAuth { get; set; }
     
-        public virtual ICollection<Auth> Auth { get; set; }
+        public virtual Auth Auth { get; set; }
         public virtual DoctorCategory DoctorCategory { get; set; }
-        public virtual Auth Auth1 { get; set; }
     }
 }

@@ -49,12 +49,18 @@ namespace Rehabilitation_Center
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            var logUser = MainWindow.ReabilCenterDB.Auth.Where(c => c.Login == TBLogin.Text.Trim() && c.Password == PBPassword.Password.Trim()); _
-                if (logUser != null)
+            //Создаем переменную юзера и выполняем поиск по бд всех юзеров с таким логином и паролем
+            Auth logUser = MainWindow.ReabilCenterDB.Auth.FirstOrDefault(c => c.Login == TBLogin.Text.Trim() && c.Password == PBPassword.Password.Trim()); 
+            if (logUser != null)
             {
+                //обращаемся к уже созданной переменной в MainWindow чтобы к ней был доступ везде 
+                MainWindow.AuthUser = logUser;
 
+                new MainWindow().Show();
+                this.Close();
             }
-            MessageBox.Show("Неправильный пароль или логин");
+            else
+                MessageBox.Show("Неправильный пароль или логин");
         }
     }
 }

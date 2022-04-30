@@ -22,8 +22,12 @@ namespace Rehabilitation_Center
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public static ReabilCenterEntities ReabilCenterDB = new ReabilCenterEntities();
-        public static Auth Client;
+
+        //Создаем статичную переменную чтобы к ней обращаться ото всюду
+        public static Auth AuthUser = new Auth();
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -36,7 +40,7 @@ namespace Rehabilitation_Center
 
         private void MyMainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove(); ////
+            this.DragMove(); 
         }
 
         private void BtnMyAccount_Click(object sender, RoutedEventArgs e)
