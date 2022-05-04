@@ -17,6 +17,27 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid>
+
+        <Button Content="Load" HorizontalAlignment="Left" Height="40" Margin="276,750,0,0" 
+                VerticalAlignment="Top" Width="100" x:Name="BtnLoad" Click="BtnLoad_Click"/>
+        <ListView x:Name="listviewUsers" HorizontalAlignment="Stretch"  
+                  Margin="276,115,49,55" VerticalAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <Label Content="{Binding Name}"/>
+                        <Label Content="{Binding Price}"/>
+                        <Button 
+                            x:Name="buyBtn" 
+                            CommandParameter="{Binding IDTherapy}" 
+                            Content="Buy"
+                            HorizontalAlignment="Right"
+                            Click="buyBtn_Click"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
             <ComboBox Height="30"
                   materialDesign:HintAssist.Hint="Категория"
                   Width="100"
@@ -33,14 +54,14 @@
                     Content="Терапевт" />
         </ComboBox>
 
-        <Rectangle Fill="#F7F8FD" 
+        <!--<Rectangle Fill="#F7F8FD" 
                    HorizontalAlignment="Left" 
                    Height="617" 
                    Margin="252,112,0,0" 
                    VerticalAlignment="Top" 
                    Width="990"
                    RadiusY="20"
-                   RadiusX="20"/>
+                   RadiusX="20"/>-->
 
         <Label Content="Терапии" 
                HorizontalAlignment="Left" 
@@ -51,6 +72,7 @@
                Foreground="#FF5690FC" 
                FontWeight="SemiBold" 
                FontSize="32"/>
+        
 
     </Grid>
 </Page>

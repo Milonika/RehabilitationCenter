@@ -18,7 +18,7 @@ namespace Rehabilitation_Center.Db
         {
             this.health = new HashSet<health>();
             this.HistoryClient = new HashSet<HistoryClient>();
-            this.Therapy = new HashSet<Therapy>();
+            this.TherapyHistory = new HashSet<TherapyHistory>();
         }
     
         public int IDClient { get; set; }
@@ -34,9 +34,8 @@ namespace Rehabilitation_Center.Db
         public Nullable<int> IDAuth { get; set; }
     
         public virtual Auth Auth { get; set; }
-        public virtual Photo Photo1 { get; set; }
         public virtual ICollection<health> health { get; set; }
         public virtual ICollection<HistoryClient> HistoryClient { get; set; }
-        public virtual ICollection<Therapy> Therapy { get; set; }
+        public virtual ICollection<TherapyHistory> TherapyHistory { get; set; }
     }
 }

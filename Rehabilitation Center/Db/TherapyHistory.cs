@@ -12,17 +12,13 @@ namespace Rehabilitation_Center.Db
     using System;
     using System.Collections.Generic;
     
-    public partial class Therapy
+    public partial class TherapyHistory
     {
-        public Therapy()
-        {
-            this.TherapyHistory = new HashSet<TherapyHistory>();
-        }
-    
         public int IDTherapy { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
+        public int IDClient { get; set; }
+        public int ID { get; set; }
     
-        public virtual ICollection<TherapyHistory> TherapyHistory { get; set; }
+        public virtual Client Client { get; set; }
+        public virtual Therapy Therapy { get; set; }
     }
 }

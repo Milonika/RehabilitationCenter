@@ -30,7 +30,7 @@
             BorderThickness="3"
             Background="{x:Null}" 
             Foreground="#FF5690FC" Style="{DynamicResource ButtonKrug}" FontWeight="Bold"/>
-        <StackPanel 
+        <StackPanel
             HorizontalAlignment="Left" 
             Height="800" 
             VerticalAlignment="Top" 
@@ -42,11 +42,12 @@
             <Button x:Name="BtnPacient" Click="BtnPacient_Click"  Content="Пациенты" FontSize="16" HorizontalAlignment="Left" Height="69" Width="265" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Medium" Foreground="#5690FC" Style="{DynamicResource PanelBtnMainWindow}"/>
         </StackPanel>
         <Image HorizontalAlignment="Left" Height="82" Margin="28,64,0,0" VerticalAlignment="Top" Width="210" Source="img/LogoTMNUN.png"/>
-        <Frame x:Name="MainFrameInMainWindow" NavigationUIVisibility="Hidden" Source="/Rehabilitation Center;component/MainWindowPage/MyAccountPage.xaml"/>
+        <Frame x:Name="MainFrameInMainWindow" NavigationUIVisibility="Hidden"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="28,215,0,0" VerticalAlignment="Top" Width="29" Source="img/IconAccount.png"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="28,288,0,0" VerticalAlignment="Top" Width="30" Source="img/IconsStatistic.png"/>
-        <Image HorizontalAlignment="Left" Height="35" Margin="28,354,0,0" VerticalAlignment="Top" Width="35" Source="img/IconTerapia.png"/>
+        <Image x:Name="therapyimg" HorizontalAlignment="Left" Height="35" Margin="28,354,0,0" VerticalAlignment="Top" Width="35" Source="img/IconTerapia.png"></Image>
         <Image HorizontalAlignment="Left" Height="30" Margin="28,426,0,0" VerticalAlignment="Top" Width="30" Source="img/IconEmployee.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="33,496,0,0" VerticalAlignment="Top" Width="30" Source="img/IconPacient.png"/>
 
     </Grid>
 </Window>

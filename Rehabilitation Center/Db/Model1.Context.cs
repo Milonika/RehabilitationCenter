@@ -37,5 +37,6 @@ namespace Rehabilitation_Center.Db
         public DbSet<Rols> Rols { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<Therapy> Therapy { get; set; }
+        public DbSet<TherapyHistory> TherapyHistory { get; set; }
     }
 }

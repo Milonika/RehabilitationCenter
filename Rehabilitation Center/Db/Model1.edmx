@@ -26,7 +26,7 @@
           <Property Name="Polis" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="SNILS" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="Phone" Type="nchar" MaxLength="20" />
-          <Property Name="Photo" Type="varbinary" MaxLength="50" />
+          <Property Name="Photo" Type="image" />
           <Property Name="Age" Type="int" Nullable="false" />
           <Property Name="IDAuth" Type="int" />
         </EntityType>
@@ -57,7 +57,7 @@
           <Property Name="Polis" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="SNILS" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="Phone" Type="nchar" MaxLength="20" />
-          <Property Name="Photo" Type="varbinary" MaxLength="50" />
+          <Property Name="Photo" Type="image" />
           <Property Name="IDDoctorCategory" Type="int" Nullable="false" />
           <Property Name="WorkExperience" Type="int" />
           <Property Name="Age" Type="int" />
@@ -138,11 +138,11 @@
         </EntityType>
         <EntityType Name="TherapyHistory">
           <Key>
-            <PropertyRef Name="IDTherapy" />
-            <PropertyRef Name="IDClient" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="IDTherapy" Type="int" Nullable="false" />
           <Property Name="IDClient" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
         </EntityType>
         <Association Name="FK_Auth_Rols">
           <End Role="Rols" Type="Self.Rols" Multiplicity="1" />
@@ -165,18 +165,6 @@
             </Principal>
             <Dependent Role="Client">
               <PropertyRef Name="IDAuth" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Client_Photo">
-          <End Role="Photo" Type="Self.Photo" Multiplicity="0..1" />
-          <End Role="Client" Type="Self.Client" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Photo">
-              <PropertyRef Name="IDPhoto" />
-            </Principal>
-            <Dependent Role="Client">
-              <PropertyRef Name="Photo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -311,10 +299,6 @@
             <End Role="Auth" EntitySet="Auth" />
             <End Role="Client" EntitySet="Client" />
           </AssociationSet>
-          <AssociationSet Name="FK_Client_Photo" Association="Self.FK_Client_Photo">
-            <End Role="Photo" EntitySet="Photo" />
-            <End Role="Client" EntitySet="Client" />
-          </AssociationSet>
           <AssociationSet Name="FK_DependeceHealth_Dependece" Association="Self.FK_DependeceHealth_Dependece">
             <End Role="Dependece" EntitySet="Dependece" />
             <End Role="DependeceHealth" EntitySet="DependeceHealth" />
@@ -381,14 +365,13 @@
           <Property Name="Polis" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="SNILS" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Phone" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="Photo" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Age" Type="Int32" Nullable="false" />
           <Property Name="IDAuth" Type="Int32" />
           <NavigationProperty Name="Auth" Relationship="Self.FK_Client_Auth" FromRole="Client" ToRole="Auth" />
-          <NavigationProperty Name="Photo1" Relationship="Self.FK_Client_Photo" FromRole="Client" ToRole="Photo" />
           <NavigationProperty Name="health" Relationship="Self.FK_health_Client" FromRole="Client" ToRole="health" />
           <NavigationProperty Name="HistoryClient" Relationship="Self.FK_HistoryClient_Client" FromRole="Client" ToRole="HistoryClient" />
-          <NavigationProperty Name="Therapy" Relationship="Self.TherapyHistory" FromRole="Client" ToRole="Therapy" />
+          <NavigationProperty Name="TherapyHistory" Relationship="Self.FK_TherapyHistory_Client" FromRole="Client" ToRole="TherapyHistory" />
         </EntityType>
         <EntityType Name="Dependece">
           <Key>
@@ -410,7 +393,7 @@
           <Property Name="Polis" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="SNILS" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Phone" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="Photo" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="IDDoctorCategory" Type="Int32" Nullable="false" />
           <Property Name="WorkExperience" Type="Int32" />
           <Property Name="Age" Type="Int32" />
@@ -466,7 +449,6 @@
           </Key>
           <Property Name="IDPhoto" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
           <Property Name="Photo1" Type="Binary" MaxLength="50" FixedLength="false" />
-          <NavigationProperty Name="Client" Relationship="Self.FK_Client_Photo" FromRole="Photo" ToRole="Client" />
         </EntityType>
         <EntityType Name="Rols">
           <Key>
@@ -493,7 +475,17 @@
           <Property Name="IDTherapy" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <NavigationProperty Name="Client" Relationship="Self.TherapyHistory" FromRole="Therapy" ToRole="Client" />
+          <NavigationProperty Name="TherapyHistory" Relationship="Self.FK_TherapyHistory_Therapy" FromRole="Therapy" ToRole="TherapyHistory" />
+        </EntityType>
+        <EntityType Name="TherapyHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="IDTherapy" Type="Int32" Nullable="false" />
+          <Property Name="IDClient" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_TherapyHistory_Client" FromRole="TherapyHistory" ToRole="Client" />
+          <NavigationProperty Name="Therapy" Relationship="Self.FK_TherapyHistory_Therapy" FromRole="TherapyHistory" ToRole="Therapy" />
         </EntityType>
         <Association Name="FK_Auth_Rols">
           <End Role="Rols" Type="Self.Rols" Multiplicity="1" />
@@ -531,18 +523,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Client_Photo">
-          <End Role="Photo" Type="Self.Photo" Multiplicity="0..1" />
-          <End Role="Client" Type="Self.Client" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Photo">
-              <PropertyRef Name="IDPhoto" />
-            </Principal>
-            <Dependent Role="Client">
-              <PropertyRef Name="Photo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_health_Client">
           <End Role="Client" Type="Self.Client" Multiplicity="1" />
           <End Role="health" Type="Self.health" Multiplicity="*" />
@@ -563,6 +543,18 @@
               <PropertyRef Name="IDClient" />
             </Principal>
             <Dependent Role="HistoryClient">
+              <PropertyRef Name="IDClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TherapyHistory_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="TherapyHistory" Type="Self.TherapyHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="IDClient" />
+            </Principal>
+            <Dependent Role="TherapyHistory">
               <PropertyRef Name="IDClient" />
             </Dependent>
           </ReferentialConstraint>
@@ -591,13 +583,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TherapyHistory_Therapy">
+          <End Role="Therapy" Type="Self.Therapy" Multiplicity="1" />
+          <End Role="TherapyHistory" Type="Self.TherapyHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Therapy">
+              <PropertyRef Name="IDTherapy" />
+            </Principal>
+            <Dependent Role="TherapyHistory">
+              <PropertyRef Name="IDTherapy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="DependeceHealth">
           <End Role="Dependece" Type="Self.Dependece" Multiplicity="*" />
           <End Role="health" Type="Self.health" Multiplicity="*" />
-        </Association>
-        <Association Name="TherapyHistory">
-          <End Role="Client" Type="Self.Client" Multiplicity="*" />
-          <End Role="Therapy" Type="Self.Therapy" Multiplicity="*" />
         </Association>
         <EntityContainer Name="ReabilCenterEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Auth" EntityType="Self.Auth" />
@@ -612,6 +612,7 @@
           <EntitySet Name="Rols" EntityType="Self.Rols" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Therapy" EntityType="Self.Therapy" />
+          <EntitySet Name="TherapyHistory" EntityType="Self.TherapyHistory" />
           <AssociationSet Name="FK_Auth_Rols" Association="Self.FK_Auth_Rols">
             <End Role="Rols" EntitySet="Rols" />
             <End Role="Auth" EntitySet="Auth" />
@@ -624,10 +625,6 @@
             <End Role="Auth" EntitySet="Auth" />
             <End Role="Doctor" EntitySet="Doctor" />
           </AssociationSet>
-          <AssociationSet Name="FK_Client_Photo" Association="Self.FK_Client_Photo">
-            <End Role="Photo" EntitySet="Photo" />
-            <End Role="Client" EntitySet="Client" />
-          </AssociationSet>
           <AssociationSet Name="FK_health_Client" Association="Self.FK_health_Client">
             <End Role="Client" EntitySet="Client" />
             <End Role="health" EntitySet="health" />
@@ -635,6 +632,10 @@
           <AssociationSet Name="FK_HistoryClient_Client" Association="Self.FK_HistoryClient_Client">
             <End Role="Client" EntitySet="Client" />
             <End Role="HistoryClient" EntitySet="HistoryClient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TherapyHistory_Client" Association="Self.FK_TherapyHistory_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="TherapyHistory" EntitySet="TherapyHistory" />
           </AssociationSet>
           <AssociationSet Name="FK_Doctor_DoctorCategory" Association="Self.FK_Doctor_DoctorCategory">
             <End Role="DoctorCategory" EntitySet="DoctorCategory" />
@@ -644,13 +645,13 @@
             <End Role="Events" EntitySet="Events" />
             <End Role="HistoryClient" EntitySet="HistoryClient" />
           </AssociationSet>
+          <AssociationSet Name="FK_TherapyHistory_Therapy" Association="Self.FK_TherapyHistory_Therapy">
+            <End Role="Therapy" EntitySet="Therapy" />
+            <End Role="TherapyHistory" EntitySet="TherapyHistory" />
+          </AssociationSet>
           <AssociationSet Name="DependeceHealth" Association="Self.DependeceHealth">
             <End Role="Dependece" EntitySet="Dependece" />
             <End Role="health" EntitySet="health" />
-          </AssociationSet>
-          <AssociationSet Name="TherapyHistory" Association="Self.TherapyHistory">
-            <End Role="Client" EntitySet="Client" />
-            <End Role="Therapy" EntitySet="Therapy" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -788,20 +789,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="TherapyHistory">
+            <EntityTypeMapping TypeName="ReabilCenterModel.TherapyHistory">
+              <MappingFragment StoreEntitySet="TherapyHistory">
+                <ScalarProperty Name="IDTherapy" ColumnName="IDTherapy" />
+                <ScalarProperty Name="IDClient" ColumnName="IDClient" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <AssociationSetMapping Name="DependeceHealth" TypeName="ReabilCenterModel.DependeceHealth" StoreEntitySet="DependeceHealth">
             <EndProperty Name="Dependece">
               <ScalarProperty Name="IDDependece" ColumnName="IDDependece" />
             </EndProperty>
             <EndProperty Name="health">
               <ScalarProperty Name="IDHealth" ColumnName="IDHealth" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="TherapyHistory" TypeName="ReabilCenterModel.TherapyHistory" StoreEntitySet="TherapyHistory">
-            <EndProperty Name="Client">
-              <ScalarProperty Name="IDClient" ColumnName="IDClient" />
-            </EndProperty>
-            <EndProperty Name="Therapy">
-              <ScalarProperty Name="IDTherapy" ColumnName="IDTherapy" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>

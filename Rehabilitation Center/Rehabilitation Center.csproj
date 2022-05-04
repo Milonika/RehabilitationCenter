@@ -71,61 +71,70 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Db\Auth.cs">
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Db\Client.cs">
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Db\Dependece.cs">
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Db\Doctor.cs">
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Db\DoctorCategory.cs">
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Db\Events.cs">
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Db\health.cs">
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Db\HistoryClient.cs">
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Db\Photo.cs">
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Db\ReabilCenterModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReabilCenterModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Db\ReabilCenterModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Db\ReabilCenterModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReabilCenterModel.edmx</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Db\Rols.cs">
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Db\sysdiagrams.cs">
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Db\Therapy.cs">
-      <DependentUpon>ReabilCenterModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db\TherapyHistory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowPage\MyAccountDoctorPage.xaml.cs">
+      <DependentUpon>MyAccountDoctorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindowPage\MyAccountPage.xaml.cs">
       <DependentUpon>MyAccountPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindowPage\MyStatisticPage.xaml.cs">
       <DependentUpon>MyStatisticPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowPage\PacientDoctorPage.xaml.cs">
+      <DependentUpon>PacientDoctorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindowPage\SpesialistPage.xaml.cs">
       <DependentUpon>SpesialistPage.xaml</DependentUpon>
@@ -190,11 +199,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MainWindowPage\MyAccountDoctorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindowPage\MyAccountPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindowPage\MyStatisticPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindowPage\PacientDoctorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,12 +246,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Db\ReabilCenterModel.edmx">
+    <EntityDeploy Include="Db\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ReabilCenterModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Db\ReabilCenterModel.edmx.diagram">
-      <DependentUpon>ReabilCenterModel.edmx</DependentUpon>
+    <None Include="Db\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -305,15 +322,19 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Db\ReabilCenterModel.Context.tt">
+    <Resource Include="img\IconPacient.png" />
+    <Resource Include="img\ImgAccountDoctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Db\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ReabilCenterModel.edmx</DependentUpon>
-      <LastGenOutput>ReabilCenterModel.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Db\ReabilCenterModel.tt">
+    <Content Include="Db\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ReabilCenterModel.edmx</DependentUpon>
-      <LastGenOutput>ReabilCenterModel.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

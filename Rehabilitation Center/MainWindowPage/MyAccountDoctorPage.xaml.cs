@@ -1,6 +1,8 @@
-﻿using Rehabilitation_Center.Db;
+﻿using Microsoft.Win32;
+using Rehabilitation_Center.Db;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,10 @@ namespace Rehabilitation_Center.MainWindowPage
     /// <summary>
     /// Логика взаимодействия для MyAccountPage.xaml
     /// </summary>
-    public partial class MyAccountPage : Page
+    public partial class MyAccountDoctorPage : Page
     {
-        public MyAccountPage()
+        public OpenFileDialog fileDialog = new OpenFileDialog();
+        public MyAccountDoctorPage()
         {
             InitializeComponent();
 
@@ -34,13 +37,13 @@ namespace Rehabilitation_Center.MainWindowPage
                     var client = MainWindow.ReabilCenterDB.Client.FirstOrDefault(c => c.IDAuth == MainWindow.AuthUser.IDAuth);
 
                     //работаем с переменной клиента 
-                    MessageBox.Show($"Добро пожаловать {client.Name}", "Сообщение клиенту");
-                    FNameAndNameTB.Text = $"{client.Name} {client.FName} {client.LName}";
+                    FNameAndNameTBDoctor.Text = $"{client.Name} {client.FName} {client.LName}";
                     LastNameTB.Text = $"{client.LName}";
                     TextBlokAge.Text = $"Возраст: {client.Age.ToString()}";
                     TBPasport.Text = $"{client.Pasport}";
-                    TBPolis.Text = $"{client.Polis}";
-                    TBSNILS.Text = $"{client.SNILS}";
+                    TBPolisDoctor.Text = $"{client.Polis}";
+                    TBSNILSDoctor.Text = $"{client.SNILS}"; 
+
                 }
                 else if (MainWindow.AuthUser.IDRols == 1)
                 {
@@ -48,10 +51,18 @@ namespace Rehabilitation_Center.MainWindowPage
                     var doctor = MainWindow.ReabilCenterDB.Doctor.FirstOrDefault(c => c.IDAuth == MainWindow.AuthUser.IDAuth);
 
                     //работаем с переменной клиента 
-                    MessageBox.Show($"Добро пожаловать {doctor.Name}", "Сообщение доктору(админ в бд)");
-                    FNameAndNameTB.Text = $"{doctor.Name} {doctor.FName}";
+                    FNameAndNameTBDoctor.Text = $"{doctor.Name} {doctor.FName}";
                     LastNameTB.Text = $"{doctor.LName}";
                     TextBlokAge.Text = $"Возраст: {doctor.Age.ToString()}";
+                    if (doctor.Photo != null )
+                    {
+                        MemoryStream memoryStream = new MemoryStream(doctor.Photo);
+                        BitmapImage bitmapImage = new BitmapImage();
+                        bitmapImage.BeginInit();
+                        bitmapImage.StreamSource = memoryStream;
+                        bitmapImage.EndInit();
+                        UserImg.Source = bitmapImage;
+                    }
                 }
             }
             //если вылезает ошибка в авторизации открываем страницу авторизации
@@ -62,10 +73,28 @@ namespace Rehabilitation_Center.MainWindowPage
             }
         }
 
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void UserImg_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files|*.bmp;*.jpg;*.png|All files|*.*";
+            openFileDialog.FilterIndex = 1;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                var gg = MainWindow.ReabilCenterDB.Doctor.FirstOrDefault(c => c.IDAuth == MainWindow.authUser.IDAuth);
+                MainWindow.ReabilCenterDB.Doctor.Attach(gg);
 
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(openFileDialog.FileName);
 
+                gg.Photo = File.ReadAllBytes(openFileDialog.FileName);
+
+                image.EndInit();
+                fileDialog = openFileDialog;
+                UserImg.Source = image;
+                MainWindow.ReabilCenterDB.SaveChanges();
+            }
         }
+
     }
 }

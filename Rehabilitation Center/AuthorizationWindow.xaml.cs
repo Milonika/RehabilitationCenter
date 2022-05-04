@@ -50,11 +50,14 @@ namespace Rehabilitation_Center
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             //Создаем переменную юзера и выполняем поиск по бд всех юзеров с таким логином и паролем
-            Auth logUser = MainWindow.ReabilCenterDB.Auth.FirstOrDefault(c => c.Login == TBLogin.Text.Trim() && c.Password == PBPassword.Password.Trim()); 
+            Auth logUser = MainWindow.ReabilCenterDB.Auth.FirstOrDefault(c => c.Login == TBLogin.Text.Trim() && c.Password == PBPassword.Password.Trim());
+            MainWindow.authUser = logUser;
             if (logUser != null)
             {
                 //обращаемся к уже созданной переменной в MainWindow чтобы к ней был доступ везде 
                 MainWindow.AuthUser = logUser;
+
+                MessageBox.Show($"Добро пожаловать {logUser.Login}", "Вы зашли под админом");
 
                 new MainWindow().Show();
                 this.Close();

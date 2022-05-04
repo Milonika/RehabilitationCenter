@@ -24,13 +24,24 @@ namespace Rehabilitation_Center
     {
 
         public static ReabilCenterEntities ReabilCenterDB = new ReabilCenterEntities();
-
+        public static Auth authUser;
         //Создаем статичную переменную чтобы к ней обращаться ото всюду
         public static Auth AuthUser = new Auth();
         
         public MainWindow()
         {
             InitializeComponent();
+            if (authUser.IDRols == 1)
+            {
+                MainFrameInMainWindow.Navigate(new MyAccountDoctorPage());
+                BtnMyStatistic.IsEnabled = false;
+            }
+            else if (authUser.IDRols == 2)
+            {
+                MainFrameInMainWindow.Navigate(new MyAccountPage());
+                BtnMyStatistic.IsEnabled = true;
+                BtnPacient.IsEnabled = false;
+            }
         }
 
         private void BtnCloseMainWindow_Click(object sender, RoutedEventArgs e)
@@ -40,12 +51,19 @@ namespace Rehabilitation_Center
 
         private void MyMainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove(); 
+            this.DragMove();
         }
 
         private void BtnMyAccount_Click(object sender, RoutedEventArgs e)
         {
-            MainFrameInMainWindow.Navigate(new MyAccountPage());
+            if (authUser.IDRols == 1)
+            {
+                MainFrameInMainWindow.Navigate(new MyAccountDoctorPage());
+            }
+            else if (authUser.IDRols == 2)
+            {
+                MainFrameInMainWindow.Navigate(new MyAccountPage());
+            }
         }
 
         private void BtnMyStatistic_Click(object sender, RoutedEventArgs e)
@@ -65,7 +83,8 @@ namespace Rehabilitation_Center
 
         private void BtnPacient_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrameInMainWindow.Navigate(new MainWindowPage.PacientDoctorPage());
         }
+
     }
 }

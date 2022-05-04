@@ -14,14 +14,7 @@ namespace Rehabilitation_Center.Db
     
     public partial class Photo
     {
-        public Photo()
-        {
-            this.Client = new HashSet<Client>();
-        }
-    
         public byte[] IDPhoto { get; set; }
         public byte[] Photo1 { get; set; }
-    
-        public virtual ICollection<Client> Client { get; set; }
     }
 }

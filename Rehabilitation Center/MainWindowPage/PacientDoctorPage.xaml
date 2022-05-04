@@ -1,0 +1,30 @@
+﻿<Page x:Class="Rehabilitation_Center.MainWindowPage.PacientDoctorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Rehabilitation_Center.MainWindowPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1280"
+      Title="PacientDoctorPage">
+
+    <Grid>
+        <Rectangle Fill="#F7F8FD" 
+            HorizontalAlignment="Left" 
+            Height="617" 
+            Margin="252,112,-442,-279" 
+            VerticalAlignment="Top" 
+            Width="990"
+            RadiusY="20"
+            RadiusX="20"/>
+
+        <Label Content="Пациенты" 
+            HorizontalAlignment="Left" 
+            Height="62" 
+            FontSize="32"
+            Margin="276,55,0,0" 
+            VerticalAlignment="Top" 
+            Width="212" Foreground="#FF5690FC" FontWeight="SemiBold"/>
+
+    </Grid>
+</Page>
