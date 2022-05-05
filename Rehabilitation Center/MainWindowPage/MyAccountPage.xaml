@@ -18,12 +18,14 @@
                    VerticalAlignment="Top" 
                    Width="766"/>
 
-        <Image HorizontalAlignment="Left" 
+        <Image 
+               x:Name="AddPhotoClient"
+               HorizontalAlignment="Left" 
                Height="105" 
                Margin="1089,93,0,0"
                VerticalAlignment="Top"
                Width="105" 
-               Source="/Rehabilitation Center;component/img/TestImgInAvatar.png"/>
+               Source="/Rehabilitation Center;component/img/TestImgInAvatar.png" MouseRightButtonDown="AddPhotoClient_MouseRightButtonDown"/>
 
         <Rectangle Fill="White" 
                    HorizontalAlignment="Left" 

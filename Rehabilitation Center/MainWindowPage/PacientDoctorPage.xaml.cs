@@ -23,6 +23,7 @@ namespace Rehabilitation_Center.MainWindowPage
         public PacientDoctorPage()
         {
             InitializeComponent();
+            PacientList.ItemsSource = MainWindow.ReabilCenterDB.Client.ToList();
         }
     }
 }

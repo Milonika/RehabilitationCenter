@@ -9,14 +9,6 @@
       Title="PacientDoctorPage">
 
     <Grid>
-        <Rectangle Fill="#F7F8FD" 
-            HorizontalAlignment="Left" 
-            Height="617" 
-            Margin="252,112,-442,-279" 
-            VerticalAlignment="Top" 
-            Width="990"
-            RadiusY="20"
-            RadiusX="20"/>
 
         <Label Content="Пациенты" 
             HorizontalAlignment="Left" 
@@ -25,6 +17,18 @@
             Margin="276,55,0,0" 
             VerticalAlignment="Top" 
             Width="212" Foreground="#FF5690FC" FontWeight="SemiBold"/>
+
+        <ListView x:Name="PacientList"  HorizontalAlignment="Left" Height="630" Margin="276,122,0,0" VerticalAlignment="Top" Width="920">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding FName}" Width="100">Фамилия</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="100">Имя</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding LName}" Width="100">Отчество</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Pasport}" Width="100">Полис</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Polis}" Width="200">Полис</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Page>

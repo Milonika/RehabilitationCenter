@@ -1,4 +1,6 @@
 ﻿using Rehabilitation_Center.Db;
+using Microsoft.Win32;
+using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +22,8 @@ namespace Rehabilitation_Center
     /// </summary>
     public partial class RegistrationWindow : Window
     {
+        OpenFileDialog openFileDialogRegist = new OpenFileDialog();
+        MemoryStream image2;
         public RegistrationWindow()
         {
             InitializeComponent();
@@ -51,22 +55,60 @@ namespace Rehabilitation_Center
                 };
                 Client us = new Client()
                 {
-                   LName = TBLNameRegis.Text,
-                   Name = TBNameRegis.Text,
-                   FName = TBNameRegis.Text,
-                   Pasport = TBPasportRegis.Text,
-                   SNILS = TBSNILSRegis.Text,
-                   Polis = TBPolisRegis.Text,
-                   Phone = TBPhoneRegis.Text,
+                    LName = TBLNameRegis.Text,
+                    Name = TBNameRegis.Text,
+                    FName = TBNameRegis.Text,
+                    Pasport = TBPasportRegis.Text,
+                    SNILS = TBSNILSRegis.Text,
+                    Polis = TBPolisRegis.Text,
+                    Phone = TBPhoneRegis.Text,
+                    Photo = getJPGFromImageControl(AddPhotoRegis.Source as BitmapImage),
                    Age = Convert.ToInt32(TBAgeRegis.Text),
                    IDAuth = aut.IDAuth
                 };
+
                 MainWindow.ReabilCenterDB.Auth.Add(aut);
                 MainWindow.ReabilCenterDB.Client.Add(us);
                 MainWindow.ReabilCenterDB.SaveChanges();
                 MessageBox.Show("Вы Зарегестрированы");
             }
 
+            // hide main form
+            this.Hide();
+
+            // show other form
+            AuthorizationWindow authWin = new AuthorizationWindow();
+            authWin.ShowDialog();
+
+            // close application
+            this.Close();
+
+        }
+
+        private void AddPhotoRegis_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files|*.bmp;*.jpg;*.png|All files|*.*";
+            openFileDialog.FilterIndex = 1;
+            if (openFileDialog.ShowDialog() == true)
+            {
+
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(openFileDialog.FileName);
+                image.EndInit();
+                openFileDialogRegist = openFileDialog;
+                AddPhotoRegis.Source = image;
+                MainWindow.ReabilCenterDB.SaveChanges();
+            }
+        }
+        public byte[] getJPGFromImageControl(BitmapImage imageC)
+        {
+            MemoryStream memStream = new MemoryStream();
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(imageC));
+            encoder.Save(memStream);
+            return memStream.ToArray();
         }
     }
 }

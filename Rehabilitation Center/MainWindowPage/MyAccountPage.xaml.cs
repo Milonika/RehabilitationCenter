@@ -1,4 +1,6 @@
 ﻿using Rehabilitation_Center.Db;
+using Microsoft.Win32;
+using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +23,7 @@ namespace Rehabilitation_Center.MainWindowPage
     /// </summary>
     public partial class MyAccountPage : Page
     {
+        public OpenFileDialog fileDialogClient = new OpenFileDialog();
         public MyAccountPage()
         {
             InitializeComponent();
@@ -45,6 +48,15 @@ namespace Rehabilitation_Center.MainWindowPage
                     HistoryBuyTherapy.ItemsSource = MainWindow.ReabilCenterDB.TherapyHistory.Where(
                                                     c => c.IDClient == MainWindow.ReabilCenterDB.Client.FirstOrDefault(
                                                     d => d.IDAuth == MainWindow.authUser.IDAuth).IDClient).ToList();
+                    if (client.Photo != null)
+                    {
+                        MemoryStream memoryStream = new MemoryStream(client.Photo);
+                        BitmapImage bitmapImage = new BitmapImage();
+                        bitmapImage.BeginInit();
+                        bitmapImage.StreamSource = memoryStream;
+                        bitmapImage.EndInit();
+                        AddPhotoClient.Source = bitmapImage;
+                    }
                 }
                 else if (MainWindow.AuthUser.IDRols == 1)
                 {
@@ -64,6 +76,30 @@ namespace Rehabilitation_Center.MainWindowPage
                 MessageBox.Show(ex.Message);
                 new AuthorizationWindow().Show();
             }
+
         }
+
+        private void AddPhotoClient_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files|*.bmp;*.jpg;*.png|All files|*.*";
+            openFileDialog.FilterIndex = 1;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                var gg = MainWindow.ReabilCenterDB.Client.FirstOrDefault(c => c.IDAuth == MainWindow.authUser.IDAuth);
+                MainWindow.ReabilCenterDB.Client.Attach(gg);
+
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(openFileDialog.FileName);
+
+                gg.Photo = File.ReadAllBytes(openFileDialog.FileName);
+
+                image.EndInit();
+                fileDialogClient = openFileDialog;
+                AddPhotoClient.Source = image;
+                MainWindow.ReabilCenterDB.SaveChanges();
+            }
+        }    
     }
 }
