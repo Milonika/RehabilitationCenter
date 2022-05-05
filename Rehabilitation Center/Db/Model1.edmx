@@ -62,6 +62,7 @@
           <Property Name="WorkExperience" Type="int" />
           <Property Name="Age" Type="int" />
           <Property Name="IDAuth" Type="int" />
+          <Property Name="InfoDoctor" Type="text" />
         </EntityType>
         <EntityType Name="DoctorCategory">
           <Key>
@@ -142,7 +143,7 @@
           </Key>
           <Property Name="IDTherapy" Type="int" Nullable="false" />
           <Property Name="IDClient" Type="int" Nullable="false" />
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <Association Name="FK_Auth_Rols">
           <End Role="Rols" Type="Self.Rols" Multiplicity="1" />
@@ -398,6 +399,7 @@
           <Property Name="WorkExperience" Type="Int32" />
           <Property Name="Age" Type="Int32" />
           <Property Name="IDAuth" Type="Int32" />
+          <Property Name="InfoDoctor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Auth" Relationship="Self.FK_Doctor_Auth1" FromRole="Doctor" ToRole="Auth" />
           <NavigationProperty Name="DoctorCategory" Relationship="Self.FK_Doctor_DoctorCategory" FromRole="Doctor" ToRole="DoctorCategory" />
         </EntityType>
@@ -711,6 +713,7 @@
                 <ScalarProperty Name="WorkExperience" ColumnName="WorkExperience" />
                 <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="IDAuth" ColumnName="IDAuth" />
+                <ScalarProperty Name="InfoDoctor" ColumnName="InfoDoctor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -40,7 +40,7 @@ namespace Rehabilitation_Center.MainWindowPage
                     FNameAndNameTBDoctor.Text = $"{client.Name} {client.FName} {client.LName}";
                     LastNameTB.Text = $"{client.LName}";
                     TextBlokAge.Text = $"Возраст: {client.Age.ToString()}";
-                    TBPasport.Text = $"{client.Pasport}";
+                    TBPasportDoctor.Text = $"{client.Pasport}";
                     TBPolisDoctor.Text = $"{client.Polis}";
                     TBSNILSDoctor.Text = $"{client.SNILS}"; 
 
@@ -54,6 +54,9 @@ namespace Rehabilitation_Center.MainWindowPage
                     FNameAndNameTBDoctor.Text = $"{doctor.Name} {doctor.FName}";
                     LastNameTB.Text = $"{doctor.LName}";
                     TextBlokAge.Text = $"Возраст: {doctor.Age.ToString()}";
+                    TBPasportDoctor.Text = $"{doctor.Pasport}";
+                    TBPolisDoctor.Text = $"{doctor.Polis}";
+                    TBSNILSDoctor.Text = $"{doctor.SNILS}";
                     if (doctor.Photo != null )
                     {
                         MemoryStream memoryStream = new MemoryStream(doctor.Photo);

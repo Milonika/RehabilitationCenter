@@ -41,6 +41,10 @@ namespace Rehabilitation_Center.MainWindowPage
                     TBPasport.Text = $"{client.Pasport}";
                     TBPolis.Text = $"{client.Polis}";
                     TBSNILS.Text = $"{client.SNILS}";
+
+                    HistoryBuyTherapy.ItemsSource = MainWindow.ReabilCenterDB.TherapyHistory.Where(
+                                                    c => c.IDClient == MainWindow.ReabilCenterDB.Client.FirstOrDefault(
+                                                    d => d.IDAuth == MainWindow.authUser.IDAuth).IDClient).ToList();
                 }
                 else if (MainWindow.AuthUser.IDRols == 1)
                 {
@@ -60,12 +64,6 @@ namespace Rehabilitation_Center.MainWindowPage
                 MessageBox.Show(ex.Message);
                 new AuthorizationWindow().Show();
             }
-        }
-
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-
         }
     }
 }

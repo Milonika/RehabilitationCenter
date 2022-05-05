@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rehabilitation_Center.Db;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,19 @@ namespace Rehabilitation_Center.MainWindowPage
         public SpesialistPage()
         {
             InitializeComponent();
+            DoctorList.ItemsSource = MainWindow.ReabilCenterDB.Doctor.ToList();
+            DoctorCategoryCB.ItemsSource = MainWindow.ReabilCenterDB.DoctorCategory.ToList();
+        }
+
+        private void DoctorList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void DoctorCategoryCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedCategoryCb = DoctorCategoryCB.SelectedItem as DoctorCategory;
+            DoctorList.ItemsSource = MainWindow.ReabilCenterDB.Doctor.Where(c => c.IDDoctorCategory == selectedCategoryCb.IDDoctorCategory).ToList();
         }
     }
 }

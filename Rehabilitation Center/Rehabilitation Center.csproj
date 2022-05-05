@@ -326,6 +326,9 @@
     <Resource Include="img\ImgAccountDoctor.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="img\AddImgRegisWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Db\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

@@ -54,5 +54,10 @@ namespace Rehabilitation_Center.MainWindowPage
             MainWindow.ReabilCenterDB.SaveChanges();
             
         }
+
+        private void listviewUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

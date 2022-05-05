@@ -17,11 +17,8 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid>
-
-        <Button Content="Load" HorizontalAlignment="Left" Height="40" Margin="276,750,0,0" 
-                VerticalAlignment="Top" Width="100" x:Name="BtnLoad" Click="BtnLoad_Click"/>
         <ListView x:Name="listviewUsers" HorizontalAlignment="Stretch"  
-                  Margin="276,115,49,55" VerticalAlignment="Stretch">
+                  Margin="276,115,49,55" VerticalAlignment="Stretch" SelectionChanged="listviewUsers_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">

@@ -109,22 +109,7 @@
             Margin="336,459,0,0" 
             VerticalAlignment="Top" 
             Width="146" Foreground="#FF000C8B" FontWeight="Medium"/>
-        <ListView x:Name="HistoryBuy" HorizontalAlignment="Left" Height="277" Margin="323,500,0,0" VerticalAlignment="Top" Width="601" SelectionChanged="ListView_SelectionChanged">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                        <Label Content="{Binding }"/>
-                        <Label Content="{Binding Price}"/>
-                        <Button 
-                            x:Name="buyBtn" 
-                            CommandParameter="{Binding IDTherapy}" 
-                            Content="Buy"
-                            HorizontalAlignment="Right"
-                            Click="buyBtn_Click"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+
         <Button Content="Button" HorizontalAlignment="Left" 
                 Height="30" Margin="1191,22,0,0" VerticalAlignment="Top" Width="30" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
@@ -151,6 +136,20 @@
             Text="TextBlock" 
             VerticalAlignment="Top" 
             Width="128" Foreground="#FFA8A8A8" FontWeight="Medium"/>
+
+
+        <ListView x:Name="HistoryBuyTherapy" Margin="336,495,356,5">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Имя" Width="300" DisplayMemberBinding="{Binding Therapy.Name}">
+                        </GridViewColumn>
+                        <GridViewColumn Header="Цена" Width="200"  DisplayMemberBinding="{Binding  Therapy.Price}">
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
 
     </Grid>

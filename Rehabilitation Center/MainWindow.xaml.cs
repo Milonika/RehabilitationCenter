@@ -35,6 +35,7 @@ namespace Rehabilitation_Center
             {
                 MainFrameInMainWindow.Navigate(new MyAccountDoctorPage());
                 BtnMyStatistic.IsEnabled = false;
+                BtnTerapia.IsEnabled = false;
             }
             else if (authUser.IDRols == 2)
             {

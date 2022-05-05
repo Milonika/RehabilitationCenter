@@ -4,20 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8a1c8e84843d4730ae9597734b587f4d" Name="Diagram1" ZoomLevel="64">
+      <Diagram DiagramId="4c079484c2ed4368ace712a8ff038f78" Name="Diagram1">
         <EntityTypeShape EntityType="ReabilCenterModel.Auth" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReabilCenterModel.Client" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReabilCenterModel.Dependece" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReabilCenterModel.Doctor" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReabilCenterModel.DoctorCategory" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReabilCenterModel.Events" Width="1.5" PointX="8.25" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReabilCenterModel.health" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReabilCenterModel.HistoryClient" Width="1.5" PointX="10.5" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReabilCenterModel.Photo" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReabilCenterModel.Rols" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Client" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Dependece" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Doctor" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.DoctorCategory" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Events" Width="1.5" PointX="8.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.health" Width="1.5" PointX="7.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.HistoryClient" Width="1.5" PointX="10.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Photo" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Rols" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ReabilCenterModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReabilCenterModel.Therapy" Width="1.5" PointX="8.25" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReabilCenterModel.TherapyHistory" Width="1.5" PointX="10.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.Therapy" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReabilCenterModel.TherapyHistory" Width="1.5" PointX="10.5" PointY="4.125" IsExpanded="true" />
         <AssociationConnector Association="ReabilCenterModel.FK_Auth_Rols" ManuallyRouted="false" />
         <AssociationConnector Association="ReabilCenterModel.FK_Client_Auth" ManuallyRouted="false" />
         <AssociationConnector Association="ReabilCenterModel.FK_Doctor_Auth1" ManuallyRouted="false" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rehabilitation_Center.Db;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,9 +37,36 @@ namespace Rehabilitation_Center
 
         private void BtnZaregistr_Click(object sender, RoutedEventArgs e)
         {
-            Window mainwindow = new MainWindow();
-            mainwindow.Show();
-            this.Close();
+            if (TBNameRegis.Text == "" || TBFNameRegis.Text == "" || TBPasportRegis.Text == ""  || TBSNILSRegis.Text == "" || TBPolisRegis.Text == "" || TBAgeRegis.Text == ""  || TBLoginRegis.Text == "" || TBPasswordRegis.Text == "") 
+            {
+                MessageBox.Show("Введите все данные");
+            }
+            else
+            {
+                Auth aut = new Auth()
+                {
+                    Login = TBLoginRegis.Text,
+                    Password = TBPasswordRegis.Text,
+                    IDRols = 2,
+                };
+                Client us = new Client()
+                {
+                   LName = TBLNameRegis.Text,
+                   Name = TBNameRegis.Text,
+                   FName = TBNameRegis.Text,
+                   Pasport = TBPasportRegis.Text,
+                   SNILS = TBSNILSRegis.Text,
+                   Polis = TBPolisRegis.Text,
+                   Phone = TBPhoneRegis.Text,
+                   Age = Convert.ToInt32(TBAgeRegis.Text),
+                   IDAuth = aut.IDAuth
+                };
+                MainWindow.ReabilCenterDB.Auth.Add(aut);
+                MainWindow.ReabilCenterDB.Client.Add(us);
+                MainWindow.ReabilCenterDB.SaveChanges();
+                MessageBox.Show("Вы Зарегестрированы");
+            }
+
         }
     }
 }

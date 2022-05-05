@@ -55,7 +55,7 @@
                Width="108" Foreground="#FF000C8B" FontWeight="Medium"/>
 
         <TextBox 
-            x:Name="TBPasport"
+            x:Name="TBPasportDoctor"
             HorizontalAlignment="Left" 
             Height="25"
             Margin="336,139,0,0" 

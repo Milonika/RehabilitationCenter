@@ -18,31 +18,117 @@
     </Page.Resources>
 
     <Grid>
-        <ComboBox Height="30"
+        <ComboBox 
+            x:Name="DoctorCategoryCB"
+            Height="30"
+            DisplayMemberPath="Name"
                   materialDesign:HintAssist.Hint="Категория"
                   Width="100"
                   materialDesign:HintAssist.HintOpacity=".26"
                   IsEditable="True" 
-                  Margin="530,68,650,702">
-                <ComboBoxItem
-                    Content="Нарколог" />
-                <ComboBoxItem
-                    Content="Психолог" />
-                <ComboBoxItem
-                    Content="Психиатр" />
-                <ComboBoxItem
-                    Content="Терапевт" />
-            </ComboBox>
+                  Margin="530,68,650,702" SelectionChanged="DoctorCategoryCB_SelectionChanged">
+            
+        </ComboBox>
+        
+        <ListView
+                ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                Name="DoctorList" 
+                Width="801" 
+                Margin="276,122,203,34" 
+                Background="Transparent" 
+                BorderBrush="Transparent" 
+                HorizontalContentAlignment="Center" 
+                SelectionChanged ="DoctorList_SelectionChanged"
+                HorizontalAlignment="Center">
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="White" CornerRadius="10" Margin="10,0,0,10">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" />
+                        </Border.Effect>
+                        <Canvas Height="150" Width="500" HorizontalAlignment="Center">
+                            <TextBlock 
+                                Text="" 
+                                FontWeight="Bold" 
+                                FontSize="15" 
+                                Margin="0,5"
+                                Width="500"
+                                TextAlignment="Center" 
+                                Background="Transparent"/>
 
-        <Rectangle Fill="#F7F8FD" 
+                            <Image Source="{Binding Photo}" Height="65" Width="65" Margin="65,10"/>
+                            
+                            <TextBlock 
+                                Text="{Binding InfoDoctor}" 
+                                FontWeight="Bold" 
+                                FontSize="10" 
+                                Margin="40,35"
+                                Width="500"
+                                Height="150"
+                                TextAlignment="Center" 
+                                Background="Transparent" 
+                                Foreground="#FF5690FC"/>
+
+                            <TextBlock 
+                                Text="{Binding DoctorCategory.Name}" 
+                                FontWeight="Bold" 
+                                FontSize="10" 
+                                Margin="40,10"
+                                Width="500"
+                                Height="150"
+                                TextAlignment="Center"
+                                Background="Transparent" 
+                                Foreground="#FF1C6BFF"/>
+
+                            <TextBlock 
+                                Text="{Binding Name}" 
+                                FontWeight="Bold" 
+                                FontSize="10" 
+                                Margin="-125,80"
+                                Width="500"
+                                Height="150"
+                                TextAlignment="Center" 
+                                Background="Transparent" 
+                                Foreground="#FF5690FC"/>
+
+                            <TextBlock 
+                                Text="{Binding FName}" 
+                                FontWeight="Bold" 
+                                FontSize="10" 
+                                Margin="-180,80"
+                                Width="500"
+                                Height="150"
+                                TextAlignment="Center" 
+                                Background="Transparent" 
+                                Foreground="#FF5690FC"/>
+
+                            <TextBlock 
+                                Text="{Binding LName}" 
+                                FontWeight="Bold" 
+                                FontSize="10" 
+                                Margin="-155,95"
+                                Width="500"
+                                Height="150"
+                                TextAlignment="Center" 
+                                Background="Transparent" 
+                                Foreground="#FF5690FC"/>
+
+                        </Canvas>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!--<Rectangle Fill="#F7F8FD" 
                    HorizontalAlignment="Left" 
                    Height="617" 
                    Margin="252,112,0,0" 
                    VerticalAlignment="Top" 
                    Width="990"
                    RadiusY="20"
-                   RadiusX="20"/>
-        
+                   RadiusX="20"/>-->
+
         <Label Content="Специалисты" 
                HorizontalAlignment="Left" 
                Height="62" 
