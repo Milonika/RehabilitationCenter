@@ -50,86 +50,74 @@
                Foreground="#FF000C8B"/>
 
         <TextBox HorizontalAlignment="Left" 
+                 x:Name= "TBFNameRegis"
                  Height="29" 
                  Margin="147,148,0,0" 
                  TextWrapping="Wrap" 
-                 Text="TextBox" 
                  VerticalAlignment="Top" 
-                 Width="193"/>
+                 Width="193" 
+                 />
 
         <TextBox HorizontalAlignment="Left" 
+                 x:Name= "TBNameRegis"
                  Height="29" 
                  Margin="147,210,0,0" 
                  TextWrapping="Wrap" 
-                 Text="TextBox" 
                  VerticalAlignment="Top" 
                  Width="193"/>
 
         <TextBox HorizontalAlignment="Left" 
+                 x:Name= "TBLNameRegis"
                  Height="29" 
                  Margin="147,272,0,0" 
                  TextWrapping="Wrap" 
-                 Text="TextBox" 
                  VerticalAlignment="Top" 
                  Width="193"/>
 
         <TextBox HorizontalAlignment="Left" 
+                 x:Name= "TBPasportRegis"
                  Height="29" 
                  Margin="147,334,0,0" 
                  TextWrapping="Wrap" 
-                 Text="TextBox" 
                  VerticalAlignment="Top" 
+                 
                  Width="193"/>
 
-        <TextBox HorizontalAlignment="Left" 
+        <TextBox HorizontalAlignment="Left"
+                 x:Name="TBSNILSRegis"
                  Height="29" 
                  Margin="147,396,0,0" 
                  TextWrapping="Wrap" 
-                 Text="TextBox" 
                  VerticalAlignment="Top" 
+                 
                  Width="193"/>
 
-        <TextBox HorizontalAlignment="Left" 
+        <TextBox HorizontalAlignment="Left"
+                 x:Name="TBPhoneRegis"
                  Height="29" 
                  Margin="438,148,0,0" 
                  TextWrapping="Wrap" 
-                 Text="TextBox" 
                  VerticalAlignment="Top" 
+                 
                  Width="193"/>
 
         <TextBox HorizontalAlignment="Left" 
+                 x:Name="TBAgeRegis"
                  Height="29" 
                  Margin="438,210,0,0" 
                  TextWrapping="Wrap" 
-                 Text="TextBox" 
                  VerticalAlignment="Top" 
                  Width="193"/>
 
-        <TextBox HorizontalAlignment="Left" 
-                 Height="29" 
-                 Margin="438,272,0,0" 
-                 TextWrapping="Wrap" 
-                 Text="TextBox" 
-                 VerticalAlignment="Top" 
-                 Width="193"/>
-
-        <TextBox HorizontalAlignment="Left" 
-                 Height="29" 
-                 Margin="438,338,0,0" 
-                 TextWrapping="Wrap" 
-                 Text="TextBox" 
-                 VerticalAlignment="Top" 
-                 Width="193"/>
-
-        <Button Content="Button" 
+        <Button Content="Зарегестрироваться" 
                 x:Name="BtnZaregistr"
                 Click="BtnZaregistr_Click"
                 HorizontalAlignment="Left" 
-                Height="30" 
-                Margin="450,391,0,0" 
+                Height="36" 
+                Margin="463,395,0,0" 
                 VerticalAlignment="Top" 
-                Width="160"/>
-        
+                Width="160"  BorderBrush="{x:Null}" Background="#FF5690FC" Foreground="White" FontWeight="Bold"/>
+
         <Button Content="X" 
             x:Name="BtnCloseRegistWindow"
             Click="BtnCloseRegistWindow_Click"
@@ -140,7 +128,43 @@
             Width="25" 
             BorderBrush="{x:Null}" 
             Background="#FF5C87CC" 
-            Foreground="White" Style="{DynamicResource ButtonKrug}"/>
+            Foreground="White"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Height="25" Margin="142,118,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF5690FC"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Height="25" Margin="142,185,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF5690FC"/>
+        <Label Content="Отчество" HorizontalAlignment="Left" Height="25" Margin="142,247,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF5690FC"/>
+        <Label Content="Серия и номер паспорта" HorizontalAlignment="Left" Height="25" Margin="142,310,0,0" VerticalAlignment="Top" Width="147" Foreground="#FF5690FC"/>
+        <Label Content="СНИЛС" HorizontalAlignment="Left" Height="25" Margin="142,373,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF5690FC"/>
+
+        <Label Content="Возраст" HorizontalAlignment="Left" Height="25" Margin="431,185,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF5690FC"/>
+        <Label Content="Телефон" HorizontalAlignment="Left" Height="25" Margin="431,118,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF5690FC"/>
+        
+        <TextBox HorizontalAlignment="Left"
+            x:Name="TBLoginRegis"
+            Height="29" 
+            Margin="438,272,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+
+            Width="193"/>
+
+        <TextBox HorizontalAlignment="Left" 
+            x:Name="TBPasswordRegis"
+            Height="29" 
+            Margin="438,334,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="193"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Height="25" Margin="431,309,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF5690FC"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Height="25" Margin="431,242,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF5690FC"/>
+        <TextBox HorizontalAlignment="Left"
+            x:Name="TBPolisRegis"
+            Height="29" 
+            Margin="147,461,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="193"/>
+        <Label Content="Полис" HorizontalAlignment="Left" Height="25" Margin="142,438,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF5690FC"/>
+
 
     </Grid>
 </Window>
