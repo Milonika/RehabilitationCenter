@@ -56,6 +56,7 @@
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top" 
                  Width="193" 
+                 Style="{DynamicResource TextBoxZakruglenie}" 
                  />
 
         <TextBox HorizontalAlignment="Left" 
@@ -64,6 +65,7 @@
                  Margin="147,210,0,0" 
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top" 
+                 Style="{DynamicResource TextBoxZakruglenie}"
                  Width="193"/>
 
         <TextBox HorizontalAlignment="Left" 
@@ -72,6 +74,7 @@
                  Margin="147,272,0,0" 
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top" 
+                 Style="{DynamicResource TextBoxZakruglenie}"
                  Width="193"/>
 
         <TextBox HorizontalAlignment="Left" 
@@ -80,7 +83,7 @@
                  Margin="147,334,0,0" 
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top" 
-                 
+                 Style="{DynamicResource TextBoxZakruglenie}"
                  Width="193"/>
 
         <TextBox HorizontalAlignment="Left"
@@ -89,7 +92,7 @@
                  Margin="147,396,0,0" 
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top" 
-                 
+                 Style="{DynamicResource TextBoxZakruglenie}"
                  Width="193"/>
 
         <TextBox HorizontalAlignment="Left"
@@ -98,7 +101,7 @@
                  Margin="438,148,0,0" 
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top" 
-                 
+                 Style="{DynamicResource TextBoxZakruglenie}"
                  Width="193"/>
 
         <TextBox HorizontalAlignment="Left" 
@@ -107,6 +110,7 @@
                  Margin="438,210,0,0" 
                  TextWrapping="Wrap" 
                  VerticalAlignment="Top" 
+                 Style="{DynamicResource TextBoxZakruglenie}"
                  Width="193"/>
 
         <Button Content="Зарегестрироваться" 
@@ -116,7 +120,8 @@
                 Height="36" 
                 Margin="463,395,0,0" 
                 VerticalAlignment="Top" 
-                Width="160"  BorderBrush="{x:Null}" Background="#FF5690FC" Foreground="White" FontWeight="Bold"/>
+                
+                Width="160"  BorderBrush="{x:Null}" Background="#FF5690FC" Foreground="White" FontWeight="Bold" Style="{DynamicResource Buttonzakruglenie}"/>
 
         <Button Content="X" 
             x:Name="BtnCloseRegistWindow"
@@ -127,6 +132,7 @@
             VerticalAlignment="Top" 
             Width="25" 
             BorderBrush="{x:Null}" 
+            Style="{DynamicResource ButtonKrug}"
             Background="#FF5C87CC" 
             Foreground="White"/>
         <Label Content="Фамилия" HorizontalAlignment="Left" Height="25" Margin="142,118,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF5690FC"/>
@@ -144,12 +150,13 @@
             Margin="438,272,0,0" 
             TextWrapping="Wrap" 
             VerticalAlignment="Top" 
-
+            Style="{DynamicResource TextBoxZakruglenie}"
             Width="193"/>
 
         <TextBox HorizontalAlignment="Left" 
             x:Name="TBPasswordRegis"
             Height="29" 
+            Style="{DynamicResource TextBoxZakruglenie}"
             Margin="438,334,0,0" 
             TextWrapping="Wrap" 
             VerticalAlignment="Top" 
@@ -162,6 +169,7 @@
             Margin="147,461,0,0" 
             TextWrapping="Wrap" 
             VerticalAlignment="Top" 
+            Style="{DynamicResource TextBoxZakruglenie}"
             Width="193"/>
         <Label Content="Полис" HorizontalAlignment="Left" Height="25" Margin="142,438,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF5690FC"/>
 
