@@ -36,8 +36,14 @@ namespace Rehabilitation_Center
 
         private void BtnZaregistr_Click(object sender, RoutedEventArgs e)
         {
-            Window mainwindow = new MainWindow();
-            mainwindow.Show();
+            // hide main form
+            this.Hide();
+
+            // show other form
+            AuthorizationWindow authWin = new AuthorizationWindow();
+            authWin.ShowDialog();
+
+            // close application
             this.Close();
         }
     }

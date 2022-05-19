@@ -44,13 +44,27 @@
                     Margin="886,155,0,0" 
                     VerticalAlignment="Top" 
                     Width="260"/>
-        <ListView HorizontalAlignment="Left" Height="502" Margin="834,236,0,0" VerticalAlignment="Top" Width="360">
+        <ListView HorizontalAlignment="Left" Height="466" Margin="834,236,0,0" VerticalAlignment="Top" Width="360" Background="White" BorderBrush="#FF90B7FF">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <Label Content="Состояние здоровья" 
+               HorizontalAlignment="Left" 
+               Height="41" 
+               Margin="426,163,0,0" 
+               VerticalAlignment="Top" 
+               Width="230" 
+               Foreground="#FF000C8B" FontSize="20" FontWeight="SemiBold"/>
+        <Label Content="Рост" HorizontalAlignment="Left" Height="26" Margin="378,236,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <Label Content="Вес" HorizontalAlignment="Left" Height="26" Margin="378,280,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <Label Content="Давление" HorizontalAlignment="Left" Height="40" Margin="378,324,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <Label Content="Сатурация" HorizontalAlignment="Left" Height="31" Margin="378,369,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <Label Content="Группа крови" HorizontalAlignment="Left" Height="31" Margin="378,418,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <Label Content="Зависимсоть:" HorizontalAlignment="Left" Height="31" Margin="378,463,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <Rectangle HorizontalAlignment="Left" Height="568" Margin="340,134,0,0" RadiusY="20" RadiusX="20" VerticalAlignment="Top" Width="372" Stroke="#FF90B7FF"/>
 
     </Grid>
 </Page>
