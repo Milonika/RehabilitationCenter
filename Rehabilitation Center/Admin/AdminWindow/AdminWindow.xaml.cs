@@ -23,5 +23,25 @@ namespace Rehabilitation_Center.Admin.AdminWindow
         {
             InitializeComponent();
         }
+
+        private void BtnMyAccountAdmin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnSpesialistAdmin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnPacientAdmin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnClosWindowAdmin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
