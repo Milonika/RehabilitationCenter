@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Rehabilitation_Center.MainWindowPage;
 
 namespace Rehabilitation_Center.Admin.AdminWindow
 {
@@ -19,9 +20,11 @@ namespace Rehabilitation_Center.Admin.AdminWindow
     /// </summary>
     public partial class AdminWindow : Window
     {
-        public AdminWindow()
+        public bool IsAdmin;
+        public AdminWindow(bool isAdmin)
         {
             InitializeComponent();
+            IsAdmin = isAdmin;
         }
 
         private void BtnMyAccountAdmin_Click(object sender, RoutedEventArgs e)
@@ -41,7 +44,12 @@ namespace Rehabilitation_Center.Admin.AdminWindow
 
         private void BtnClosWindowAdmin_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
 
+        private void BtnTerapiaAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            AdminMainFrame.Navigate(new MainWindowPage.TherapyPage());
         }
     }
 }

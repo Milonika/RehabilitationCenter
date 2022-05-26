@@ -36,13 +36,15 @@
             Width="265">
             <Button x:Name="BtnMyAccountAdmin" Click="BtnMyAccountAdmin_Click" Content="Личный кабинет" FontSize="16" Margin="-1,197,0,0" HorizontalAlignment="Left" Height="69" Width="266" BorderBrush="{x:Null}" Background="{x:Null}" FontWeight="Medium" Foreground="#5690FC" Style="{DynamicResource PanelBtnMainWindow}"/>
             <Button x:Name="BtnSpesialistAdmin" Click="BtnSpesialistAdmin_Click" Content="Специалисты" FontSize="16" HorizontalAlignment="Left" Height="69" Width="265" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Medium" Foreground="#5690FC" Style="{DynamicResource PanelBtnMainWindow}"/>
+            <Button x:Name="BtnTerapiaAdmin" Click="BtnTerapiaAdmin_Click"  Content="Терапии" FontSize="16" HorizontalAlignment="Left" Height="69" Width="265" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Medium" Foreground="#5690FC" Style="{DynamicResource PanelBtnMainWindow}"/>
             <Button x:Name="BtnPacientAdmin" Click="BtnPacientAdmin_Click" Content="Пациенты" FontSize="16" HorizontalAlignment="Left" Height="69" Width="265" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Medium" Foreground="#5690FC" Style="{DynamicResource PanelBtnMainWindow}"/>
         </StackPanel>
         <Image HorizontalAlignment="Left" Height="82" Margin="28,64,0,0" VerticalAlignment="Top" Width="210" />
         <Frame x:Name="AdminMainFrame" NavigationUIVisibility="Hidden"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="28,215,0,0" VerticalAlignment="Top" Width="29" Source="/Rehabilitation Center;component/img/IconAccount.png"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="28,286,0,0" VerticalAlignment="Top" Width="29" Source="/Rehabilitation Center;component/img/IconEmployee.png"/>
-        <Image HorizontalAlignment="Left" Height="30" Margin="28,355,0,0" VerticalAlignment="Top" Width="29" Source="/Rehabilitation Center;component/img/IconPacient.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="28,424,0,0" VerticalAlignment="Top" Width="29" Source="/Rehabilitation Center;component/img/IconPacient.png"/>
         <Image HorizontalAlignment="Left" Height="82" Margin="28,64,0,0" VerticalAlignment="Top" Width="210" Source="/Rehabilitation Center;component/img/LogoTMNUN.png"/>
+        <Image HorizontalAlignment="Left" Height="30" Margin="28,354,0,0" VerticalAlignment="Top" Width="29" Source="/Rehabilitation Center;component/img/IconTerapia.png"/>
     </Grid>
 </Window>

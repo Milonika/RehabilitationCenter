@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rehabilitation_Center.Data;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace Rehabilitation_Center
     /// </summary>
     public partial class App : Application
     {
+        public static Users users;
     }
 }

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Rehabilitation_Center.Admin.AdminWindow;
+using Rehabilitation_Center.Data;
 
 namespace Rehabilitation_Center
 {
@@ -47,9 +49,32 @@ namespace Rehabilitation_Center
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            Window mainwindow = new MainWindow();
-            mainwindow.Show();
-            this.Close();
+            if (TBLogin.Text == "" || PBPassword.Password == "")
+            {
+                MessageBox.Show("Введите все данные");
+            }
+            else
+            {
+                Users us = new Users(TBLogin.Text, PBPassword.Password);
+                Users.LogInUser(us);
+                if (App.users.IsAdmin == true)
+                {
+                    MessageBox.Show("Приветсвуем, Администратор");
+                    AdminWindow adminWindow = new AdminWindow(us.IsAdmin);
+                    adminWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Успешный вход");
+                    MainWindow mw = new MainWindow(us.IsAdmin);
+                    mw.Show();
+                    this.Close();
+                }
+            }
+            //Window mainwindow = new MainWindow();
+            //mainwindow.Show();
+            //this.Close();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rehabilitation_Center.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,15 +37,20 @@ namespace Rehabilitation_Center
 
         private void BtnZaregistr_Click(object sender, RoutedEventArgs e)
         {
-            // hide main form
-            this.Hide();
-
-            // show other form
-            AuthorizationWindow authWin = new AuthorizationWindow();
-            authWin.ShowDialog();
-
-            // close application
-            this.Close();
+            if (TBNameRegis.Text == "" || TBFNameRegis.Text == "" || TBLNameRegis.Text == "" || TBPasportRegis.Text == "" || TBSNILSRegis.Text == "" || TBPolisRegis.Text == "" || TBAgeRegis.Text == "" || TBLoginRegis.Text == "" || TBPasswordRegis.Text == "")
+            {
+                MessageBox.Show("Введите все данные");
+            }
+            else
+            {
+                Users us = new Users(TBFNameRegis.Text, TBNameRegis.Text, TBLNameRegis.Text, TBPasportRegis.Text, TBPolisRegis.Text, TBSNILSRegis.Text, TBPhoneRegis.Text, Convert.ToInt32(TBAgeRegis.Text), TBLoginRegis.Text, TBPasswordRegis.Text);
+                Users.AddUser(us);
+                MessageBox.Show("Вы зарегистрировались!");
+                MainWindow mw = new MainWindow(us.IsAdmin);
+                mw.Show();
+                this.Close();
+                App.users = us;
+            }
         }
     }
 }

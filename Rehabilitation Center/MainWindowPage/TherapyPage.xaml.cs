@@ -24,5 +24,25 @@ namespace Rehabilitation_Center.MainWindowPage
         {
             InitializeComponent();
         }
+
+        private void LWTherapy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void buyTherapyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //var gg = sender as Button;
+            //var ff = int.Parse(gg.CommandParameter.ToString());
+            ////Поиск
+            //var bb = MainWindow.ReabilCenterDB.Client.Where(c => c.IDAuth == MainWindow.authUser.IDAuth).FirstOrDefault();
+            //TherapyHistory therapyHistory = new TherapyHistory()
+            //{
+            //    IDClient = MainWindow.ReabilCenterDB.Client.Where(c => c.IDAuth == MainWindow.authUser.IDAuth).FirstOrDefault().IDClient,
+            //    IDTherapy = ff,
+            //};
+            //MainWindow.ReabilCenterDB.TherapyHistory.Add(therapyHistory);
+            //MainWindow.ReabilCenterDB.SaveChanges();
+        }
     }
 }

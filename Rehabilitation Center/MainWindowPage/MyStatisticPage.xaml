@@ -41,16 +41,17 @@
                     x:Name="ggwp"
                     Height="49" 
                     SelectedDateChanged="DatePicker_SelectedDateChanged"
-                    Margin="886,155,0,0" 
+                    Margin="834,155,0,0" 
                     VerticalAlignment="Top" 
-                    Width="260"/>
-        <ListView HorizontalAlignment="Left" Height="466" Margin="834,236,0,0" VerticalAlignment="Top" Width="360" Background="White" BorderBrush="#FF90B7FF">
+                    Width="360"/>
+        <ListView HorizontalAlignment="Left" Height="466" Margin="834,236,0,0" VerticalAlignment="Top" Width="360" Background="White" BorderBrush="#FF90B7FF" Foreground="{x:Null}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <Rectangle HorizontalAlignment="Left" Height="568" Margin="340,134,0,0" RadiusY="20" RadiusX="20" VerticalAlignment="Top" Width="372" Fill="White"/>
         <Label Content="Состояние здоровья" 
                HorizontalAlignment="Left" 
                Height="41" 
@@ -64,7 +65,7 @@
         <Label Content="Сатурация" HorizontalAlignment="Left" Height="31" Margin="378,369,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
         <Label Content="Группа крови" HorizontalAlignment="Left" Height="31" Margin="378,418,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
         <Label Content="Зависимсоть:" HorizontalAlignment="Left" Height="31" Margin="378,463,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
-        <Rectangle HorizontalAlignment="Left" Height="568" Margin="340,134,0,0" RadiusY="20" RadiusX="20" VerticalAlignment="Top" Width="372" Stroke="#FF90B7FF"/>
+
 
     </Grid>
 </Page>

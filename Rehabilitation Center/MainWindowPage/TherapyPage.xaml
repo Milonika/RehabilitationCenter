@@ -17,7 +17,7 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid>
-            <ComboBox Height="30"
+        <ComboBox Height="30"
                   materialDesign:HintAssist.Hint="Категория"
                   Width="100"
                   materialDesign:HintAssist.HintOpacity=".26"
@@ -51,6 +51,23 @@
                Foreground="#FF5690FC" 
                FontWeight="SemiBold" 
                FontSize="32"/>
+        <ListView x:Name="LWTherapy" HorizontalAlignment="Stretch"  
+                  Margin="276,115,49,55" VerticalAlignment="Stretch" SelectionChanged="LWTherapy_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <Label DataContext="{Binding Name}"/>
+                        <Label DataContext="{Binding Price}"/>
+                        <!--<Button 
+                            x:Name="buyTherapyBtn" 
+                            CommandParameter="{Binding IDTherapy}" 
+                            Content="Buy"
+                            HorizontalAlignment="Right"
+                            Click="buyTherapyBtn_Click"/>-->
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </Grid>
 </Page>

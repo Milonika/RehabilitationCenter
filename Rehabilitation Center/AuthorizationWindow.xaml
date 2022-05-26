@@ -282,6 +282,16 @@
                  FontSize="18"
                  VerticalContentAlignment="Center"
                  Style="{DynamicResource TextBoxStyleEmpty}" TextChanged="TBLogin_TextChanged"/>
+        
+        <PasswordBox HorizontalAlignment="Left" 
+                     x:Name="PBPassword"
+                     Margin="62,482,0,0" 
+                     VerticalAlignment="Top" 
+                     Width="267"
+                     FontSize="18"
+                     VerticalContentAlignment="Center"
+                     Height="37" Style="{DynamicResource PasswordBoxStyle1}"/>
+
 
         <Button Content="Войти" 
                 x:Name="BtnLogin"
@@ -296,14 +306,6 @@
                 BorderBrush="{x:Null}" 
                 Foreground="White" 
                 FontWeight="Bold" Style="{DynamicResource ButtonStyleCorner}"/>
-
-        <PasswordBox HorizontalAlignment="Left" 
-                     Margin="62,482,0,0" 
-                     VerticalAlignment="Top" 
-                     Width="267"
-                     FontSize="18"
-                     VerticalContentAlignment="Center"
-                     Height="37" Style="{DynamicResource PasswordBoxStyle1}"/>
         
         <Button Content="Регистрация" 
                 x:Name="BtnRegistWindow"

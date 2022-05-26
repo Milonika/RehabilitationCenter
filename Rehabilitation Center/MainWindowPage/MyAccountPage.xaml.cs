@@ -23,6 +23,16 @@ namespace Rehabilitation_Center.MainWindowPage
         public MyAccountPage()
         {
             InitializeComponent();
+
+            TbFio.Text = App.users.FirstName + " " + App.users.Name;
+            TblLname.Text = App.users.LastName;
+            TbPasport.Text = App.users.Pasport;
+            TbPolis.Text = App.users.Polis;
+            TbSnils.Text = App.users.Snils;
+            TbPhone.Text = App.users.Phone;
+            
         }
+
+
     }
 }

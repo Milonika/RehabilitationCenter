@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Rehabilitation_Center.Data
 {
-    class Users
+    public class Users
     {
         [BsonId]
         [BsonIgnoreIfDefault]
@@ -30,12 +30,69 @@ namespace Rehabilitation_Center.Data
         public string Snils { get; set; }
         [BsonElement]
         public string Phone { get; set; }
+
+        //[BsonElement]
+        //public string Photo { get; set; }
+
         [BsonElement]
-        public string Photo { get; set; }
+        public int Age { get; set; }
+
         [BsonElement]
-        public string Age { get; set; }
+        public string Login { get; set; }
+        [BsonElement]
+        public string Password { get; set; }
 
         [BsonElement]
         public bool IsAdmin { get; set; }
+
+        public Users(string firstname, string name, string lastname, string pasport, string polis, string snils, string phone, int age, string login, string password, bool isadmin = false)
+        {
+            FirstName = firstname;
+            Name = name;
+            LastName = lastname;
+            Pasport = pasport;
+            Polis = polis;
+            Snils = snils;
+            Phone = phone;
+            Age = age;
+            Login = login;
+            Password = password;
+            IsAdmin = isadmin;
+        }
+
+        public Users(string login, string password)
+        {
+            Login = login;
+            Password = password;
+        }
+
+        public async static void AddUser(Users user)
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var collection = db.GetCollection<Users>("users");
+            await collection.InsertOneAsync(user);
+        }
+        public static bool LogInUser(Users user)
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var collection = db.GetCollection<Users>("users");
+            var users = collection.Find(x => true).ToList();
+            App.users = users.Where(x => x.Login == user.Login && x.Password == user.Password).FirstOrDefault();
+            if (App.users == null)
+                return false;
+            return true;
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }

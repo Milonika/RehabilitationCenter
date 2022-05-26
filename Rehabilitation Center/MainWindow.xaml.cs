@@ -21,9 +21,12 @@ namespace Rehabilitation_Center
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public bool IsAdmin;
+        public MainWindow(bool idadm)
         {
             InitializeComponent();
+            IsAdmin = idadm;
+
         }
 
         private void BtnCloseMainWindow_Click(object sender, RoutedEventArgs e)
