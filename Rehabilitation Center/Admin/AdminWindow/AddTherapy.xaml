@@ -1,0 +1,16 @@
+﻿<Window x:Class="Rehabilitation_Center.Admin.AdminWindow.AddTherapy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rehabilitation_Center.Admin.AdminWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="AddTherapy" Height="450" Width="506">
+    <Grid>
+        <TextBox x:Name="AddNameTherapy" HorizontalAlignment="Left" Height="27" Margin="161,168,0,0" TextWrapping="Wrap" Text="Название" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="AddPriceTherapy" HorizontalAlignment="Left" Height="27" Margin="161,227,0,0" TextWrapping="Wrap" Text="Прайс" VerticalAlignment="Top" Width="175"/>
+        <Button x:Name="BtnAddNewTherapy" Click="BtnAddNewTherapy_Click" Content="Button" HorizontalAlignment="Left" Height="34" Margin="179,294,0,0" VerticalAlignment="Top" Width="139"/>
+
+    </Grid>
+</Window>

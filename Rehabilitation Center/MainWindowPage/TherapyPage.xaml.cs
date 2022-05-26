@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Rehabilitation_Center.Admin.AdminWindow;
+using Rehabilitation_Center.Data;
 
 namespace Rehabilitation_Center.MainWindowPage
 {
@@ -23,6 +25,10 @@ namespace Rehabilitation_Center.MainWindowPage
         public TherapyPage()
         {
             InitializeComponent();
+            if (App.users.IsAdmin == false)
+                BtnAddtherapy.Visibility = Visibility.Hidden;
+
+            GetInfoTherapyAsync();
         }
 
         private void LWTherapy_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -32,17 +38,22 @@ namespace Rehabilitation_Center.MainWindowPage
 
         private void buyTherapyBtn_Click(object sender, RoutedEventArgs e)
         {
-            //var gg = sender as Button;
-            //var ff = int.Parse(gg.CommandParameter.ToString());
-            ////Поиск
-            //var bb = MainWindow.ReabilCenterDB.Client.Where(c => c.IDAuth == MainWindow.authUser.IDAuth).FirstOrDefault();
-            //TherapyHistory therapyHistory = new TherapyHistory()
-            //{
-            //    IDClient = MainWindow.ReabilCenterDB.Client.Where(c => c.IDAuth == MainWindow.authUser.IDAuth).FirstOrDefault().IDClient,
-            //    IDTherapy = ff,
-            //};
-            //MainWindow.ReabilCenterDB.TherapyHistory.Add(therapyHistory);
-            //MainWindow.ReabilCenterDB.SaveChanges();
+
+        }
+        public async Task GetInfoTherapyAsync()
+        {
+            LWTherapy.ItemsSource = await Therapy.GetTherapy();
+        }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAddtherapy_Click(object sender, RoutedEventArgs e)
+        {
+            AddTherapy addTherapy = new AddTherapy();
+            addTherapy.Show();
         }
     }
 }

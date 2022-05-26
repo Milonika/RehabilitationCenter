@@ -17,25 +17,10 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid>
-        <ComboBox Height="30"
-                  materialDesign:HintAssist.Hint="Категория"
-                  Width="100"
-                  materialDesign:HintAssist.HintOpacity=".26"
-                  IsEditable="True" 
-                  Margin="530,68,650,702">
-            <ComboBoxItem
-                    Content="Нарколог" />
-            <ComboBoxItem
-                    Content="Психолог" />
-            <ComboBoxItem
-                    Content="Психиатр" />
-            <ComboBoxItem
-                    Content="Терапевт" />
-        </ComboBox>
 
         <Rectangle Fill="#F7F8FD" 
                    HorizontalAlignment="Left" 
-                   Height="617" 
+                   Height="611" 
                    Margin="252,112,0,0" 
                    VerticalAlignment="Top" 
                    Width="990"
@@ -52,22 +37,27 @@
                FontWeight="SemiBold" 
                FontSize="32"/>
         <ListView x:Name="LWTherapy" HorizontalAlignment="Stretch"  
-                  Margin="276,115,49,55" VerticalAlignment="Stretch" SelectionChanged="LWTherapy_SelectionChanged">
+                  Margin="276,115,49,77" VerticalAlignment="Stretch" SelectionChanged="LWTherapy_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                        <Label DataContext="{Binding Name}"/>
-                        <Label DataContext="{Binding Price}"/>
-                        <!--<Button 
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <TextBlock Width="400" Height="50" Text="{Binding Name}"/>
+                        <TextBlock Width="200" Height="50" Text="{Binding Price}"/>
+                        <Button 
                             x:Name="buyTherapyBtn" 
                             CommandParameter="{Binding IDTherapy}" 
                             Content="Buy"
                             HorizontalAlignment="Right"
-                            Click="buyTherapyBtn_Click"/>-->
+                            Click="buyTherapyBtn_Click"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
+        <Button
+            x:Name="BtnAddtherapy" Click="BtnAddtherapy_Click"
+                Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
+                ToolTip="Resource name: MaterialDesignRaisedSecondaryButton"
+                Content="ADD"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="Auto" Margin="1092,728,58,38" Background="#FF598DEE" BorderBrush="#FF367CFF" Foreground="White" />
     </Grid>
 </Page>

@@ -33,5 +33,13 @@ namespace Rehabilitation_Center.Data
             await collection.InsertOneAsync(therapy);
         }
 
+        public async static Task<List<Therapy>> GetTherapy() 
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var collection = db.GetCollection<Therapy>("therapy");
+            return collection.Find(x => true).ToList();
+        }
+
     }
 }

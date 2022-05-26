@@ -9,7 +9,29 @@ using System.Threading.Tasks;
 
 namespace Rehabilitation_Center.Data
 {
-    class HistoryUser
+    public class HistoryUser
     {
+
+        [BsonId]
+        [BsonIgnoreIfDefault]
+        public ObjectId Id { get; set; }
+        [BsonElement]
+        public string Name { get; set; }
+
+        [BsonElement]
+        public string Price { get; set; }
+
+        public HistoryUser(string name, string price)
+        {
+            Name = name;
+            Price = price;
+        }
+        public async static void AddHistoryUser(HistoryUser historyUser)
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var collection = db.GetCollection<HistoryUser>("historyuser");
+            await collection.InsertOneAsync(historyUser);
+        }
     }
 }

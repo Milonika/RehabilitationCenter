@@ -61,7 +61,7 @@ namespace Rehabilitation_Center
 
         private void BtnPacient_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
