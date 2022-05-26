@@ -66,6 +66,18 @@
     <Compile Include="Admin\AdminWindow\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Authorization.cs" />
+    <Compile Include="Data\Dependece.cs" />
+    <Compile Include="Data\DependeceHealth.cs" />
+    <Compile Include="Data\Doctor.cs" />
+    <Compile Include="Data\DoctorCategory.cs" />
+    <Compile Include="Data\Events.cs" />
+    <Compile Include="Data\Health.cs" />
+    <Compile Include="Data\HistoryUser.cs" />
+    <Compile Include="Data\Rols.cs" />
+    <Compile Include="Data\Therapy.cs" />
+    <Compile Include="Data\TherapyHistory.cs" />
+    <Compile Include="Data\Users.cs" />
     <Compile Include="MainWindowPage\MyAccountPage.xaml.cs">
       <DependentUpon>MyAccountPage.xaml</DependentUpon>
     </Compile>
