@@ -11,5 +11,19 @@ namespace Rehabilitation_Center.Data
 {
     class Health
     {
+        [BsonId]
+        [BsonIgnoreIfDefault]
+        public ObjectId Id { get; set; }
+        [BsonElement]
+        public int Height { get; set; }
+
+        [BsonElement]
+        public int Weight { get; set; }
+        [BsonElement]
+        public string Pressure { get; set; }
+        [BsonElement]
+        public string Saturation { get; set; }
+        [BsonElement]
+        public string BloodType { get; set; }
     }
 }

@@ -11,5 +11,10 @@ namespace Rehabilitation_Center.Data
 {
     class Events
     {
+        [BsonId]
+        [BsonIgnoreIfDefault]
+        public ObjectId Id { get; set; }
+        [BsonElement]
+        public string Name { get; set; }
     }
 }

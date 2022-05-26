@@ -11,5 +11,14 @@ namespace Rehabilitation_Center.Data
 {
     class Therapy
     {
+        [BsonId]
+        [BsonIgnoreIfDefault]
+        public ObjectId Id { get; set; }
+        [BsonElement]
+        public string Name { get; set; }
+
+        [BsonElement]
+        public string Price { get; set; }
+
     }
 }
