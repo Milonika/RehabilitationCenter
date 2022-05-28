@@ -58,6 +58,18 @@
                 Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
                 ToolTip="Resource name: MaterialDesignRaisedSecondaryButton"
                 Content="ADD"
-                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="Auto" Margin="1092,728,58,38" Background="#FF598DEE" BorderBrush="#FF367CFF" Foreground="White" />
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="Auto" Margin="810,728,340,38" Background="#FF598DEE" BorderBrush="#FF367CFF" Foreground="White" />
+        <Button
+            x:Name="BtnDeleteTherapy_Copy" Click="BtnDeleteTherapy_Copy_Click"
+            Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
+            ToolTip="Resource name: MaterialDesignRaisedSecondaryButton"
+            Content="DELETE"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Height="Auto" Margin="1101,728,49,38" Background="#FF598DEE" BorderBrush="#FF367CFF" Foreground="White" />
+        <Button
+            x:Name="BtnEditTherapy_Copy1" Click="BtnEditTherapy_Copy_Click"
+            Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
+            ToolTip="Resource name: MaterialDesignRaisedSecondaryButton"
+            Content="EDIT"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Height="Auto" Margin="956,728,194,38" Background="#FF598DEE" BorderBrush="#FF367CFF" Foreground="White" />
     </Grid>
 </Page>

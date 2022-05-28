@@ -55,5 +55,15 @@ namespace Rehabilitation_Center.MainWindowPage
             AddTherapy addTherapy = new AddTherapy();
             addTherapy.Show();
         }
+
+        private void BtnEditTherapy_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnDeleteTherapy_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

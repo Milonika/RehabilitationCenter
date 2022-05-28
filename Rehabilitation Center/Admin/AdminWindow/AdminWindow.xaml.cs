@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Rehabilitation_Center.MainWindowPage;
+using Rehabilitation_Center.Admin.AdminPages;
 
 namespace Rehabilitation_Center.Admin.AdminWindow
 {
@@ -29,7 +30,7 @@ namespace Rehabilitation_Center.Admin.AdminWindow
 
         private void BtnMyAccountAdmin_Click(object sender, RoutedEventArgs e)
         {
-
+            AdminMainFrame.Navigate(new AdminAccount());
         }
 
         private void BtnSpesialistAdmin_Click(object sender, RoutedEventArgs e)
@@ -39,7 +40,7 @@ namespace Rehabilitation_Center.Admin.AdminWindow
 
         private void BtnPacientAdmin_Click(object sender, RoutedEventArgs e)
         {
-
+            AdminMainFrame.Navigate(new AdmPatientPage());
         }
 
         private void BtnClosWindowAdmin_Click(object sender, RoutedEventArgs e)

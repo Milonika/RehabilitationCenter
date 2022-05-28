@@ -10,7 +10,7 @@
     <Grid>
         <TextBox x:Name="AddNameTherapy" HorizontalAlignment="Left" Height="27" Margin="161,168,0,0" TextWrapping="Wrap" Text="Название" VerticalAlignment="Top" Width="175"/>
         <TextBox x:Name="AddPriceTherapy" HorizontalAlignment="Left" Height="27" Margin="161,227,0,0" TextWrapping="Wrap" Text="Прайс" VerticalAlignment="Top" Width="175"/>
-        <Button x:Name="BtnAddNewTherapy" Click="BtnAddNewTherapy_Click" Content="Button" HorizontalAlignment="Left" Height="34" Margin="179,294,0,0" VerticalAlignment="Top" Width="139"/>
+        <Button x:Name="BtnAddNewTherapy" Click="BtnAddNewTherapy_Click" Content="Добавить" HorizontalAlignment="Left" Height="34" Margin="179,294,0,0" VerticalAlignment="Top" Width="139"/>
 
     </Grid>
 </Window>
