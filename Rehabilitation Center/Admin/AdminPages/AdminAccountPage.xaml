@@ -80,7 +80,6 @@
                    FontWeight="Medium"><Run Text="Бурнашева Айлина"/><LineBreak/><Run Text="Тимуровна"/></TextBlock>
 
         <TextBlock HorizontalAlignment="Left" 
-                   x:Name="AdmAge"
                    Height="24" 
                    Margin="1115,264,0,0" 
                    TextWrapping="Wrap" 
@@ -95,6 +94,7 @@
                 <ImageBrush ImageSource="/Rehabilitation Center;component/img/SettingIcon.png"/>
             </Button.Background>
         </Button>
+        
         <TextBlock HorizontalAlignment="Left" 
             x:Name="TbAdmLname"
             Height="26" 
@@ -116,9 +116,14 @@
             Width="644"
             RadiusY="20"
             RadiusX="20"/>
-        <Image HorizontalAlignment="Left" Height="352" Margin="366,429,0,0" VerticalAlignment="Top" Width="558" Source="/Rehabilitation Center;component/img/ServisImgDoctor.png"/>
 
-
-
+        <Image x:Name="AdmimImg" 
+               HorizontalAlignment="Left" 
+               Height="352" 
+               Margin="366,429,0,0" 
+               VerticalAlignment="Top" 
+               Width="558" 
+               PreviewMouseDown="AdmimImg_PreviewMouseDown" Source="/Rehabilitation Center;component/img/AuthmainImg.png"/>
+        <TextBlock x:Name="TbAdminAge" HorizontalAlignment="Left" Height="16" Margin="1173,266,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="33" Foreground="#FF9BA7C0"/>
     </Grid>
 </Page>

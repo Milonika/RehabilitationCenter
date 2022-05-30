@@ -40,7 +40,7 @@
             <Button x:Name="BtnPacientAdmin" Click="BtnPacientAdmin_Click" Content="Пациенты" FontSize="16" HorizontalAlignment="Left" Height="69" Width="265" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Medium" Foreground="#5690FC" Style="{DynamicResource PanelBtnMainWindow}"/>
         </StackPanel>
         <Image HorizontalAlignment="Left" Height="82" Margin="28,64,0,0" VerticalAlignment="Top" Width="210" />
-        <Frame x:Name="AdminMainFrame" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="AdminMainFrame" NavigationUIVisibility="Hidden" Source="/Rehabilitation Center;component/Admin/AdminPages/AdminAccountPage.xaml"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="28,215,0,0" VerticalAlignment="Top" Width="29" Source="/Rehabilitation Center;component/img/IconAccount.png"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="28,286,0,0" VerticalAlignment="Top" Width="29" Source="/Rehabilitation Center;component/img/IconEmployee.png"/>
         <Image HorizontalAlignment="Left" Height="30" Margin="28,424,0,0" VerticalAlignment="Top" Width="29" Source="/Rehabilitation Center;component/img/IconPacient.png"/>

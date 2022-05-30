@@ -34,9 +34,14 @@ namespace Rehabilitation_Center.MainWindowPage
             TbPolis.Text = App.users.Polis;
             TbSnils.Text = App.users.Snils;
             TbPhone.Text = App.users.Phone;
+            TBWorkPin.Text = App.users.Work;
+            TBAddresHome.Text = App.users.Addres;
             LWHistoryBuy.ItemsSource = BuyTherapia.Take().Result;
             BuyTherapia.OnAdd += Update;
             DataContext = App.users;
+            TbAgeUser.Text = App.users.Age.ToString();
+            BtnSaveData.Visibility = Visibility.Hidden;
+            
 
         }
         private void Update()
@@ -59,6 +64,46 @@ namespace Rehabilitation_Center.MainWindowPage
                 UserImg.Source = image;
                 App.users.Update();
             }
+        }
+
+        private void BtnSetting_Click(object sender, RoutedEventArgs e)
+        {
+            TBWorkPin.IsEnabled = true;
+            TbAgeUser.IsEnabled = true;
+            TbFio.IsEnabled = true;
+            TblLname.IsEnabled = true;
+            TbPhone.IsEnabled = true;
+            TbPolis.IsEnabled = true;
+            TbPasport.IsEnabled = true;
+            TbSnils.IsEnabled = true;
+            TBAddresHome.IsEnabled = true;
+            BtnSaveData.Visibility = Visibility.Visible;
+        }
+
+        private void BtnSaveData_Click(object sender, RoutedEventArgs e)
+        {
+            string[] fio = TbFio.Text.Split(' ');
+            App.users.FirstName = fio[0];
+            App.users.Name = fio[1];
+            App.users.LastName = TblLname.Text;
+            App.users.Phone = TbPhone.Text;
+            App.users.Pasport = TbPasport.Text;
+            App.users.Polis = TbPolis.Text;
+            App.users.Snils = TbSnils.Text;
+            App.users.Addres = TBAddresHome.Text;
+            App.users.Work = TBWorkPin.Text;
+            Users.EditProfile();
+
+            TBWorkPin.IsEnabled = false;
+            TbAgeUser.IsEnabled = false;
+            TbFio.IsEnabled = false;
+            TblLname.IsEnabled = false;
+            TbPhone.IsEnabled = false;
+            TbPolis.IsEnabled = false;
+            TbPasport.IsEnabled = false;
+            TbSnils.IsEnabled = false;
+            TBAddresHome.IsEnabled = false;
+            BtnSaveData.Visibility = Visibility.Hidden;
         }
     }
 }

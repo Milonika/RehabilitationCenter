@@ -43,7 +43,7 @@ namespace Rehabilitation_Center
             }
             else
             {
-                Users us = new Users(TBFNameRegis.Text, TBNameRegis.Text, TBLNameRegis.Text, TBPasportRegis.Text, TBPolisRegis.Text, TBSNILSRegis.Text, TBPhoneRegis.Text, Convert.ToInt32(TBAgeRegis.Text), TBLoginRegis.Text, TBPasswordRegis.Text, null);
+                Users us = new Users(TBFNameRegis.Text, TBNameRegis.Text, TBLNameRegis.Text, TBPasportRegis.Text, TBPolisRegis.Text, TBSNILSRegis.Text, TBPhoneRegis.Text, Convert.ToInt32(TBAgeRegis.Text),  TBLoginRegis.Text, TBPasswordRegis.Text, null, TBWork.Text, TBAddres.Text);
                 Users.AddUser(us);
                 MessageBox.Show("Вы зарегистрировались!");
                 MainWindow mw = new MainWindow(us.IsAdmin);
@@ -51,6 +51,11 @@ namespace Rehabilitation_Center
                 this.Close();
                 App.users = us;
             }
+        }
+
+        private void TBAddres_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

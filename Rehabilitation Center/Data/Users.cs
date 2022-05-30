@@ -43,9 +43,14 @@ namespace Rehabilitation_Center.Data
         public string Password { get; set; }
 
         [BsonElement]
+        public string Work { get; set; }
+        [BsonElement]
+        public string Addres { get; set; }
+
+        [BsonElement]
         public bool IsAdmin { get; set; }
 
-        public Users(string firstname, string name, string lastname, string pasport, string polis, string snils, string phone, int age, string login, string password, byte[] photo, bool isadmin = false)
+        public Users(string firstname, string name, string lastname, string pasport, string polis, string snils, string phone, int age, string login, string password, byte[] photo, string work, string addres, bool isadmin = false)
         {
             FirstName = firstname;
             Name = name;
@@ -57,6 +62,8 @@ namespace Rehabilitation_Center.Data
             Age = age;
             Login = login;
             Password = password;
+            Work = work;
+            Addres = addres;
             IsAdmin = isadmin;
             Photo = photo;
         }
@@ -94,5 +101,17 @@ namespace Rehabilitation_Center.Data
             var UpdateDef = Builders<Users>.Update.Set("Photo", App.users.Photo);
             collection.UpdateOne(basa => basa.Id == App.users.Id, UpdateDef);
         }
+
+        public static void EditProfile()
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var data = db.GetCollection<Users>("users");
+            var UpdateDef = Builders<Users>.Update.Set("Polis", App.users.Polis).Set("Addres", App.users.Addres).Set("Snils", App.users.Snils).Set("Phone", App.users.Phone).Set("Pasport", App.users.Pasport).Set("Work", App.users.Work).Set("FirstName", App.users.FirstName).Set("Name", App.users.Name).Set("LastName", App.users.LastName).Set("Age", App.users.Age);
+            data.UpdateOne(basa => basa.Id == App.users.Id, UpdateDef);
+
+        }
+
+
     }
 }
