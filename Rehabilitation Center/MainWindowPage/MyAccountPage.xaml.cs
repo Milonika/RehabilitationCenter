@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using Rehabilitation_Center.Data;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -30,9 +34,31 @@ namespace Rehabilitation_Center.MainWindowPage
             TbPolis.Text = App.users.Polis;
             TbSnils.Text = App.users.Snils;
             TbPhone.Text = App.users.Phone;
-            
+            LWHistoryBuy.ItemsSource = BuyTherapia.Take().Result;
+            BuyTherapia.OnAdd += Update;
+            DataContext = App.users;
+
+        }
+        private void Update()
+        {
+            LWHistoryBuy.ItemsSource = BuyTherapia.Take().Result;
         }
 
-
+        private void UserImg_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files|*.bmp;*.jpg;*.png|All files|*.*";
+            openFileDialog.FilterIndex = 1;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                App.users.Photo = File.ReadAllBytes(openFileDialog.FileName); 
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(openFileDialog.FileName);
+                image.EndInit();
+                UserImg.Source = image;
+                App.users.Update();
+            }
+        }
     }
 }

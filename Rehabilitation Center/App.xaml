@@ -5,7 +5,6 @@
              xmlns:local="clr-namespace:Rehabilitation_Center"
              StartupUri="AuthMainPage.xaml">
     <Application.Resources>
-        
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>

@@ -23,7 +23,7 @@ namespace Rehabilitation_Center.Data
         [BsonElement]
         public string LastName { get; set; }
         [BsonElement]
-        public string Pasport{ get; set; }
+        public string Pasport { get; set; }
         [BsonElement]
         public string Polis { get; set; }
         [BsonElement]
@@ -31,8 +31,8 @@ namespace Rehabilitation_Center.Data
         [BsonElement]
         public string Phone { get; set; }
 
-        //[BsonElement]
-        //public string Photo { get; set; }
+        [BsonElement]
+        public byte[] Photo { get; set; }
 
         [BsonElement]
         public int Age { get; set; }
@@ -45,7 +45,7 @@ namespace Rehabilitation_Center.Data
         [BsonElement]
         public bool IsAdmin { get; set; }
 
-        public Users(string firstname, string name, string lastname, string pasport, string polis, string snils, string phone, int age, string login, string password, bool isadmin = false)
+        public Users(string firstname, string name, string lastname, string pasport, string polis, string snils, string phone, int age, string login, string password, byte[] photo, bool isadmin = false)
         {
             FirstName = firstname;
             Name = name;
@@ -58,6 +58,7 @@ namespace Rehabilitation_Center.Data
             Login = login;
             Password = password;
             IsAdmin = isadmin;
+            Photo = photo;
         }
 
         public Users(string login, string password)
@@ -85,14 +86,13 @@ namespace Rehabilitation_Center.Data
             return true;
         }
 
-
-
-
-
-
-
-
-
-
+        public void Update()
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var collection = db.GetCollection<Users>("users");
+            var UpdateDef = Builders<Users>.Update.Set("Photo", App.users.Photo);
+            collection.UpdateOne(basa => basa.Id == App.users.Id, UpdateDef);
+        }
     }
 }

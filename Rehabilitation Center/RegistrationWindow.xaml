@@ -172,7 +172,6 @@
             Style="{DynamicResource TextBoxZakruglenie}"
             Width="193"/>
         <Label Content="Полис" HorizontalAlignment="Left" Height="25" Margin="142,438,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF5690FC"/>
-
-
+        
     </Grid>
 </Window>

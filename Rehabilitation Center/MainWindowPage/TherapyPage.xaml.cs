@@ -30,16 +30,22 @@ namespace Rehabilitation_Center.MainWindowPage
 
             GetInfoTherapyAsync();
         }
-
+         
         private void LWTherapy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void buyTherapyBtn_Click(object sender, RoutedEventArgs e)
+        private async void buyTherapyBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            string a = ((Button)sender).CommandParameter.ToString();
+            BuyTherapia buyTherapia = new BuyTherapia();
+            var b = await Therapy.GetTherapy();
+            buyTherapia.Therapy = b.Where(x => x.Id.ToString() == a).FirstOrDefault();
+            buyTherapia.User = App.users;
+            buyTherapia.Add();
         }
+
         public async Task GetInfoTherapyAsync()
         {
             LWTherapy.ItemsSource = await Therapy.GetTherapy();
@@ -52,6 +58,7 @@ namespace Rehabilitation_Center.MainWindowPage
 
         private void BtnAddtherapy_Click(object sender, RoutedEventArgs e)
         {
+
             AddTherapy addTherapy = new AddTherapy();
             addTherapy.Show();
         }

@@ -26,7 +26,6 @@
                 Background="Transparent" 
                 BorderBrush="Transparent" 
                 HorizontalContentAlignment="Center" 
-                SelectionChanged ="DoctorList_SelectionChanged"
                 HorizontalAlignment="Center">
 
             <ListView.ItemTemplate>

@@ -45,7 +45,7 @@
                         <TextBlock Width="200" Height="50" Text="{Binding Price}"/>
                         <Button 
                             x:Name="buyTherapyBtn" 
-                            CommandParameter="{Binding IDTherapy}" 
+                            CommandParameter="{Binding Id}" 
                             Content="Buy"
                             HorizontalAlignment="Right"
                             Click="buyTherapyBtn_Click"/>
