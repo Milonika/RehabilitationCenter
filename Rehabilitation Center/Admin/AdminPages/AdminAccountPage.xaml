@@ -53,9 +53,9 @@
                VerticalAlignment="Top" 
                Width="108" Foreground="#FF000C8B" FontWeight="Medium"/>
 
-        <TextBox x:Name="TbAdmPasport" HorizontalAlignment="Left" Height="25" Margin="336,139,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
-        <TextBox x:Name="TbAdmPolis" HorizontalAlignment="Left" Height="25" Margin="336,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
-        <TextBox x:Name="TbAdmSnils" HorizontalAlignment="Left" Height="25" Margin="336,266,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
+        <TextBox x:Name="TbAdmPasport" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="336,139,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
+        <TextBox x:Name="TbAdmPolis" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="336,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
+        <TextBox x:Name="TbAdmSnils" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="336,266,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
         <Label Content="Личные сведения" 
             HorizontalAlignment="Left" 
             Height="29" 
@@ -63,9 +63,9 @@
             Margin="728,71,0,0" 
             VerticalAlignment="Top" 
             Width="149" Foreground="#FF000C8B" FontWeight="Medium"/>
-        <TextBox x:Name="TbAdmJobPin" HorizontalAlignment="Left" Height="25" Margin="684,138,0,0" TextWrapping="Wrap" Text="Место работы" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
-        <TextBox x:Name="TbAdmHome" HorizontalAlignment="Left" Height="25" Margin="684,202,0,0" TextWrapping="Wrap" Text="Адрес проживания" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
-        <TextBox x:Name="TbAdmPhone" HorizontalAlignment="Left" Height="25" Margin="684,265,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
+        <TextBox x:Name="TbAdmJobPin" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="684,138,0,0" TextWrapping="Wrap" Text="Место работы" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
+        <TextBox x:Name="TbAdmHome" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="684,202,0,0" TextWrapping="Wrap" Text="Адрес проживания" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
+        <TextBox x:Name="TbAdmPhone" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="684,265,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
 
         <TextBlock HorizontalAlignment="Left" 
                    x:Name="TbAdmFio"
@@ -88,13 +88,7 @@
                    Width="58" 
                    FontSize="14"
                    Foreground="#9BA7C0"/>
-        <Button Content="Button" HorizontalAlignment="Left" 
-                Height="30" Margin="1191,22,0,0" VerticalAlignment="Top" Width="30" BorderBrush="{x:Null}" Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/Rehabilitation Center;component/img/SettingIcon.png"/>
-            </Button.Background>
-        </Button>
-        
+
         <TextBlock HorizontalAlignment="Left" 
             x:Name="TbAdmLname"
             Height="26" 
@@ -124,6 +118,28 @@
                VerticalAlignment="Top" 
                Width="558" 
                PreviewMouseDown="AdmimImg_PreviewMouseDown" Source="/Rehabilitation Center;component/img/AuthmainImg.png"/>
-        <TextBlock x:Name="TbAdminAge" HorizontalAlignment="Left" Height="16" Margin="1173,266,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="33" Foreground="#FF9BA7C0"/>
+
+        <Button Content="Button" x:Name="BtnSettingAdmin" Click="BtnSettingAdmin_Click" HorizontalAlignment="Left" 
+            Height="30" Margin="1191,22,0,0" VerticalAlignment="Top" Width="30" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Rehabilitation Center;component/img/SettingIcon.png"/>
+            </Button.Background>
+        </Button>
+        
+        <Button Content="Button" x:Name="BtnSaveDataAdmin" Click="BtnSaveDataAdmin_Click"  HorizontalAlignment="Left" 
+            Height="22" Margin="1164,26,0,0" VerticalAlignment="Top" Width="22" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Rehabilitation Center;component/img/IconSave.png"/>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left"
+            x:Name="TblAdminAge"       
+            Height="24" 
+            Margin="1178,264,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="31" 
+            FontSize="14"
+            Foreground="#9BA7C0"/>
     </Grid>
 </Page>

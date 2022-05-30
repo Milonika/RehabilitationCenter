@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using Rehabilitation_Center.Data;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,8 +35,8 @@ namespace Rehabilitation_Center.Admin.AdminPages
             TbAdmPhone.Text = App.users.Phone;
             TbAdmJobPin.Text = App.users.Work;
             TbAdmHome.Text = App.users.Addres;
-            TbAdminAge.Text = App.users.ToString();
-           
+            TblAdminAge.Text = App.users.Age.ToString();
+            BtnSaveDataAdmin.Visibility = Visibility.Hidden;
         }
 
 
@@ -54,6 +55,44 @@ namespace Rehabilitation_Center.Admin.AdminPages
                 AdmimImg.Source = image;
                 App.users.Update();
             }
+        }
+
+        private void BtnSaveDataAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            string[] fio = TbAdmFio.Text.Split(' ');
+            App.users.FirstName = fio[0];
+            App.users.Name = fio[1];
+            App.users.LastName = TbAdmLname.Text;
+            App.users.Phone = TbAdmPhone.Text;
+            App.users.Pasport = TbAdmPasport.Text;
+            App.users.Polis = TbAdmPolis.Text;
+            App.users.Snils = TbAdmSnils.Text;
+            App.users.Addres = TbAdmHome.Text;
+            App.users.Work = TbAdmJobPin.Text;
+            Users.EditProfile();
+
+            TbAdmJobPin.IsEnabled = false;
+            TbAdmFio.IsEnabled = false;
+            TbAdmLname.IsEnabled = false;
+            TbAdmPhone.IsEnabled = false;
+            TbAdmPolis.IsEnabled = false;
+            TbAdmPasport.IsEnabled = false;
+            TbAdmSnils.IsEnabled = false;
+            TbAdmHome.IsEnabled = false;
+            BtnSaveDataAdmin.Visibility = Visibility.Hidden;
+        }
+
+        private void BtnSettingAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            TbAdmJobPin.IsEnabled = true;
+            TbAdmFio.IsEnabled = true;
+            TbAdmLname.IsEnabled = true;
+            TbAdmPhone.IsEnabled = true;
+            TbAdmPolis.IsEnabled = true;
+            TbAdmPasport.IsEnabled = true;
+            TbAdmSnils.IsEnabled = true;
+            TbAdmHome.IsEnabled = true;
+            BtnSaveDataAdmin.Visibility = Visibility.Visible;
         }
     }
 }
