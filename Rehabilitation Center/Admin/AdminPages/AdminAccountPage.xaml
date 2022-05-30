@@ -63,8 +63,8 @@
             Margin="728,71,0,0" 
             VerticalAlignment="Top" 
             Width="149" Foreground="#FF000C8B" FontWeight="Medium"/>
-        <TextBox x:Name="TbAdmJobPin" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="684,138,0,0" TextWrapping="Wrap" Text="Место работы" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
-        <TextBox x:Name="TbAdmHome" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="684,202,0,0" TextWrapping="Wrap" Text="Адрес проживания" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
+        <TextBox x:Name="TbAdmJobPin" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="684,138,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
+        <TextBox x:Name="TbAdmHome" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="684,202,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
         <TextBox x:Name="TbAdmPhone" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="684,265,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" Style="{DynamicResource TextBoxStyleMainWindowMyAccount}" Foreground="#FF5690FC" SelectionBrush="#FF000C8B" BorderBrush="#FF5690FC" Background="{x:Null}"/>
 
         <TextBlock HorizontalAlignment="Left" 
@@ -83,7 +83,7 @@
                    Height="24" 
                    Margin="1115,264,0,0" 
                    TextWrapping="Wrap" 
-                   Text="Возраст" 
+                   Text="Возраст:" 
                    VerticalAlignment="Top" 
                    Width="58" 
                    FontSize="14"
@@ -100,7 +100,7 @@
             TextAlignment="Center"
             Foreground="#000C8B" 
             FontWeight="Medium" Text="Тимуровна"/>
-        
+
         <Rectangle Fill="White" 
             HorizontalAlignment="Left" 
             Height="352" 
@@ -125,7 +125,7 @@
                 <ImageBrush ImageSource="/Rehabilitation Center;component/img/SettingIcon.png"/>
             </Button.Background>
         </Button>
-        
+
         <Button Content="Button" x:Name="BtnSaveDataAdmin" Click="BtnSaveDataAdmin_Click"  HorizontalAlignment="Left" 
             Height="22" Margin="1164,26,0,0" VerticalAlignment="Top" Width="22" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
@@ -135,11 +135,17 @@
         <TextBlock HorizontalAlignment="Left"
             x:Name="TblAdminAge"       
             Height="24" 
-            Margin="1178,264,0,0" 
+            Margin="1169,264,0,0" 
             TextWrapping="Wrap" 
             VerticalAlignment="Top" 
             Width="31" 
             FontSize="14"
             Foreground="#9BA7C0"/>
+        <Label Content="Паспорт" HorizontalAlignment="Left" Height="25" Margin="336,114,0,0" VerticalAlignment="Top" Width="80" Foreground="#FFA0C1FD"/>
+        <Label Content="Полис" HorizontalAlignment="Left" Height="25" Margin="336,178,0,0" VerticalAlignment="Top" Width="80" Foreground="#FFA0C1FD"/>
+        <Label Content="СНИЛС" HorizontalAlignment="Left" Height="25" Margin="336,241,0,0" VerticalAlignment="Top" Width="80" Foreground="#FFA0C1FD"/>
+        <Label Content="Место работы" HorizontalAlignment="Left" Height="25" Margin="684,113,0,0" VerticalAlignment="Top" Width="93" Foreground="#FFA0C1FD"/>
+        <Label Content="Адрес проживания" HorizontalAlignment="Left" Height="25" Margin="684,177,0,0" VerticalAlignment="Top" Width="125" Foreground="#FFA0C1FD"/>
+        <Label Content="Телефон" HorizontalAlignment="Left" Height="25" Margin="684,240,0,0" VerticalAlignment="Top" Width="80" Foreground="#FFA0C1FD"/>
     </Grid>
 </Page>

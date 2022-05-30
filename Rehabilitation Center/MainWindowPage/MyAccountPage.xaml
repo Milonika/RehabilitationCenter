@@ -144,6 +144,12 @@
                 <ImageBrush ImageSource="/Rehabilitation Center;component/img/IconSave.png"/>
             </Button.Background>
         </Button>
+        <Label Content="Паспорт" HorizontalAlignment="Left" Height="25" Margin="336,114,0,0" VerticalAlignment="Top" Width="80" Foreground="#FFA0C1FD"/>
+        <Label Content="Полис" HorizontalAlignment="Left" Height="25" Margin="336,178,0,0" VerticalAlignment="Top" Width="80" Foreground="#FFA0C1FD"/>
+        <Label Content="СНИЛС" HorizontalAlignment="Left" Height="25" Margin="336,241,0,0" VerticalAlignment="Top" Width="80" Foreground="#FFA0C1FD"/>
+        <Label Content="Место работы" HorizontalAlignment="Left" Height="25" Margin="684,113,0,0" VerticalAlignment="Top" Width="93" Foreground="#FFA0C1FD"/>
+        <Label Content="Адрес проживания" HorizontalAlignment="Left" Height="25" Margin="684,177,0,0" VerticalAlignment="Top" Width="125" Foreground="#FFA0C1FD"/>
+        <Label Content="Телефон" HorizontalAlignment="Left" Height="25" Margin="684,240,0,0" VerticalAlignment="Top" Width="80" Foreground="#FFA0C1FD"/>
 
 
     </Grid>
