@@ -46,7 +46,24 @@ namespace Rehabilitation_Center.MainWindowPage
 
         private void BtnAdddDataPacient_Click(object sender, RoutedEventArgs e)
         {
+            TbRost.Text = App.health.Height.ToString();
+            TbVes.Text = App.health.Weight.ToString();
+            TbSaturacia.Text = App.health.Saturation;
+            TbDavleine.Text = App.health.Davleine;
+            TbBloodType.Text = App.health.BloodType;
 
+
+
+            //TBWorkPin.IsEnabled = false;
+            //TbAgeUser.IsEnabled = false;
+            //TbFio.IsEnabled = false;
+            //TblLname.IsEnabled = false;
+            //TbPhone.IsEnabled = false;
+            //TbPolis.IsEnabled = false;
+            //TbPasport.IsEnabled = false;
+            //TbSnils.IsEnabled = false;
+            //TBAddresHome.IsEnabled = false;
+            //BtnSaveData.Visibility = Visibility.Hidden;
         }
     }
 }

@@ -41,8 +41,6 @@ namespace Rehabilitation_Center.MainWindowPage
             DataContext = App.users;
             TbAgeUser.Text = App.users.Age.ToString();
             BtnSaveData.Visibility = Visibility.Hidden;
-            
-
         }
         private void Update()
         {

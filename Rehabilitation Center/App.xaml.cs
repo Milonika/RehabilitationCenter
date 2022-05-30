@@ -15,5 +15,6 @@ namespace Rehabilitation_Center
     public partial class App : Application
     {
         public static Users users;
+        public static Health health;
     }
 }

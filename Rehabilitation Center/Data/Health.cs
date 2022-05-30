@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Rehabilitation_Center.Data
 {
-    class Health
+    public class Health
     {
         [BsonId]
         [BsonIgnoreIfDefault]
@@ -24,17 +24,21 @@ namespace Rehabilitation_Center.Data
         [BsonElement]
         public string Saturation { get; set; }
         [BsonElement]
+        public string Davleine { get; set; }
+        [BsonElement]
         public string BloodType { get; set; }
         [BsonElement]
         public string LoginUser{ get; set; }
 
-        public Health(int height, int weight, string pressure, string saturation, string bloodType, string loginuser )
+        public Health(int height, int weight, string pressure, string saturation, string davleine, string bloodType, string loginuser )
         {
             Height = height;
             Weight = weight;
             Pressure = pressure;
             Saturation = saturation;
+            Davleine = davleine;
             BloodType = bloodType;
+            LoginUser = loginuser;
         }
         public async static void AddHealth(Health health)
         {

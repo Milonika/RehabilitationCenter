@@ -95,12 +95,12 @@
             Height="18" 
             Margin="1034,323,0,0" 
             TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Foreground="#FF9BA7C0" FontSize="14"/>
-        <TextBox x:Name="TbRost" HorizontalAlignment="Left" Height="26" Margin="504,236,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
-        <TextBox x:Name="TbVes" HorizontalAlignment="Left" Height="26" Margin="504,283,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
-        <TextBox x:Name="TbDavleine" HorizontalAlignment="Left" Height="26" Margin="504,328,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
-        <TextBox x:Name="TbSaturacia" HorizontalAlignment="Left" Height="26" Margin="504,373,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
-        <TextBox x:Name="TbBloodType" HorizontalAlignment="Left" Height="26" Margin="504,418,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
-        <TextBox x:Name="TbDependece" HorizontalAlignment="Left" Height="26" Margin="504,467,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TbRost" IsEnabled="False" HorizontalAlignment="Left" Height="26" Margin="504,236,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TbVes" IsEnabled="False" HorizontalAlignment="Left" Height="26" Margin="504,283,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TbDavleine" IsEnabled="False" HorizontalAlignment="Left" Height="26" Margin="504,328,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TbSaturacia" IsEnabled="False" HorizontalAlignment="Left" Height="26" Margin="504,373,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TbBloodType" IsEnabled="False" HorizontalAlignment="Left" Height="26" Margin="504,418,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TbDependece" IsEnabled="False" HorizontalAlignment="Left" Height="26" Margin="504,467,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
         
         <Button
             x:Name="BtnAdddDataPacient" Click="BtnAdddDataPacient_Click"
