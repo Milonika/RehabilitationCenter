@@ -41,5 +41,14 @@ namespace Rehabilitation_Center.Data
             return collection.Find(x => true).ToList();
         }
 
+        public static void DeleteTherapy(Therapy therapy)
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var collection = db.GetCollection<Therapy>("therapy");
+            collection.DeleteOne(x => x.Id == therapy.Id);
+        }
+
+
     }
 }

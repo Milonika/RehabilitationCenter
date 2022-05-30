@@ -35,7 +35,7 @@ namespace Rehabilitation_Center.Admin.AdminWindow
 
         private void BtnSpesialistAdmin_Click(object sender, RoutedEventArgs e)
         {
-
+            AdminMainFrame.Navigate(new MainWindowPage.SpesialistPage());
         }
 
         private void BtnPacientAdmin_Click(object sender, RoutedEventArgs e)
@@ -51,6 +51,11 @@ namespace Rehabilitation_Center.Admin.AdminWindow
         private void BtnTerapiaAdmin_Click(object sender, RoutedEventArgs e)
         {
             AdminMainFrame.Navigate(new MainWindowPage.TherapyPage());
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

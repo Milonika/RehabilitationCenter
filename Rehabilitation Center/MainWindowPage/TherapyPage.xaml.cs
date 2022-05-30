@@ -26,13 +26,24 @@ namespace Rehabilitation_Center.MainWindowPage
         {
             InitializeComponent();
             if (App.users.IsAdmin == false)
+            { 
                 BtnAddtherapy.Visibility = Visibility.Hidden;
+                BtnEditTherapy.Visibility = Visibility.Hidden;
+            }
+
 
             GetInfoTherapyAsync();
         }
          
         private void LWTherapy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            DeleteTherapy deleteTherapy = new DeleteTherapy();
+            if (deleteTherapy.ShowDialog() == true)
+            { 
+                var item = LWTherapy.SelectedItem as Therapy;
+                Therapy.DeleteTherapy(item);
+                //GetInfoTherapyAsync();
+            }
 
         }
 
@@ -69,6 +80,16 @@ namespace Rehabilitation_Center.MainWindowPage
         }
 
         private void BtnDeleteTherapy_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnDeleteTherapy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnEditTherapy_Click(object sender, RoutedEventArgs e)
         {
 
         }

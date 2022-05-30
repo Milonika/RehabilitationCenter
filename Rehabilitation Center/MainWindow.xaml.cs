@@ -46,7 +46,7 @@ namespace Rehabilitation_Center
 
         private void BtnMyStatistic_Click(object sender, RoutedEventArgs e)
         {
-            MainFrameInMainWindow.Navigate(new MyStatisticPage());
+            MainFrameInMainWindow.Navigate(new MyStatisticPage(App.users));
         }
 
         private void BtnTerapia_Click(object sender, RoutedEventArgs e)

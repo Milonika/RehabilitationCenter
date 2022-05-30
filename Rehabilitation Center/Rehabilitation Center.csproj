@@ -161,7 +161,9 @@
     <Compile Include="Admin\AdminWindow\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Authorization.cs" />
+    <Compile Include="Admin\AdminWindow\DeleteTherapy.xaml.cs">
+      <DependentUpon>DeleteTherapy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\BuyTherapia.cs" />
     <Compile Include="Data\Dependece.cs" />
     <Compile Include="Data\DependeceHealth.cs" />
@@ -170,9 +172,7 @@
     <Compile Include="Data\Events.cs" />
     <Compile Include="Data\Health.cs" />
     <Compile Include="Data\HistoryUser.cs" />
-    <Compile Include="Data\Rols.cs" />
     <Compile Include="Data\Therapy.cs" />
-    <Compile Include="Data\TherapyHistory.cs" />
     <Compile Include="Data\Users.cs" />
     <Compile Include="MainWindowPage\MyAccountPage.xaml.cs">
       <DependentUpon>MyAccountPage.xaml</DependentUpon>
@@ -208,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Admin\AdminWindow\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\AdminWindow\DeleteTherapy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

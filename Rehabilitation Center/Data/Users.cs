@@ -111,7 +111,20 @@ namespace Rehabilitation_Center.Data
             data.UpdateOne(basa => basa.Id == App.users.Id, UpdateDef);
 
         }
+        public async static Task<List<Users>> GetUsersTask()
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var data = db.GetCollection<Users>("users");
+            return data.Find(x => x.IsAdmin == false).ToList();
+        }
 
-
+        public async static Task<List<Users>> GetDoctorTask()
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var data = db.GetCollection<Users>("users");
+            return data.Find(x => x.IsAdmin == true).ToList();
+        }
     }
 }

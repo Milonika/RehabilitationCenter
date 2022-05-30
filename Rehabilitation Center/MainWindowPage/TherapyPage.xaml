@@ -36,7 +36,7 @@
                Foreground="#FF5690FC" 
                FontWeight="SemiBold" 
                FontSize="32"/>
-        <ListView x:Name="LWTherapy" HorizontalAlignment="Stretch"  
+        <ListView x:Name="LWTherapy" HorizontalAlignment="Stretch"
                   Margin="276,115,49,77" VerticalAlignment="Stretch" SelectionChanged="LWTherapy_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -60,13 +60,7 @@
                 Content="ADD"
                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Height="Auto" Margin="810,728,340,38" Background="#FF598DEE" BorderBrush="#FF367CFF" Foreground="White" />
         <Button
-            x:Name="BtnDeleteTherapy_Copy" Click="BtnDeleteTherapy_Copy_Click"
-            Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
-            ToolTip="Resource name: MaterialDesignRaisedSecondaryButton"
-            Content="DELETE"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Height="Auto" Margin="1101,728,49,38" Background="#FF598DEE" BorderBrush="#FF367CFF" Foreground="White" />
-        <Button
-            x:Name="BtnEditTherapy_Copy1" Click="BtnEditTherapy_Copy_Click"
+            x:Name="BtnEditTherapy" Click="BtnEditTherapy_Click"
             Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
             ToolTip="Resource name: MaterialDesignRaisedSecondaryButton"
             Content="EDIT"

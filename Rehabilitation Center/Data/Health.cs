@@ -25,5 +25,26 @@ namespace Rehabilitation_Center.Data
         public string Saturation { get; set; }
         [BsonElement]
         public string BloodType { get; set; }
+        [BsonElement]
+        public string LoginUser{ get; set; }
+
+        public Health(int height, int weight, string pressure, string saturation, string bloodType, string loginuser )
+        {
+            Height = height;
+            Weight = weight;
+            Pressure = pressure;
+            Saturation = saturation;
+            BloodType = bloodType;
+        }
+        public async static void AddHealth(Health health)
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var collection = db.GetCollection<Health>("health");
+            await collection.InsertOneAsync(health);
+        }
     }
+
+
+
 }

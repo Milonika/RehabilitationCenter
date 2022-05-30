@@ -36,21 +36,6 @@
                Width="242" 
                FontWeight="SemiBold" 
                Foreground="#FF5690FC"/>
-
-        <DatePicker HorizontalAlignment="Left" 
-                    x:Name="ggwp"
-                    Height="49" 
-                    SelectedDateChanged="DatePicker_SelectedDateChanged"
-                    Margin="834,155,0,0" 
-                    VerticalAlignment="Top" 
-                    Width="360"/>
-        <ListView HorizontalAlignment="Left" Height="466" Margin="834,236,0,0" VerticalAlignment="Top" Width="360" Background="White" BorderBrush="#FF90B7FF" Foreground="{x:Null}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
         <Rectangle HorizontalAlignment="Left" Height="568" Margin="340,134,0,0" RadiusY="20" RadiusX="20" VerticalAlignment="Top" Width="372" Fill="White"/>
         <Label Content="Состояние здоровья" 
                HorizontalAlignment="Left" 
@@ -59,12 +44,76 @@
                VerticalAlignment="Top" 
                Width="230" 
                Foreground="#FF000C8B" FontSize="20" FontWeight="SemiBold"/>
-        <Label Content="Рост" HorizontalAlignment="Left" Height="26" Margin="378,236,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
-        <Label Content="Вес" HorizontalAlignment="Left" Height="26" Margin="378,280,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
-        <Label Content="Давление" HorizontalAlignment="Left" Height="40" Margin="378,324,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
-        <Label Content="Сатурация" HorizontalAlignment="Left" Height="31" Margin="378,369,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
-        <Label Content="Группа крови" HorizontalAlignment="Left" Height="31" Margin="378,418,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
-        <Label Content="Зависимсоть:" HorizontalAlignment="Left" Height="31" Margin="378,463,0,0" VerticalAlignment="Top" Width="300" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <Label Content="Рост" HorizontalAlignment="Left" Height="26" Margin="378,236,0,0" VerticalAlignment="Top" Width="72" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <Label Content="Вес" HorizontalAlignment="Left" Height="26" Margin="378,280,0,0" VerticalAlignment="Top" Width="72" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <Label Content="Давление" HorizontalAlignment="Left" Height="40" Margin="378,324,0,0" VerticalAlignment="Top" Width="89" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <Label Content="Сатурация" HorizontalAlignment="Left" Height="31" Margin="378,369,0,0" VerticalAlignment="Top" Width="89" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <Label Content="Группа крови" HorizontalAlignment="Left" Height="31" Margin="378,418,0,0" VerticalAlignment="Top" Width="111" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <Label Content="Зависимсоть:" HorizontalAlignment="Left" Height="31" Margin="378,463,0,0" VerticalAlignment="Top" Width="111" FontSize="16" Foreground="#FF90B7FF" FontWeight="Medium"/>
+        <TextBlock HorizontalAlignment="Left" Height="266" Margin="795,369,0,0" TextWrapping="Wrap" Text="Юмор всегда срабатывает, когда нужно произвести впечатление на пользователей в Инстаграм." VerticalAlignment="Top" Width="412" FontSize="18" Foreground="#FF000C8B"/>
+        <Image HorizontalAlignment="Left" 
+            x:Name="UserImgStatistic"
+            Height="105" 
+            Margin="950,151,0,0"
+            VerticalAlignment="Top"
+            Width="104"
+            PreviewMouseDown="UserImgStatistic_PreviewMouseDown"  Source="/Rehabilitation Center;component/img/Ailina.png"/>
+        <TextBlock HorizontalAlignment="Left" 
+            x:Name="TbFio"
+            Height="26" 
+            Margin="876,274,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="262" 
+            FontSize="18"
+            TextAlignment="Center"
+            Foreground="#000C8B" 
+            FontWeight="Medium"><Run Text="Бурнашева Айлина"/><LineBreak/><Run Text="Тимуровна"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" 
+            Height="24" 
+            Margin="976,322,0,0" 
+            TextWrapping="Wrap" 
+            Text="Возраст:" 
+            VerticalAlignment="Top" 
+            Width="58" 
+            FontSize="14"
+            Foreground="#9BA7C0"/>
+        <TextBlock HorizontalAlignment="Left" 
+            x:Name="TblLname"
+            Height="26" 
+            Margin="876,300,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Width="262" 
+            FontSize="18"
+            TextAlignment="Center"
+            Foreground="#000C8B" 
+            FontWeight="Medium" Text="Тимуровна"/>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            x:Name="TbAgeUser"
+            Height="18" 
+            Margin="1034,323,0,0" 
+            TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Foreground="#FF9BA7C0" FontSize="14"/>
+        <TextBox x:Name="TbRost" HorizontalAlignment="Left" Height="26" Margin="504,236,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TbVes" HorizontalAlignment="Left" Height="26" Margin="504,283,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TbDavleine" HorizontalAlignment="Left" Height="26" Margin="504,328,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TbSaturacia" HorizontalAlignment="Left" Height="26" Margin="504,373,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TbBloodType" HorizontalAlignment="Left" Height="26" Margin="504,418,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        <TextBox x:Name="TbDependece" HorizontalAlignment="Left" Height="26" Margin="504,467,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="167"/>
+        
+        <Button
+            x:Name="BtnAdddDataPacient" Click="BtnAdddDataPacient_Click"
+            Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
+            ToolTip="Resource name: MaterialDesignRaisedSecondaryButton"
+            Content="ADD"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Height="Auto" Margin="395,638,755,128" Background="#FF598DEE" BorderBrush="#FF367CFF" Foreground="White" />
+        <Button
+            x:Name="BtnEditDataPacient" Click="BtnEditDataPacient_Click"
+            Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
+            ToolTip="Resource name: MaterialDesignRaisedSecondaryButton"
+            Content="EDIT"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Height="Auto" Margin="541,638,609,128" Background="#FF598DEE" BorderBrush="#FF367CFF" Foreground="White" />
 
 
     </Grid>

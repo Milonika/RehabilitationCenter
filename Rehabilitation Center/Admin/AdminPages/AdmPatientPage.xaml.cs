@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Rehabilitation_Center.Data;
 
 namespace Rehabilitation_Center.Admin.AdminPages
 {
@@ -23,11 +24,19 @@ namespace Rehabilitation_Center.Admin.AdminPages
         public AdmPatientPage()
         {
             InitializeComponent();
+            nanana();
         }
 
         private void PatientList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var listPatient = PatientList.SelectedItem as Users;
+            this.NavigationService.Navigate(new MainWindowPage.MyStatisticPage(listPatient));
+        }
 
+
+        public async Task nanana()
+        {
+            PatientList.ItemsSource = await Users.GetUsersTask();
         }
     }
 }

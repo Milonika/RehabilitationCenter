@@ -8,6 +8,7 @@
         Title="MainAdminWindow" 
         Height="800" 
         Width="1280"        
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
         AllowsTransparency="True"
         ResizeMode="NoResize"
         WindowStyle="None" 

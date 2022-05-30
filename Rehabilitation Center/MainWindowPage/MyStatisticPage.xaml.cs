@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rehabilitation_Center.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +21,32 @@ namespace Rehabilitation_Center.MainWindowPage
     /// </summary>
     public partial class MyStatisticPage : Page
     {
-        public MyStatisticPage()
+        Users user;
+        public MyStatisticPage(Users miniuser)
         {
             InitializeComponent();
+            user = miniuser;
+            //TbRost.Text=miniuser
+            if (App.users.IsAdmin == false)
+            {
+                BtnAdddDataPacient.Visibility = Visibility.Hidden;
+                BtnEditDataPacient.Visibility = Visibility.Hidden;
+            }
         }
 
-        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        private void UserImgStatistic_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show(ggwp.SelectedDate.ToString(), ggwp.Text);
+
+        }
+
+        private void BtnEditDataPacient_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAdddDataPacient_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

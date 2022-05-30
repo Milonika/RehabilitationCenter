@@ -1,5 +1,4 @@
-﻿using Rehabilitation_Center.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,27 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Rehabilitation_Center.MainWindowPage
+namespace Rehabilitation_Center.Admin.AdminWindow
 {
     /// <summary>
-    /// Логика взаимодействия для SpesialistPage.xaml
+    /// Логика взаимодействия для DeleteTherapy.xaml
     /// </summary>
-    public partial class SpesialistPage : Page
+    public partial class DeleteTherapy : Window
     {
-        public SpesialistPage()
+        public DeleteTherapy()
         {
             InitializeComponent();
-            Taskis();
         }
 
-        public async Task Taskis()
+        private void Button_Click(object sender, RoutedEventArgs e) // удалить
         {
-            DoctorList.ItemsSource = await Users.GetDoctorTask();
+            this.DialogResult = true;
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
-
 }

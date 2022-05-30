@@ -22,9 +22,9 @@
                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
                 Name="DoctorList" 
                 Width="966" 
-                Margin="276,117,38,71" 
-                Background="Transparent" 
-                BorderBrush="Transparent" 
+                Margin="276,122,38,71" 
+                Background="#FFF7F8FD" 
+                BorderBrush="{x:Null}" 
                 HorizontalContentAlignment="Center" 
                 HorizontalAlignment="Center">
 
@@ -47,7 +47,7 @@
                             <Image Source="{Binding Photo}" Height="65" Width="65" Margin="65,10"/>
 
                             <TextBlock 
-                                Text="{Binding InfoDoctor}" 
+                                Text="{Binding Description}" 
                                 FontWeight="Bold" 
                                 FontSize="10" 
                                 Margin="40,35"
@@ -56,17 +56,6 @@
                                 TextAlignment="Center" 
                                 Background="Transparent" 
                                 Foreground="#FF5690FC"/>
-
-                            <TextBlock 
-                                Text="{Binding DoctorCategory.Name}" 
-                                FontWeight="Bold" 
-                                FontSize="10" 
-                                Margin="40,10"
-                                Width="500"
-                                Height="150"
-                                TextAlignment="Center"
-                                Background="Transparent" 
-                                Foreground="#FF1C6BFF"/>
 
                             <TextBlock 
                                 Text="{Binding Name}" 
@@ -121,15 +110,6 @@
             <ComboBoxItem
                     Content="Терапевт" />
         </ComboBox>
-
-        <Rectangle Fill="#F7F8FD" 
-                   HorizontalAlignment="Left" 
-                   Height="617" 
-                   Margin="252,112,0,0" 
-                   VerticalAlignment="Top" 
-                   Width="990"
-                   RadiusY="20"
-                   RadiusX="20"/>
 
 
         <Label Content="Специалисты" 
