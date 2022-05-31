@@ -28,9 +28,9 @@ namespace Rehabilitation_Center.Data
         [BsonElement]
         public string BloodType { get; set; }
         [BsonElement]
-        public string LoginUser{ get; set; }
+        public string Dependece{ get; set; }
 
-        public Health(int height, int weight, string pressure, string saturation, string davleine, string bloodType, string loginuser )
+        public Health(int height, int weight, string pressure, string saturation, string davleine, string bloodType, string dependece)
         {
             Height = height;
             Weight = weight;
@@ -38,8 +38,13 @@ namespace Rehabilitation_Center.Data
             Saturation = saturation;
             Davleine = davleine;
             BloodType = bloodType;
-            LoginUser = loginuser;
+            Dependece = dependece;
         }
+
+        public Health()
+        {
+        }
+
         public async static void AddHealth(Health health)
         {
             MongoClient client = new MongoClient();

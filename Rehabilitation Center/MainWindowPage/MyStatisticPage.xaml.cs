@@ -26,6 +26,7 @@ namespace Rehabilitation_Center.MainWindowPage
         {
             InitializeComponent();
             user = miniuser;
+            DataContext = user;
             //TbRost.Text=miniuser
             if (App.users.IsAdmin == false)
             {
@@ -41,29 +42,25 @@ namespace Rehabilitation_Center.MainWindowPage
 
         private void BtnEditDataPacient_Click(object sender, RoutedEventArgs e)
         {
-
+            TbAgeUser.IsEnabled = true;
+            TbRost.IsReadOnly = false;
+            TbFio.IsEnabled = true;
+            TblLname.IsEnabled = false;
         }
 
         private void BtnAdddDataPacient_Click(object sender, RoutedEventArgs e)
         {
-            TbRost.Text = App.health.Height.ToString();
-            TbVes.Text = App.health.Weight.ToString();
-            TbSaturacia.Text = App.health.Saturation;
-            TbDavleine.Text = App.health.Davleine;
-            TbBloodType.Text = App.health.BloodType;
-
-
-
-            //TBWorkPin.IsEnabled = false;
-            //TbAgeUser.IsEnabled = false;
-            //TbFio.IsEnabled = false;
-            //TblLname.IsEnabled = false;
-            //TbPhone.IsEnabled = false;
-            //TbPolis.IsEnabled = false;
-            //TbPasport.IsEnabled = false;
-            //TbSnils.IsEnabled = false;
-            //TBAddresHome.IsEnabled = false;
-            //BtnSaveData.Visibility = Visibility.Hidden;
+            user.Health.Height = int.Parse(TbRost.Text);
+            user.Health.Weight = int.Parse(TbVes.Text);
+            user.Health.Pressure = TbDavleine.Text;
+            user.Health.Saturation = TbSaturacia.Text;
+            user.Health.BloodType = TbBloodType.Text;
+            TbVes.IsReadOnly=true;
+            TbRost.IsReadOnly = true;
+            TbSaturacia.IsReadOnly = true;
+            TbDependece.IsReadOnly = true;
+            TbDavleine.IsReadOnly = true;
+            TbBloodType.IsReadOnly = true;
         }
     }
 }

@@ -50,6 +50,11 @@ namespace Rehabilitation_Center.Data
         [BsonElement]
         public bool IsAdmin { get; set; }
 
+        [BsonElement]
+        public Health Health { get; set; }
+
+        public string fio { get => $"{FirstName} {Name}"; }
+
         public Users(string firstname, string name, string lastname, string pasport, string polis, string snils, string phone, int age, string login, string password, byte[] photo, string work, string addres, bool isadmin = false)
         {
             FirstName = firstname;
@@ -66,11 +71,13 @@ namespace Rehabilitation_Center.Data
             Addres = addres;
             IsAdmin = isadmin;
             Photo = photo;
+            Health = new Health();
         }
 
         public Users(string login, string password)
         {
             Login = login;
+            Health = new Health();
             Password = password;
         }
 
@@ -109,7 +116,14 @@ namespace Rehabilitation_Center.Data
             var data = db.GetCollection<Users>("users");
             var UpdateDef = Builders<Users>.Update.Set("Polis", App.users.Polis).Set("Addres", App.users.Addres).Set("Snils", App.users.Snils).Set("Phone", App.users.Phone).Set("Pasport", App.users.Pasport).Set("Work", App.users.Work).Set("FirstName", App.users.FirstName).Set("Name", App.users.Name).Set("LastName", App.users.LastName).Set("Age", App.users.Age);
             data.UpdateOne(basa => basa.Id == App.users.Id, UpdateDef);
-
+        }
+        public static void EditHealth(Users user)
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var data = db.GetCollection<Users>("users");
+            var UpdateDef = Builders<Users>.Update.Set("Health", user.Health);
+            data.UpdateOne(basa => basa.Id == user.Id, UpdateDef);
         }
         public async static Task<List<Users>> GetUsersTask()
         {
