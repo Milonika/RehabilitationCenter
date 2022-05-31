@@ -20,6 +20,7 @@
     <Grid>
         <ListView
                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                SelectionChanged="DoctorList_SelectionChanged"
                 Name="DoctorList" 
                 Width="966" 
                 Margin="276,122,38,71" 
@@ -61,7 +62,7 @@
                                 Text="{Binding Name}" 
                                 FontWeight="Bold" 
                                 FontSize="10" 
-                                Margin="-125,80"
+                                Margin="-150,90"
                                 Width="500"
                                 Height="150"
                                 TextAlignment="Center" 
@@ -69,10 +70,10 @@
                                 Foreground="#FF5690FC"/>
 
                             <TextBlock 
-                                Text="{Binding FName}" 
+                                Text="{Binding FirstName}" 
                                 FontWeight="Bold" 
                                 FontSize="10" 
-                                Margin="-180,80"
+                                Margin="-150,78"
                                 Width="500"
                                 Height="150"
                                 TextAlignment="Center" 
@@ -80,10 +81,10 @@
                                 Foreground="#FF5690FC"/>
 
                             <TextBlock 
-                                Text="{Binding LName}" 
+                                Text="{Binding LastName}" 
                                 FontWeight="Bold" 
                                 FontSize="10" 
-                                Margin="-155,95"
+                                Margin="-150,101"
                                 Width="500"
                                 Height="150"
                                 TextAlignment="Center" 
@@ -95,21 +96,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ComboBox Height="30"
-                  materialDesign:HintAssist.Hint="Категория"
-                  Width="100"
-                  materialDesign:HintAssist.HintOpacity=".26"
-                  IsEditable="True" 
-                  Margin="530,68,650,702">
-            <ComboBoxItem
-                    Content="Нарколог" />
-            <ComboBoxItem
-                    Content="Психолог" />
-            <ComboBoxItem
-                    Content="Психиатр" />
-            <ComboBoxItem
-                    Content="Терапевт" />
-        </ComboBox>
 
 
         <Label Content="Специалисты" 

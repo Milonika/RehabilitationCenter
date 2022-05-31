@@ -32,6 +32,9 @@ namespace Rehabilitation_Center.MainWindowPage
             DoctorList.ItemsSource = await Users.GetDoctorTask();
         }
 
+        private void DoctorList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
     }
 
 }

@@ -9,7 +9,7 @@
     <Grid>
         <TextBlock HorizontalAlignment="Left" Height="74" Margin="44,56,0,0" TextWrapping="Wrap" Text="Вы действительно хотите удалить терапию?" VerticalAlignment="Top" Width="256" FontSize="20" FontWeight="Medium" TextAlignment="Center"/>
         <Button Content="Удалить" HorizontalAlignment="Left" Height="29" Margin="50,168,0,0" VerticalAlignment="Top" Width="91" Background="#FFFFB0B0" Click="Button_Click"/>
-        <Button Content="Отмена" HorizontalAlignment="Left" Height="29" Margin="199,168,0,0" VerticalAlignment="Top" Width="91" Background="#FF8EDBFF" Click="Button_Click_1"/>
+        <Button Content="Редактирование" HorizontalAlignment="Left" Height="29" Margin="199,168,0,0" VerticalAlignment="Top" Width="91" Background="#FF8EDBFF" Click="Button_Click_1"/>
 
     </Grid>
 </Window>

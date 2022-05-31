@@ -16,5 +16,6 @@ namespace Rehabilitation_Center
     {
         public static Users users;
         public static Health health;
+        public static Therapy therapy;
     }
 }

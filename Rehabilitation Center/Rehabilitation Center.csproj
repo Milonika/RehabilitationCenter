@@ -164,6 +164,9 @@
     <Compile Include="Admin\AdminWindow\DeleteTherapy.xaml.cs">
       <DependentUpon>DeleteTherapy.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AdminWindow\EditTherapy.xaml.cs">
+      <DependentUpon>EditTherapy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\BuyTherapia.cs" />
     <Compile Include="Data\Dependece.cs" />
     <Compile Include="Data\DependeceHealth.cs" />
@@ -212,6 +215,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Admin\AdminWindow\DeleteTherapy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\AdminWindow\EditTherapy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

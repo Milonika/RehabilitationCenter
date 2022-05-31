@@ -16,27 +16,24 @@ using System.Windows.Shapes;
 namespace Rehabilitation_Center.Admin.AdminWindow
 {
     /// <summary>
-    /// Логика взаимодействия для DeleteTherapy.xaml
+    /// Логика взаимодействия для EditTherapy.xaml
     /// </summary>
-    public partial class DeleteTherapy : Window
+    public partial class EditTherapy : Window
     {
-        public Therapy terapia;
-        public DeleteTherapy(Therapy therapy)
+        public EditTherapy(Therapy ter)
         {
             InitializeComponent();
-            terapia = therapy;
+            App.therapy = ter;
+            EditNameTherapy.Text = ter.Name;
+            EditPriceTherapy.Text = ter.Price;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) // удалить
+        private void BtnEditNewTherapy_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-            EditTherapy editTherapy = new EditTherapy(terapia);
-            editTherapy.Show();
+            App.therapy.Name = EditNameTherapy.Text;
+            App.therapy.Price = EditPriceTherapy.Text;
+            Therapy.EditProd();
+            MessageBox.Show("Терапия отредактирована");
             this.Close();
         }
     }

@@ -23,6 +23,7 @@
                Margin="1089,93,0,0"
                VerticalAlignment="Top"
                Width="105" 
+               PreviewMouseDown="AdmImg_PreviewMouseDown"
                Source="/Rehabilitation Center;component/img/Gulnara.png"/>
 
         <Rectangle Fill="White" 
@@ -111,13 +112,13 @@
             RadiusY="20"
             RadiusX="20"/>
 
-        <Image x:Name="AdmimImg" 
+        <Image 
                HorizontalAlignment="Left" 
                Height="352" 
                Margin="366,429,0,0" 
                VerticalAlignment="Top" 
                Width="558" 
-               PreviewMouseDown="AdmimImg_PreviewMouseDown" Source="/Rehabilitation Center;component/img/AuthmainImg.png"/>
+               Source="/Rehabilitation Center;component/img/AuthmainImg.png"/>
 
         <Button Content="Button" x:Name="BtnSettingAdmin" Click="BtnSettingAdmin_Click" HorizontalAlignment="Left" 
             Height="30" Margin="1191,22,0,0" VerticalAlignment="Top" Width="30" BorderBrush="{x:Null}" Foreground="{x:Null}">

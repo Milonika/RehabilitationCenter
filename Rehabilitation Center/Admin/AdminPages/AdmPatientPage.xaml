@@ -71,22 +71,12 @@
                                 Background="Transparent" 
                                 Foreground="#FF5690FC"/>
 
-                                <TextBlock 
-                                Text="{Binding DoctorCategory.Name}" 
-                                FontWeight="Bold" 
-                                FontSize="10" 
-                                Margin="40,10"
-                                Width="500"
-                                Height="150"
-                                TextAlignment="Center"
-                                Background="Transparent" 
-                                Foreground="#FF1C6BFF"/>
 
                                 <TextBlock 
                                 Text="{Binding Name}" 
                                 FontWeight="Bold" 
                                 FontSize="10" 
-                                Margin="-125,80"
+                                Margin="-150,90"
                                 Width="500"
                                 Height="150"
                                 TextAlignment="Center" 
@@ -94,10 +84,10 @@
                                 Foreground="#FF5690FC"/>
 
                                 <TextBlock 
-                                Text="{Binding FName}" 
+                                Text="{Binding FirstName}" 
                                 FontWeight="Bold" 
                                 FontSize="10" 
-                                Margin="-180,80"
+                                Margin="-150,78"
                                 Width="500"
                                 Height="150"
                                 TextAlignment="Center" 
@@ -105,10 +95,10 @@
                                 Foreground="#FF5690FC"/>
 
                                 <TextBlock 
-                                Text="{Binding LName}" 
+                                Text="{Binding LastName}" 
                                 FontWeight="Bold" 
                                 FontSize="10" 
-                                Margin="-155,95"
+                                Margin="-150,101"
                                 Width="500"
                                 Height="150"
                                 TextAlignment="Center" 

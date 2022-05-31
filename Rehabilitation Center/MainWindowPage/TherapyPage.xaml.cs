@@ -28,22 +28,22 @@ namespace Rehabilitation_Center.MainWindowPage
             if (App.users.IsAdmin == false)
             { 
                 BtnAddtherapy.Visibility = Visibility.Hidden;
-                BtnEditTherapy.Visibility = Visibility.Hidden;
             }
-
-
             GetInfoTherapyAsync();
+
+            //App.therapy = prod;
+            //EditNameProd.Text = prod.Name;
+            //EditPriceProd.Text = prod.Price.ToString();
+            //EditDesProd.Text = prod.Description;
+
         }
          
         private void LWTherapy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DeleteTherapy deleteTherapy = new DeleteTherapy();
-            if (deleteTherapy.ShowDialog() == true)
-            { 
-                var item = LWTherapy.SelectedItem as Therapy;
-                Therapy.DeleteTherapy(item);
-                //GetInfoTherapyAsync();
-            }
+            var tik = LWTherapy.SelectedItem as Therapy;
+
+            DeleteTherapy deleteTherapy = new DeleteTherapy(tik);
+            deleteTherapy.Show();
 
         }
 
@@ -72,26 +72,6 @@ namespace Rehabilitation_Center.MainWindowPage
 
             AddTherapy addTherapy = new AddTherapy();
             addTherapy.Show();
-        }
-
-        private void BtnEditTherapy_Copy_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnDeleteTherapy_Copy_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnDeleteTherapy_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnEditTherapy_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

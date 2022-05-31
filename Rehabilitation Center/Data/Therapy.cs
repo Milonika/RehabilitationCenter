@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Rehabilitation_Center.Data
 {
-    class Therapy
+    public class Therapy
     {
         [BsonId]
         [BsonIgnoreIfDefault]
@@ -47,6 +47,15 @@ namespace Rehabilitation_Center.Data
             var db = client.GetDatabase("ReabilitionCenter");
             var collection = db.GetCollection<Therapy>("therapy");
             collection.DeleteOne(x => x.Id == therapy.Id);
+        }
+
+        public static void EditProd()
+        {
+            MongoClient client = new MongoClient();
+            var db = client.GetDatabase("ReabilitionCenter");
+            var data = db.GetCollection<Therapy>("therapy");
+            var UpdateDef = Builders<Therapy>.Update.Set("Name", App.therapy.Name).Set("Price", App.therapy.Price);
+            data.UpdateOne(basa => basa.Id == App.therapy.Id, UpdateDef);
         }
 
 

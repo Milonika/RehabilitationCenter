@@ -39,24 +39,6 @@ namespace Rehabilitation_Center.Admin.AdminPages
             BtnSaveDataAdmin.Visibility = Visibility.Hidden;
         }
 
-
-        private void AdmimImg_PreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files|*.bmp;*.jpg;*.png|All files|*.*";
-            openFileDialog.FilterIndex = 1;
-            if (openFileDialog.ShowDialog() == true)
-            {
-                App.users.Photo = File.ReadAllBytes(openFileDialog.FileName);
-                BitmapImage image = new BitmapImage();
-                image.BeginInit();
-                image.UriSource = new Uri(openFileDialog.FileName);
-                image.EndInit();
-                AdmimImg.Source = image;
-                App.users.Update();
-            }
-        }
-
         private void BtnSaveDataAdmin_Click(object sender, RoutedEventArgs e)
         {
             string[] fio = TbAdmFio.Text.Split(' ');
@@ -93,6 +75,23 @@ namespace Rehabilitation_Center.Admin.AdminPages
             TbAdmSnils.IsEnabled = true;
             TbAdmHome.IsEnabled = true;
             BtnSaveDataAdmin.Visibility = Visibility.Visible;
+        }
+
+        private void AdmImg_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files|*.bmp;*.jpg;*.png|All files|*.*";
+            openFileDialog.FilterIndex = 1;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                App.users.Photo = File.ReadAllBytes(openFileDialog.FileName);
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(openFileDialog.FileName);
+                image.EndInit();
+                AdmImg.Source = image;
+                App.users.Update();
+            }
         }
     }
 }
