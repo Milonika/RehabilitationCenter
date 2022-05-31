@@ -139,8 +139,7 @@
             Margin="950,151,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            PreviewMouseDown="UserImgStatistic_PreviewMouseDown"
-            Source="/Rehabilitation Center;component/img/Ailina.png" />
+            PreviewMouseDown="UserImgStatistic_PreviewMouseDown"/>
         <TextBlock
             x:Name="TbFio"
             Width="262"
@@ -218,7 +217,7 @@
             VerticalAlignment="Top"
             DataContext="{Binding Path=Health}"
             IsReadOnly="False"
-            Text="{Binding Path=Davlenie}"
+            Text="{Binding Path=Pressure}"
             TextWrapping="Wrap" />
         <TextBox
             x:Name="TbSaturacia"
@@ -247,7 +246,9 @@
             Width="167"
             Height="26"
             Margin="504,467,0,0"
+            DataContext="{Binding Path=Health}"
             HorizontalAlignment="Left"
+            Text="{Binding Path=Dependece}"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
 

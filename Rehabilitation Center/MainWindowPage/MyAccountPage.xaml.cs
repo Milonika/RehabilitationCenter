@@ -41,6 +41,17 @@ namespace Rehabilitation_Center.MainWindowPage
             DataContext = App.users;
             TbAgeUser.Text = App.users.Age.ToString();
             BtnSaveData.Visibility = Visibility.Hidden;
+
+
+            if (App.users.Photo != null)
+            {
+                MemoryStream memoryStream = new MemoryStream(App.users.Photo);
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = memoryStream;
+                bitmapImage.EndInit();
+                UserImg.Source = bitmapImage;
+            }
         }
         private void Update()
         {
@@ -61,6 +72,7 @@ namespace Rehabilitation_Center.MainWindowPage
                 image.EndInit();
                 UserImg.Source = image;
                 App.users.Update();
+
             }
         }
 

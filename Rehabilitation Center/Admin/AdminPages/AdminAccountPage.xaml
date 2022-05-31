@@ -24,7 +24,7 @@
                VerticalAlignment="Top"
                Width="105" 
                PreviewMouseDown="AdmImg_PreviewMouseDown"
-               Source="/Rehabilitation Center;component/img/Gulnara.png"/>
+               Source="/Rehabilitation Center;component/img/billy.jpg"/>
 
         <Rectangle Fill="White" 
                    HorizontalAlignment="Left" 

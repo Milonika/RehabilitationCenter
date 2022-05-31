@@ -37,6 +37,15 @@ namespace Rehabilitation_Center.Admin.AdminPages
             TbAdmHome.Text = App.users.Addres;
             TblAdminAge.Text = App.users.Age.ToString();
             BtnSaveDataAdmin.Visibility = Visibility.Hidden;
+            if (App.users.Photo != null)
+            {
+                MemoryStream memoryStream = new MemoryStream(App.users.Photo);
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = memoryStream;
+                bitmapImage.EndInit();
+                AdmImg.Source = bitmapImage;
+            }
         }
 
         private void BtnSaveDataAdmin_Click(object sender, RoutedEventArgs e)
