@@ -27,7 +27,8 @@ namespace Rehabilitation_Center.AuthPages
 
         private void BtnContactPage_Click(object sender, RoutedEventArgs e)
         {
-
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.Show();
         }
     }
 }

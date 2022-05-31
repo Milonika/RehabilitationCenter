@@ -27,7 +27,8 @@ namespace Rehabilitation_Center.AuthPages
 
         private void BtnGetStarted2_Click(object sender, RoutedEventArgs e)
         {
-
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
         }
     }
 }
